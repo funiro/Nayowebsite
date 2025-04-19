@@ -58,25 +58,21 @@ navLinksItems.forEach(link => {
 // Hero Slider
 class HeroSlider {
     constructor() {
-        this.slider = document.querySelector('.slider');
-        this.slides = document.querySelectorAll('.slide');
-        this.dots = document.querySelectorAll('.dot');
-        this.prevBtn = document.querySelector('.slider-btn.prev');
-        this.nextBtn = document.querySelector('.slider-btn.next');
+        this.slides = document.querySelectorAll('.hero-slide');
+        this.prevBtn = document.querySelector('.prev-slide');
+        this.nextBtn = document.querySelector('.next-slide');
+        this.dots = document.querySelectorAll('.slider-dot');
         this.currentSlide = 0;
-        this.slideCount = this.slides.length;
-        this.autoPlayInterval = null;
-        this.autoPlayDelay = 5000; // 5 seconds
-
+        this.slideInterval = null;
         this.init();
     }
 
     init() {
-        if (!this.slider) return;
-
-        // Set initial slide
+        if (this.slides.length === 0) return;
+        
+        // Show first slide
         this.showSlide(0);
-
+        
         // Add event listeners
         if (this.prevBtn) {
             this.prevBtn.addEventListener('click', () => this.prevSlide());
@@ -84,142 +80,66 @@ class HeroSlider {
         if (this.nextBtn) {
             this.nextBtn.addEventListener('click', () => this.nextSlide());
         }
+        
+        // Add dot event listeners
         this.dots.forEach((dot, index) => {
             dot.addEventListener('click', () => this.showSlide(index));
         });
 
         // Start autoplay
-        this.startAutoPlay();
-
-        // Pause autoplay on hover
-        this.slider.addEventListener('mouseenter', () => this.stopAutoPlay());
-        this.slider.addEventListener('mouseleave', () => this.startAutoPlay());
+        this.startAutoplay();
     }
 
     showSlide(index) {
-        // Remove active class from all slides and dots
+        // Hide all slides
         this.slides.forEach(slide => {
+            slide.style.display = 'none';
             slide.classList.remove('active');
-            slide.style.opacity = '0';
         });
+        
+        // Remove active class from all dots
         this.dots.forEach(dot => dot.classList.remove('active'));
-
-        // Add active class to current slide and dot
+        
+        // Show current slide
+        this.slides[index].style.display = 'block';
         this.slides[index].classList.add('active');
-        this.slides[index].style.opacity = '1';
+        
+        // Add active class to current dot
         this.dots[index].classList.add('active');
-
+        
         this.currentSlide = index;
     }
 
     prevSlide() {
-        const index = (this.currentSlide - 1 + this.slideCount) % this.slideCount;
-        this.showSlide(index);
+        let newIndex = this.currentSlide - 1;
+        if (newIndex < 0) {
+            newIndex = this.slides.length - 1;
+        }
+        this.showSlide(newIndex);
     }
 
     nextSlide() {
-        const index = (this.currentSlide + 1) % this.slideCount;
-        this.showSlide(index);
-    }
-
-    startAutoPlay() {
-        if (this.autoPlayInterval) {
-            clearInterval(this.autoPlayInterval);
+        let newIndex = this.currentSlide + 1;
+        if (newIndex >= this.slides.length) {
+            newIndex = 0;
         }
-        this.autoPlayInterval = setInterval(() => this.nextSlide(), this.autoPlayDelay);
+        this.showSlide(newIndex);
     }
 
-    stopAutoPlay() {
-        if (this.autoPlayInterval) {
-            clearInterval(this.autoPlayInterval);
-            this.autoPlayInterval = null;
+    startAutoplay() {
+        this.slideInterval = setInterval(() => {
+            this.nextSlide();
+        }, 5000); // Change slide every 5 seconds
+    }
+
+    stopAutoplay() {
+        if (this.slideInterval) {
+            clearInterval(this.slideInterval);
         }
     }
 }
 
-// Contact Form Functionality
-const contactBtn = document.querySelector('.contact-btn');
-const contactModal = document.querySelector('.contact-form-modal');
-const closeModal = document.querySelector('.close-modal');
-const contactForm = document.querySelector('.contact-form');
-
-// Open modal
-contactBtn.addEventListener('click', () => {
-    contactModal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    // Focus on first input when modal opens
-    const firstInput = contactForm.querySelector('input, textarea');
-    if (firstInput) firstInput.focus();
-});
-
-// Close modal
-closeModal.addEventListener('click', () => {
-    contactModal.style.display = 'none';
-    document.body.style.overflow = '';
-});
-
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target === contactModal) {
-        contactModal.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-});
-
-// Handle form submission
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const submitBtn = contactForm.querySelector('.submit-btn');
-    
-    try {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-        
-        // Here you would typically send the form data to your server
-        // For now, we'll simulate a successful submission
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-        contactModal.style.display = 'none';
-        document.body.style.overflow = '';
-        
-    } catch (error) {
-        alert('Sorry, there was an error sending your message. Please try again later.');
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-    }
-});
-
-// Accessibility improvements
-document.addEventListener('keydown', (e) => {
-    // Close modal with Escape key
-    if (e.key === 'Escape' && contactModal.style.display === 'block') {
-        contactModal.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-});
-
-// Add skip link functionality
-const skipLink = document.createElement('a');
-skipLink.href = '#main-content';
-skipLink.className = 'skip-link';
-skipLink.textContent = 'Skip to main content';
-document.body.insertBefore(skipLink, document.body.firstChild);
-
-// Add ARIA labels to form inputs
-const formInputs = contactForm.querySelectorAll('input, textarea');
-formInputs.forEach(input => {
-    const label = input.previousElementSibling;
-    if (label && label.tagName === 'LABEL') {
-        input.setAttribute('aria-labelledby', label.id);
-    }
-});
-
-// Initialize components when DOM is loaded
+// Initialize slider when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new HeroSlider();
     
@@ -382,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-}); 
+});
 
 function openSponsorForm() {
     const modal = document.getElementById('sponsor-modal');
@@ -401,5 +321,87 @@ window.addEventListener('click', function(event) {
     const modal = document.getElementById('sponsor-modal');
     if (event.target === modal) {
         closeSponsorForm();
+    }
+});
+
+// Contact Form Functionality
+const contactBtn = document.querySelector('.contact-btn');
+const contactModal = document.querySelector('.contact-form-modal');
+const closeModal = document.querySelector('.close-modal');
+const contactForm = document.querySelector('.contact-form');
+
+// Open modal
+contactBtn.addEventListener('click', () => {
+    contactModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    // Focus on first input when modal opens
+    const firstInput = contactForm.querySelector('input, textarea');
+    if (firstInput) firstInput.focus();
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    contactModal.style.display = 'none';
+    document.body.style.overflow = '';
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === contactModal) {
+        contactModal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+});
+
+// Handle form submission
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(contactForm);
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    
+    try {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        // Here you would typically send the form data to your server
+        // For now, we'll simulate a successful submission
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        alert('Thank you for your message! We will get back to you soon.');
+        contactForm.reset();
+        contactModal.style.display = 'none';
+        document.body.style.overflow = '';
+        
+    } catch (error) {
+        alert('Sorry, there was an error sending your message. Please try again later.');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+    }
+});
+
+// Accessibility improvements
+document.addEventListener('keydown', (e) => {
+    // Close modal with Escape key
+    if (e.key === 'Escape' && contactModal.style.display === 'block') {
+        contactModal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+});
+
+// Add skip link functionality
+const skipLink = document.createElement('a');
+skipLink.href = '#main-content';
+skipLink.className = 'skip-link';
+skipLink.textContent = 'Skip to main content';
+document.body.insertBefore(skipLink, document.body.firstChild);
+
+// Add ARIA labels to form inputs
+const formInputs = contactForm.querySelectorAll('input, textarea');
+formInputs.forEach(input => {
+    const label = input.previousElementSibling;
+    if (label && label.tagName === 'LABEL') {
+        input.setAttribute('aria-labelledby', label.id);
     }
 }); 
