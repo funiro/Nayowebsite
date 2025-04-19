@@ -113,18 +113,23 @@
             <div class="event-sidebar">
                 <div class="event-registration">
                     <h3>Register for the Event</h3>
-                    <form class="registration-form">
+                    <form id="event-registration-form" action="https://formspree.io/f/xgegqjqg" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_subject" value="New Event Registration">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://nayomalawi.org/thank-you.html">
+                        <input type="hidden" name="_autoresponse" value="Thank you for registering for our event. We look forward to seeing you there!">
+                        <input type="hidden" name="_replyto" value="info@nayomalawi.org">
                         <div class="form-group">
-                            <input type="text" placeholder="Full Name" required>
+                            <input type="text" placeholder="Full Name" required name="name">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email Address" required>
+                            <input type="email" placeholder="Email Address" required name="email">
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required>
+                            <input type="tel" placeholder="Phone Number" required name="phone">
                         </div>
                         <div class="form-group">
-                            <select required>
+                            <select required name="role">
                                 <option value="">Select Role</option>
                                 <option value="volunteer">Volunteer</option>
                                 <option value="donor">Donor</option>

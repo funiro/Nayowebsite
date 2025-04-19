@@ -64,7 +64,12 @@
 
         <section class="volunteer-form-section">
             <div class="form-container">
-                <form id="volunteer-form" action="mailto:info@nayomalawi.org" method="post" enctype="text/plain">
+                <form id="volunteer-form" action="https://formspree.io/f/xgegqjqg" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_subject" value="New Volunteer Application">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://nayomalawi.org/thank-you.html">
+                    <input type="hidden" name="_autoresponse" value="Thank you for your volunteer application. We will review it and get back to you soon.">
+                    <input type="hidden" name="_replyto" value="info@nayomalawi.org">
                     <div class="form-group">
                         <label for="full-name">Full Name *</label>
                         <input type="text" id="full-name" name="full-name" required>
