@@ -13,12 +13,40 @@
         <nav class="main-nav">
             <div class="logo">
                 <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
+                <span class="tagline">One Heart,<br>One Community</span>
             </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="index.html#events">EVENTS</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">PROJECTS</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="art.html">ART</a></li>
+                        <li><a href="antenatal.html">ANTENATAL CARE</a></li>
+                        <li><a href="palliative.html">PALLIATIVE CARE</a></li>
+                        <li><a href="student.html">STUDENT SUPPORT</a></li>
+                        <li><a href="outreach.html">OUTREACH PROGRAMS</a></li>
+                        <li><a href="youth.html">YOUTH FRIENDLY SERVICES</a></li>
+                    </ul>
+                </li>
+                <li><a href="events.html">EVENTS</a></li>
                 <li><a href="index.html#staff">STAFF</a></li>
-                <li><a href="index.html#partners">PARTNERS</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">PARTNERS</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.copred.org/" target="_blank">Copred</a></li>
+                        <li><a href="https://www.foccad.org/" target="_blank">FOCCAD</a></li>
+                        <li><a href="https://k2fasteners.ca/" target="_blank">K2 Fasteners</a></li>
+                        <li><a href="https://luena.org/" target="_blank">Luenna Foundation</a></li>
+                        <li><a href="https://masanawawafrika.org" target="_blank">Masana Wa Wafrika</a></li>
+                        <li><a href="https://www.health.gov.mw" target="_blank">Malawi's Ministry of Health</a></li>
+                        <li><a href="https://stephenlewisfoundation.org" target="_blank">Stephen Lewis Foundation</a></li>
+                        <li><a href="https://www.unaids.org/en" target="_blank">UNAIDS</a></li>
+                        <li><a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank">NAYO UK FUNDRAISERS</a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#volunteer">VOLUNTEER</a></li>
                 <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
             </ul>
@@ -51,111 +79,111 @@
                 </ul>
             </div>
 
-            <div class="program-impact">
+            <section class="program-impact">
                 <h2>Program Impact</h2>
                 <div class="impact-stats">
-                    <div class="stat-box">
+                    <div class="stat-item">
                         <h3>Students Supported</h3>
                         <p class="number">200+</p>
                     </div>
-                    <div class="stat-box">
+                    <div class="stat-item">
                         <h3>Success Rate</h3>
                         <p class="number">85%</p>
                     </div>
-                    <div class="stat-box">
+                    <div class="stat-item">
                         <h3>Mentors</h3>
                         <p class="number">20+</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="program-faq">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">Who is eligible for student support?</div>
-                        <div class="faq-answer">
-                            <p>Students from underprivileged backgrounds who demonstrate academic potential and financial need are eligible for our support programs.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">What types of support are available?</div>
-                        <div class="faq-answer">
-                            <p>We offer various forms of support including academic tutoring, mentorship, educational materials, school fee assistance, and career guidance.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">How can I apply for support?</div>
-                        <div class="faq-answer">
-                            <p>Students can apply through their schools or by contacting our office directly. We assess each application based on need and available resources.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">How can I become a mentor?</div>
-                        <div class="faq-answer">
-                            <p>We welcome qualified individuals who are passionate about education to join our mentorship program. Contact us to learn more about the application process.</p>
-                        </div>
-                    </div>
+            <div class="sponsor-section">
+                <h2>Become a Sponsor</h2>
+                <p>Your support can change a student's life. Join us in making education accessible to all.</p>
+                <div class="text-center">
+                    <button class="btn sponsor-btn" onclick="openSponsorForm()">Become a Sponsor</button>
                 </div>
             </div>
 
-            <div class="get-involved">
-                <h2>Get Involved</h2>
-                <p>Support our Student Support program through donations or volunteering. Your contribution helps students achieve their educational goals and build a better future.</p>
-                <div class="action-buttons">
-                    <a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="btn donate-btn">Donate Now</a>
-                    <a href="index.html#volunteer" class="btn contact-btn">Volunteer</a>
-                    <button class="btn sponsor-btn" onclick="openSponsorForm()">Become a Sponsor</button>
+            <!-- Sponsor Form Modal -->
+            <div id="sponsor-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeSponsorForm()">&times;</span>
+                    <h2>Become a Sponsor</h2>
+                    <form id="sponsor-form" class="sponsor-form" action="https://formspree.io/f/xgegqjqg" method="POST">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <input type="text" id="country" name="country" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number *</label>
+                            <input type="tel" id="mobile" name="mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Street Address *</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="students">Number of Students You Wish to Sponsor *</label>
+                            <input type="number" id="students" name="students" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profiles">Number of Student Profiles You Wish to Review *</label>
+                            <input type="number" id="profiles" name="profiles" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="start-date">Preferred Start Date for Sponsorship *</label>
+                            <input type="date" id="start-date" name="start-date" required>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="program-faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Who is eligible for student support?</div>
+                    <div class="faq-answer">
+                        <p>Students from underprivileged backgrounds who demonstrate academic potential and financial need are eligible for our support programs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What types of support are available?</div>
+                    <div class="faq-answer">
+                        <p>We offer various forms of support including academic tutoring, mentorship, educational materials, school fee assistance, and career guidance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How can I apply for support?</div>
+                    <div class="faq-answer">
+                        <p>Students can apply through their schools or by contacting our office directly. We assess each application based on need and available resources.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How can I become a mentor?</div>
+                    <div class="faq-answer">
+                        <p>We welcome qualified individuals who are passionate about education to join our mentorship program. Contact us to learn more about the application process.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Sponsor Form Modal -->
-    <div id="sponsor-form-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeSponsorForm()">&times;</span>
-            <h2>Become a Student Sponsor</h2>
-            <form id="sponsor-form" action="mailto:info@nayomalawi.org" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="country">Country</label>
-                    <input type="text" id="country" name="country" required>
-                </div>
-                <div class="form-group">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="tel" id="mobile" name="mobile" required>
-                </div>
-                <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" id="city" name="city" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Street Address</label>
-                    <input type="text" id="address" name="address" required>
-                </div>
-                <div class="form-group">
-                    <label for="students">Number of Students You Wish to Sponsor</label>
-                    <input type="number" id="students" name="students" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="profiles">Number of Student Profiles You Wish to Review</label>
-                    <input type="number" id="profiles" name="profiles" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="start-date">Preferred Start Date for Sponsorship</label>
-                    <input type="date" id="start-date" name="start-date" required>
-                </div>
-                <button type="submit" class="submit-btn">Submit Sponsorship Application</button>
-            </form>
-        </div>
-    </div>
 
     <footer>
         <div class="footer-content">
