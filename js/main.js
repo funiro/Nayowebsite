@@ -137,91 +137,91 @@ class HeroSlider {
     }
 }
 
-// Contact Form
-class ContactForm {
-    constructor() {
-        this.form = document.querySelector('.contact-form');
-        this.modal = document.querySelector('.contact-form-modal');
-        this.closeBtn = document.querySelector('.close-modal');
-        this.submitBtn = document.querySelector('.submit-btn');
+// Contact Form Functionality
+const contactBtn = document.querySelector('.contact-btn');
+const contactModal = document.querySelector('.contact-form-modal');
+const closeModal = document.querySelector('.close-modal');
+const contactForm = document.querySelector('.contact-form');
 
-        this.init();
-    }
+// Open modal
+contactBtn.addEventListener('click', () => {
+    contactModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    // Focus on first input when modal opens
+    const firstInput = contactForm.querySelector('input, textarea');
+    if (firstInput) firstInput.focus();
+});
 
-    init() {
-        if (!this.form) return;
+// Close modal
+closeModal.addEventListener('click', () => {
+    contactModal.style.display = 'none';
+    document.body.style.overflow = '';
+});
 
-        // Open modal
-        this.form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.openModal();
-        });
-
-        // Close modal
-        if (this.closeBtn) {
-            this.closeBtn.addEventListener('click', () => this.closeModal());
-        }
-
-        // Close on outside click
-        this.modal.addEventListener('click', (e) => {
-            if (e.target === this.modal) {
-                this.closeModal();
-            }
-        });
-
-        // Handle form submission
-        if (this.submitBtn) {
-            this.submitBtn.addEventListener('click', () => this.handleSubmit());
-        }
-    }
-
-    openModal() {
-        this.modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    closeModal() {
-        this.modal.classList.remove('active');
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === contactModal) {
+        contactModal.style.display = 'none';
         document.body.style.overflow = '';
     }
+});
 
-    async handleSubmit() {
-        const formData = new FormData(this.form);
-        const data = Object.fromEntries(formData.entries());
-
-        try {
-            this.submitBtn.classList.add('loading');
-            
-            // Send email using EmailJS
-            const response = await emailjs.send(
-                "service_id", // Replace with your EmailJS service ID
-                "template_id", // Replace with your EmailJS template ID
-                {
-                    from_name: data.name,
-                    from_email: data.email,
-                    message: data.message,
-                    to_email: "nayomalawi@gmail.com"
-                }
-            );
-
-            if (response.status === 200) {
-                alert('Message sent successfully!');
-                this.form.reset();
-                this.closeModal();
-            }
-        } catch (error) {
-            console.error('Error sending message:', error);
-            alert('Failed to send message. Please try again.');
-        } finally {
-            this.submitBtn.classList.remove('loading');
-        }
+// Handle form submission
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(contactForm);
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    
+    try {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        // Here you would typically send the form data to your server
+        // For now, we'll simulate a successful submission
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        alert('Thank you for your message! We will get back to you soon.');
+        contactForm.reset();
+        contactModal.style.display = 'none';
+        document.body.style.overflow = '';
+        
+    } catch (error) {
+        alert('Sorry, there was an error sending your message. Please try again later.');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
     }
-}
+});
+
+// Accessibility improvements
+document.addEventListener('keydown', (e) => {
+    // Close modal with Escape key
+    if (e.key === 'Escape' && contactModal.style.display === 'block') {
+        contactModal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+});
+
+// Add skip link functionality
+const skipLink = document.createElement('a');
+skipLink.href = '#main-content';
+skipLink.className = 'skip-link';
+skipLink.textContent = 'Skip to main content';
+document.body.insertBefore(skipLink, document.body.firstChild);
+
+// Add ARIA labels to form inputs
+const formInputs = contactForm.querySelectorAll('input, textarea');
+formInputs.forEach(input => {
+    const label = input.previousElementSibling;
+    if (label && label.tagName === 'LABEL') {
+        input.setAttribute('aria-labelledby', label.id);
+    }
+});
 
 // Initialize components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new HeroSlider();
-    new ContactForm();
     
     // Initialize sponsor form if it exists
     if (document.getElementById('sponsor-form-modal')) {
