@@ -1,58 +1,58 @@
 // Mobile Menu Toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+const dropdowns = document.querySelectorAll('.dropdown');
 
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active');
     });
 }
 
 // Handle dropdowns in mobile menu
-dropdownToggles.forEach(toggle => {
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-menu');
+
     toggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) { // Only for mobile screens
+        if (window.innerWidth <= 768) {
             e.preventDefault();
-            const dropdown = toggle.parentElement;
             dropdown.classList.toggle('active');
-            
-            // Close other dropdowns
-            dropdownToggles.forEach(otherToggle => {
-                if (otherToggle !== toggle) {
-                    otherToggle.parentElement.classList.remove('active');
-                }
-            });
         }
     });
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (window.innerWidth <= 768) { // Only for mobile screens
-        if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-            navLinks.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-            dropdownToggles.forEach(toggle => {
-                toggle.parentElement.classList.remove('active');
-            });
-        }
+    if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
     }
 });
 
 // Close mobile menu when clicking a link
-const navLinksItems = document.querySelectorAll('.nav-links a');
-navLinksItems.forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) { // Only for mobile screens
+const navItems = document.querySelectorAll('.nav-links a');
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
             navLinks.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-            dropdownToggles.forEach(toggle => {
-                toggle.parentElement.classList.remove('active');
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
             });
         }
     });
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        navLinks.classList.remove('active');
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    }
 });
 
 // Hero Slider
