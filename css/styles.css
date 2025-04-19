@@ -686,9 +686,28 @@ footer {
     filter: brightness(0) invert(1);
 }
 
+.footer-logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo-link:hover {
+    opacity: 0.9;
+}
+
+.footer-logo-img {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
 .slogan {
-    font-size: 1.2rem;
+    font-size: 14px;
     font-style: italic;
+    margin: 0;
 }
 
 .footer-address h4,
@@ -1758,5 +1777,103 @@ a[target="_blank"]:hover::after {
     .events-grid,
     .news-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Volunteer Page Styles */
+.volunteer-section {
+    padding: 80px 5%;
+    background-color: var(--light-bg);
+}
+
+.volunteer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.volunteer-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.volunteer-header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.volunteer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.volunteer-info {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.volunteer-form {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.volunteer-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #006b41;
+}
+
+@media (max-width: 768px) {
+    .volunteer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .volunteer-header h1 {
+        font-size: 2rem;
     }
 } 
