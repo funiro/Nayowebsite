@@ -141,6 +141,7 @@ class HeroSlider {
 
 // Initialize slider when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing slider...');
     new HeroSlider();
     
     // Initialize sponsor form if it exists
