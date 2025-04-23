@@ -3,9 +3,19 @@ const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 const dropdowns = document.querySelectorAll('.dropdown');
 
+// Toggle mobile menu
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        // Toggle hamburger icon
+        const icon = mobileMenuToggle.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     });
 }
 
@@ -17,6 +27,16 @@ dropdowns.forEach(dropdown => {
     toggle.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
             e.preventDefault();
+            e.stopPropagation();
+            
+            // Close other dropdowns
+            dropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
             dropdown.classList.toggle('active');
         }
     });
@@ -29,11 +49,15 @@ document.addEventListener('click', (e) => {
         dropdowns.forEach(dropdown => {
             dropdown.classList.remove('active');
         });
+        // Reset hamburger icon
+        const icon = mobileMenuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
     }
 });
 
-// Close mobile menu when clicking a link
-const navItems = document.querySelectorAll('.nav-links a');
+// Close mobile menu when clicking a regular link (not dropdown toggle)
+const navItems = document.querySelectorAll('.nav-links a:not(.dropdown-toggle)');
 navItems.forEach(item => {
     item.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
@@ -41,6 +65,10 @@ navItems.forEach(item => {
             dropdowns.forEach(dropdown => {
                 dropdown.classList.remove('active');
             });
+            // Reset hamburger icon
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         }
     });
 });
@@ -52,6 +80,10 @@ window.addEventListener('resize', function() {
         dropdowns.forEach(dropdown => {
             dropdown.classList.remove('active');
         });
+        // Reset hamburger icon
+        const icon = mobileMenuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
     }
 });
 

@@ -222,7 +222,7 @@ body {
     font-weight: 700;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    white-space: nowrap;
+    line-height: 1.2;
 }
 
 @media (max-width: 1200px) {
@@ -240,16 +240,16 @@ body {
 @media (max-width: 768px) {
     .hero-text h1 {
         font-size: 1.8rem;
-        white-space: normal;
         line-height: 1.2;
+        padding: 0 1rem;
     }
 }
 
 @media (max-width: 576px) {
     .hero-text h1 {
         font-size: 1.5rem;
-        white-space: normal;
         line-height: 1.2;
+        padding: 0 1rem;
     }
 }
 
@@ -1006,6 +1006,7 @@ textarea:focus {
         text-align: left;
         margin: 0;
         padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-links a {
@@ -1013,7 +1014,34 @@ textarea:focus {
         padding: 15px 20px;
         color: white;
         font-size: 1.1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .dropdown-toggle::after {
+        content: '▼';
+        font-size: 0.8em;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.active .dropdown-toggle::after {
+        transform: rotate(180deg);
     }
 
     .dropdown-menu {
@@ -1024,6 +1052,10 @@ textarea:focus {
         display: none;
         padding: 0;
         margin: 0;
+        border-radius: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
     }
 
     .dropdown.active .dropdown-menu {
@@ -1031,30 +1063,43 @@ textarea:focus {
     }
 
     .dropdown-menu li {
-        width: 100%;
+        border-bottom: none;
     }
 
     .dropdown-menu a {
         padding-left: 30px;
         font-size: 1rem;
         color: white;
-    }
-
-    .dropdown-toggle::after {
-        content: '▼';
-        margin-left: 5px;
-        font-size: 0.8em;
-    }
-
-    .dropdown.active .dropdown-toggle::after {
-        content: '▲';
+        text-transform: none;
     }
 
     .donate-btn {
-        margin: 15px auto;
+        margin: 15px 20px;
         display: block;
-        width: 80%;
         text-align: center;
+        background-color: #e74c3c;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .donate-btn:hover {
+        background-color: #c0392b;
+    }
+
+    /* Add smooth transitions for dropdowns */
+    .dropdown-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        transition: max-height 0.5s ease-in;
     }
 
     .hero h1 {
