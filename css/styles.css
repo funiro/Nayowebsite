@@ -973,213 +973,129 @@ textarea:focus {
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: block;
-        background: none;
-        border: none;
-        color: var(--text-color);
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 1001;
+        background: white;
+        border: 2px solid #008751;
         padding: 10px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        z-index: 1001;
+    }
+
+    .mobile-menu-toggle .fas {
+        color: #008751;
+        font-size: 24px;
+        line-height: 1;
+        display: block;
+        text-align: center;
+    }
+
+    .mobile-menu-toggle:hover {
+        background: #f5f5f5;
+    }
+
+    .mobile-menu-toggle:hover .fas {
+        color: #006b41;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        left: 0;
         width: 100%;
         height: 100vh;
         background: var(--primary-color);
+        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 80px;
-        transition: 0.5s;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
         z-index: 1000;
-        overflow-y: auto;
+        padding: 2rem;
     }
 
     .nav-links.active {
-        right: 0;
+        transform: translateX(0);
     }
 
     .nav-links li {
+        margin: 1rem 0;
         width: 100%;
-        text-align: left;
-        margin: 0;
-        padding: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
     }
 
     .nav-links a {
-        display: block;
-        padding: 15px 20px;
         color: white;
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        font-weight: 500;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        display: block;
+        transition: background-color 0.3s ease;
     }
 
     .nav-links a:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
     }
 
     .dropdown {
         position: relative;
-    }
-
-    .dropdown-toggle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         width: 100%;
     }
 
-    .dropdown-toggle::after {
-        content: '▼';
-        font-size: 0.8em;
-        margin-left: 5px;
-        transition: transform 0.3s ease;
+    .dropdown-toggle {
+        color: white;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        display: block;
+        text-align: center;
     }
 
-    .dropdown.active .dropdown-toggle::after {
-        transform: rotate(180deg);
+    .dropdown-toggle::after {
+        content: '\f107';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: 0.5rem;
     }
 
     .dropdown-menu {
         position: static;
-        width: 100%;
         background: rgba(0, 0, 0, 0.2);
-        box-shadow: none;
-        display: none;
+        width: 100%;
         padding: 0;
-        margin: 0;
-        border-radius: 0;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
+        margin-top: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
     }
 
     .dropdown.active .dropdown-menu {
-        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .dropdown-menu li {
-        border-bottom: none;
+        margin: 0;
     }
 
     .dropdown-menu a {
-        padding-left: 30px;
-        font-size: 1rem;
-        color: white;
-        text-transform: none;
+        padding: 0.5rem 2rem;
+        font-size: 1.1rem;
     }
 
     .donate-btn {
-        margin: 15px 20px;
-        display: block;
-        text-align: center;
-        background-color: #e74c3c;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
+        background: white;
+        color: var(--primary-color);
+        margin-top: 1rem;
     }
 
     .donate-btn:hover {
-        background-color: #c0392b;
-    }
-
-    /* Add smooth transitions for dropdowns */
-    .dropdown-menu {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-    }
-
-    .dropdown.active .dropdown-menu {
-        max-height: 500px;
-        transition: max-height 0.5s ease-in;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats {
-        flex-direction: column;
-        gap: var(--spacing-lg);
-    }
-
-    .youtube-container {
-        grid-template-columns: 1fr;
-    }
-
-    .staff-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
-    }
-
-    .footer-info {
-        text-align: center;
-    }
-
-    .footer-logo {
-        text-align: center;
-        margin-bottom: 1.5rem;
-    }
-    
-    .footer-logo-link {
-        align-items: center;
-    }
-    
-    .footer-logo-img {
-        height: 60px;
-    }
-    
-    .slogan {
-        text-align: center;
-        font-size: 1rem;
-    }
-
-    .footer-address h4::after,
-    .social-media h4::after,
-    .footer-links h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-
-    .footer-links {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .map-frame {
-        height: 300px;
-    }
-
-    .staff-card {
-        max-width: 100%;
-    }
-    
-    .staff-image {
-        height: 250px;
-    }
-
-    .tagline {
-        display: none;
+        background: rgba(255, 255, 255, 0.9);
     }
 }
 
