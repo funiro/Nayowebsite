@@ -977,6 +977,103 @@ textarea:focus {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 135, 81, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        padding: 2rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        display: block;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown {
+        position: relative;
+        width: 100%;
+    }
+
+    .dropdown-toggle {
+        color: white;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        display: block;
+        text-align: center;
+    }
+
+    .dropdown-toggle::after {
+        content: '\f107';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: 0.5rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        padding: 0;
+        margin-top: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu li {
+        margin: 0;
+    }
+
+    .dropdown-menu a {
+        padding: 0.5rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .donate-btn {
+        background: white;
+        color: var(--primary-color);
+        margin-top: 1rem;
+    }
+
+    .donate-btn:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
     .mobile-menu-toggle {
         display: block;
         background: none;

@@ -1,74 +1,38 @@
 // Mobile Menu Toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-const dropdowns = document.querySelectorAll('.dropdown');
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-// Toggle mobile menu
-if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Toggle hamburger icon
-        const icon = mobileMenuToggle.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-}
-
-// Handle dropdowns in mobile menu
-dropdowns.forEach(dropdown => {
-    const toggle = dropdown.querySelector('.dropdown-toggle');
-    const menu = dropdown.querySelector('.dropdown-menu');
-
-    toggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Close other dropdowns
-            dropdowns.forEach(otherDropdown => {
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.classList.remove('active');
-                }
-            });
-            
-            // Toggle current dropdown
-            dropdown.classList.toggle('active');
-        }
-    });
+mobileMenuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    mobileMenuToggle.classList.toggle('active');
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
         navLinks.classList.remove('active');
-        dropdowns.forEach(dropdown => {
-            dropdown.classList.remove('active');
-        });
-        // Reset hamburger icon
-        const icon = mobileMenuToggle.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+        mobileMenuToggle.classList.remove('active');
     }
 });
 
-// Close mobile menu when clicking a regular link (not dropdown toggle)
-const navItems = document.querySelectorAll('.nav-links a:not(.dropdown-toggle)');
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
+// Handle dropdowns in mobile menu
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = toggle.parentElement;
+            dropdown.classList.toggle('active');
+        }
+    });
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
             navLinks.classList.remove('active');
-            dropdowns.forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
-            // Reset hamburger icon
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            mobileMenuToggle.classList.remove('active');
         }
     });
 });
@@ -77,7 +41,8 @@ navItems.forEach(item => {
 window.addEventListener('resize', function() {
     if (window.innerWidth > 768) {
         navLinks.classList.remove('active');
-        dropdowns.forEach(dropdown => {
+        dropdownToggles.forEach(toggle => {
+            const dropdown = toggle.parentElement;
             dropdown.classList.remove('active');
         });
         // Reset hamburger icon
