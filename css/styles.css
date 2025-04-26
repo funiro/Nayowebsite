@@ -1082,10 +1082,18 @@ textarea:focus {
         margin-top: 1rem;
         border-radius: 4px;
         font-weight: bold;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
     }
 
     .donate-btn:hover {
         background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .mobile-menu-toggle {
@@ -1112,6 +1120,13 @@ textarea:focus {
 
     .mobile-menu-toggle:hover .fas {
         color: var(--secondary-color);
+    }
+
+    /* Fix for body overflow when menu is open */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
     }
 }
 

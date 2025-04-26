@@ -6,6 +6,7 @@ const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 mobileMenuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     mobileMenuToggle.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
 });
 
 // Close mobile menu when clicking outside
@@ -13,6 +14,7 @@ document.addEventListener('click', (e) => {
     if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
         navLinks.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
     }
 });
 
@@ -33,6 +35,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         if (window.innerWidth <= 768) {
             navLinks.classList.remove('active');
             mobileMenuToggle.classList.remove('active');
+            document.body.classList.remove('menu-open');
         }
     });
 });
@@ -41,6 +44,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 window.addEventListener('resize', function() {
     if (window.innerWidth > 768) {
         navLinks.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
         dropdownToggles.forEach(toggle => {
             const dropdown = toggle.parentElement;
             dropdown.classList.remove('active');
