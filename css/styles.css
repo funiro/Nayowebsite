@@ -751,6 +751,19 @@ footer {
     .slogan {
         font-size: 1rem;
     }
+
+    .footer-address h4::after,
+    .social-media h4::after,
+    .footer-links h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-address h4,
+    .social-media h4,
+    .footer-links h4 {
+        text-align: center;
+    }
 }
 
 .footer-address {
