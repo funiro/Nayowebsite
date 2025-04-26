@@ -1008,7 +1008,7 @@ textarea:focus {
 
     .nav-links a {
         color: white;
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 0.8rem 1rem;
         display: block;
         transition: background-color 0.3s ease;
@@ -1051,6 +1051,7 @@ textarea:focus {
         max-height: 0;
         overflow: hidden;
         display: block;
+        pointer-events: none;
     }
 
     .dropdown.active .dropdown-menu {
@@ -1059,6 +1060,7 @@ textarea:focus {
         transform: translateY(0);
         max-height: 500px;
         transition: all 0.3s ease, max-height 0.3s ease;
+        pointer-events: auto;
     }
 
     .dropdown-menu li {
@@ -1067,7 +1069,7 @@ textarea:focus {
 
     .dropdown-menu a {
         padding: 0.8rem 2rem;
-        font-size: 1.1rem;
+        font-size: 0.95rem;
     }
 
     /* Style for bottom buttons */
@@ -1084,8 +1086,8 @@ textarea:focus {
         margin-top: 1rem;
         border-radius: 4px;
         font-weight: bold;
-        padding: 0.8rem 1.5rem;
-        font-size: 1.1rem;
+        padding: 0.7rem 1.3rem;
+        font-size: 1rem;
         text-transform: uppercase;
         letter-spacing: 1px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
