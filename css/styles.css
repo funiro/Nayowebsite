@@ -987,11 +987,12 @@ textarea:focus {
         background: rgba(0, 135, 81, 0.95);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         z-index: 1000;
         padding: 2rem;
+        overflow-y: auto;
     }
 
     .nav-links.active {
@@ -1000,7 +1001,7 @@ textarea:focus {
     }
 
     .nav-links li {
-        margin: 1rem 0;
+        margin: 0.5rem 0;
         width: 100%;
         text-align: center;
     }
@@ -1008,7 +1009,7 @@ textarea:focus {
     .nav-links a {
         color: white;
         font-size: 1.2rem;
-        padding: 0.5rem 1rem;
+        padding: 0.8rem 1rem;
         display: block;
         transition: background-color 0.3s ease;
     }
@@ -1025,7 +1026,7 @@ textarea:focus {
     .dropdown-toggle {
         color: white;
         cursor: pointer;
-        padding: 0.5rem 1rem;
+        padding: 0.8rem 1rem;
         display: block;
         text-align: center;
     }
@@ -1042,17 +1043,20 @@ textarea:focus {
         background: rgba(0, 0, 0, 0.2);
         width: 100%;
         padding: 0;
-        margin-top: 0.5rem;
+        margin-top: 0;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
         transition: all 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
     }
 
     .dropdown.active .dropdown-menu {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+        max-height: 500px;
     }
 
     .dropdown-menu li {
@@ -1060,14 +1064,24 @@ textarea:focus {
     }
 
     .dropdown-menu a {
-        padding: 0.5rem 2rem;
+        padding: 0.8rem 2rem;
         font-size: 1.1rem;
+    }
+
+    /* Style for bottom buttons */
+    .nav-links li:last-child,
+    .nav-links li:nth-last-child(2),
+    .nav-links li:nth-last-child(3) {
+        margin-top: auto;
+        margin-bottom: 1rem;
     }
 
     .donate-btn {
         background: white;
         color: var(--primary-color);
         margin-top: 1rem;
+        border-radius: 4px;
+        font-weight: bold;
     }
 
     .donate-btn:hover {
@@ -1098,84 +1112,6 @@ textarea:focus {
 
     .mobile-menu-toggle:hover .fas {
         color: var(--secondary-color);
-    }
-
-    /* Mobile Layout Fixes */
-    .service-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0 1rem;
-        margin: 0 auto;
-        max-width: 100%;
-    }
-
-    .service-card {
-        margin-bottom: 1rem;
-        width: 100%;
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-    .service-card img {
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .footer {
-        padding: 2rem 1rem;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0;
-    }
-
-    .footer-info {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .footer-logo {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .footer-logo-img {
-        height: 60px;
-    }
-
-    .footer-address {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .useful-links,
-    .other-resources {
-        text-align: center;
-    }
-
-    .footer-links ul {
-        padding: 0;
-    }
-
-    .footer-links li {
-        margin-bottom: 0.5rem;
-    }
-
-    .slogan {
-        margin: 1rem 0;
-        font-size: 1rem;
-    }
-
-    .copyright {
-        margin-top: 1rem;
-        font-size: 0.9rem;
     }
 }
 
