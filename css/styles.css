@@ -1063,7 +1063,7 @@ textarea:focus {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
-        max-height: 500px;
+        max-height: 600px;
         transition: all 0.3s ease, max-height 0.3s ease;
         pointer-events: auto;
     }
@@ -1073,8 +1073,30 @@ textarea:focus {
     }
 
     .dropdown-menu a {
-        padding: 0.8rem 2rem;
-        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        white-space: normal;
+        text-align: left;
+        line-height: 1.4;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Style for external links in dropdown */
+    .dropdown-menu a[target="_blank"] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .dropdown-menu a[target="_blank"]::after {
+        content: '\f35d';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
     }
 
     /* Style for bottom buttons */
