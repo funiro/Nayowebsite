@@ -992,97 +992,80 @@ textarea:focus {
 @media (max-width: 768px) {
     body {
         overflow-x: hidden;
-        width: 100%;
     }
 
     .nav-links {
-        display: none;
         position: fixed;
         top: 0;
-        left: 0;
+        right: -100%;
         width: 100%;
         height: 100vh;
-        background: rgba(0, 135, 81, 0.95);
+        background-color: var(--primary-color);
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        justify-content: center;
+        gap: 2rem;
+        transition: right 0.3s ease-in-out;
         z-index: 1000;
         padding: 2rem;
-        overflow-y: auto;
     }
 
     .nav-links.active {
-        display: flex;
-        transform: translateX(0);
+        right: 0;
     }
 
     .nav-links li {
-        margin: 0.5rem 0;
         width: 100%;
         text-align: center;
     }
 
     .nav-links a {
         color: white;
-        font-size: 1rem;
-        padding: 0.8rem 1rem;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
         display: block;
-        transition: background-color 0.3s ease;
+        width: 100%;
     }
 
     .nav-links a:hover {
         background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
     }
 
     .dropdown {
-        position: relative;
         width: 100%;
     }
 
     .dropdown-toggle {
-        color: white;
-        cursor: pointer;
-        padding: 0.8rem 1rem;
-        display: block;
-        text-align: center;
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem 1rem;
     }
 
     .dropdown-toggle::after {
-        content: '\f107';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
         margin-left: 0.5rem;
+        font-size: 0.8em;
     }
 
     .dropdown-menu {
         position: static;
-        background: rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.1);
         width: 100%;
+        box-shadow: none;
         padding: 0;
-        margin-top: 0;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
+        margin-top: 0.5rem;
         max-height: 0;
         overflow: hidden;
-        display: block;
-        pointer-events: none;
+        transition: max-height 0.3s ease-in-out;
     }
 
     .dropdown.active .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
         max-height: 600px;
-        transition: all 0.3s ease, max-height 0.3s ease;
-        pointer-events: auto;
+        padding: 0.5rem 0;
     }
 
     .dropdown-menu li {
-        margin: 0;
+        padding: 0;
     }
 
     .dropdown-menu a {
@@ -1094,10 +1077,9 @@ textarea:focus {
     }
 
     .dropdown-menu a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* Style for external links in dropdown */
     .dropdown-menu a[target="_blank"] {
         display: flex;
         align-items: center;
@@ -1108,38 +1090,30 @@ textarea:focus {
         content: '\f35d';
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
-        font-size: 0.8rem;
         margin-left: 0.5rem;
+        font-size: 0.8em;
     }
 
-    /* Style for bottom buttons */
     .nav-links li:last-child,
-    .nav-links li:nth-last-child(2),
-    .nav-links li:nth-last-child(3) {
-        margin-top: auto;
-        margin-bottom: 1rem;
+    .nav-links li:nth-last-child(2) {
+        margin-top: 1rem;
     }
 
     .donate-btn {
-        background: #e74c3c;
+        background-color: #e74c3c;
         color: white;
-        margin-top: 1rem;
+        padding: 0.8rem 1.5rem;
         border-radius: 4px;
+        text-decoration: none;
         font-weight: bold;
-        padding: 0.7rem 1.3rem;
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        width: auto;
+        transition: background-color 0.3s ease;
         display: inline-block;
+        width: auto;
+        text-align: center;
     }
 
     .donate-btn:hover {
-        background: #c0392b;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        background-color: #c0392b;
     }
 
     .mobile-menu-toggle {
@@ -1147,225 +1121,25 @@ textarea:focus {
         background: none;
         border: none;
         cursor: pointer;
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
+        padding: 0.5rem;
         z-index: 1001;
     }
 
     .mobile-menu-toggle .fas {
+        font-size: 1.5rem;
         color: var(--primary-color);
-        font-size: 24px;
-        line-height: 1;
-        display: block;
-        text-align: center;
+        transition: color 0.3s ease;
     }
 
     .mobile-menu-toggle:hover .fas {
-        color: var(--secondary-color);
+        color: #005c3d;
     }
 
-    /* Fix for body overflow when menu is open */
     body.menu-open {
         overflow: hidden;
-        position: fixed;
-        width: 100%;
-    }
-
-    .service-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0 1rem;
-        margin: 0 auto;
-        max-width: 100%;
-    }
-
-    .service-card {
-        margin-bottom: 1rem;
-        width: 100%;
-        max-width: 100%;
-        padding: 1rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-card img {
-        height: 200px;
-        object-fit: cover;
-        border-radius: 4px;
-    }
-
-    .service-card h3 {
-        font-size: 1.2rem;
-        margin: 1rem 0;
-    }
-
-    .service-card p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    .view-more-btn {
-        width: 100%;
-        text-align: center;
-        padding: 0.8rem;
-        margin-top: 1rem;
-    }
-
-    /* Fix for main content container */
-    .our-approach,
-    .services,
-    .quote,
-    .stats,
-    .staff-section,
-    .youtube-links,
-    .map-section {
-        padding: 2rem 1rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Fix for hero section */
-    .hero {
-        height: 300px;
-    }
-
-    .hero-text h1 {
-        font-size: 1.8rem;
-        padding: 0 1rem;
-    }
-
-    .hero-text .welcome-text {
-        font-size: 1rem;
-    }
-
-    /* Fix for stats section */
-    .stats {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .stat-item {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Fix for staff section */
-    .staff-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    .staff-card {
-        max-width: 100%;
-    }
-
-    /* Fix for YouTube section */
-    .youtube-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    /* Fix for map section */
-    .map-container {
-        padding: 0 1rem;
-    }
-
-    .map-frame {
-        height: 300px;
-    }
-
-    /* Ensure all sections have proper spacing */
-    section {
-        margin: 0;
-        padding: 2rem 1rem;
-    }
-
-    /* Fix for footer */
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 1rem;
-    }
-
-    .footer-info {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-logo {
-        text-align: center;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .footer-logo-link {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        color: white;
-    }
-
-    .footer-logo-img {
-        height: 60px;
-        margin: 0 auto;
-    }
-
-    .footer-address {
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .useful-links,
-    .other-resources {
-        text-align: center;
-    }
-
-    .footer-links ul {
-        padding: 0;
-        list-style: none;
-    }
-
-    .footer-links li {
-        margin-bottom: 0.5rem;
-    }
-
-    .footer-links a {
-        color: white;
-        text-decoration: none;
-        transition: opacity 0.3s ease;
-    }
-
-    .footer-links a:hover {
-        opacity: 0.8;
-    }
-
-    .slogan {
-        text-align: center;
-        margin: 1rem 0;
-        font-size: 1rem;
-    }
-
-    .copyright {
-        text-align: center;
-        margin-top: 1rem;
-        font-size: 0.9rem;
     }
 }
 
-/* Desktop Menu Styles */
 @media (min-width: 769px) {
     .mobile-menu-toggle {
         display: none;
@@ -1373,32 +1147,37 @@ textarea:focus {
 
     .nav-links {
         display: flex;
-        align-items: center;
     }
 
     .dropdown-menu {
         position: absolute;
         top: 100%;
         left: 0;
-        background: white;
+        background-color: white;
         min-width: 200px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        display: none;
-        z-index: 1000;
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-sm) 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
     }
 
     .dropdown:hover .dropdown-menu {
-        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .dropdown-menu a {
         color: var(--text-color);
-        padding: 10px 15px;
-        display: block;
+        padding: 0.5rem 1rem;
     }
 
     .dropdown-menu a:hover {
-        background: var(--light-bg);
+        color: var(--primary-color);
+        background-color: rgba(0, 135, 81, 0.1);
     }
 }
 

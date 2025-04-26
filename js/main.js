@@ -1,70 +1,96 @@
 // Mobile Menu Toggle
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-mobileMenuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    mobileMenuToggle.classList.toggle('active');
-    document.body.classList.toggle('menu-open');
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-        navLinks.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-        document.body.classList.remove('menu-open');
-    }
-});
-
-// Handle dropdowns in mobile menu
-dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
+    if (mobileMenuToggle && navLinks) {
+        // Toggle mobile menu
+        mobileMenuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            const dropdown = toggle.parentElement;
+            navLinks.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
             
-            // Close all other dropdowns
-            dropdownToggles.forEach(otherToggle => {
-                if (otherToggle !== toggle) {
-                    const otherDropdown = otherToggle.parentElement;
-                    otherDropdown.classList.remove('active');
+            // Toggle hamburger icon
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                
+                // Reset hamburger icon
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Handle dropdowns in mobile menu
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const dropdown = toggle.parentElement;
+                    
+                    // Close all other dropdowns
+                    dropdownToggles.forEach(otherToggle => {
+                        if (otherToggle !== toggle) {
+                            const otherDropdown = otherToggle.parentElement;
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
                 }
             });
-            
-            // Toggle current dropdown
-            dropdown.classList.toggle('active');
-        }
-    });
-});
-
-// Close mobile menu when clicking a regular link (not dropdown toggle)
-document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            navLinks.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
-    });
-});
-
-// Handle window resize
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) {
-        navLinks.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-        document.body.classList.remove('menu-open');
-        dropdownToggles.forEach(toggle => {
-            const dropdown = toggle.parentElement;
-            dropdown.classList.remove('active');
         });
-        // Reset hamburger icon
-        const icon = mobileMenuToggle.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+
+        // Close mobile menu when clicking a regular link (not dropdown toggle)
+        document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    
+                    // Reset hamburger icon
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                dropdownToggles.forEach(toggle => {
+                    const dropdown = toggle.parentElement;
+                    dropdown.classList.remove('active');
+                });
+                // Reset hamburger icon
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
     }
 });
 
