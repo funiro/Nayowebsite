@@ -18,6 +18,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 body {
@@ -380,6 +383,9 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .contact-btn {
@@ -976,117 +982,103 @@ textarea:focus {
         background: none;
         border: none;
         cursor: pointer;
-        padding: 0.5rem;
-        color: var(--primary-color);
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        z-index: 1001;
     }
 
     .mobile-menu-toggle .fas {
-        font-size: 1.5rem;
         color: var(--primary-color);
-    }
-
-    .mobile-menu-toggle:hover {
-        background: #f5f5f5;
+        font-size: 24px;
+        line-height: 1;
+        display: block;
+        text-align: center;
     }
 
     .mobile-menu-toggle:hover .fas {
-        color: #006b41;
+        color: var(--secondary-color);
     }
 
-    .nav-links {
-        position: fixed;
-        top: 0;
-        left: 0;
+    /* Mobile Layout Fixes */
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .service-card {
+        margin-bottom: 1rem;
         width: 100%;
-        height: 100vh;
-        background: var(--primary-color);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-        padding: 2rem;
+        max-width: 100%;
+        padding: 1rem;
     }
 
-    .nav-links.active {
-        transform: translateX(0);
+    .service-card img {
+        height: 200px;
+        object-fit: cover;
     }
 
-    .nav-links li {
-        margin: 1rem 0;
-        width: 100%;
-        text-align: center;
+    .footer {
+        padding: 2rem 1rem;
     }
 
-    .nav-links a {
-        color: white;
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-        display: block;
-        transition: background-color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .dropdown {
-        position: relative;
-        width: 100%;
-    }
-
-    .dropdown-toggle {
-        color: white;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-        display: block;
-        text-align: center;
-    }
-
-    .dropdown-toggle::after {
-        content: '\f107';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        margin-left: 0.5rem;
-    }
-
-    .dropdown-menu {
-        position: static;
-        background: rgba(0, 0, 0, 0.2);
-        width: 100%;
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
         padding: 0;
-        margin-top: 0.5rem;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
     }
 
-    .dropdown.active .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+    .footer-info {
+        text-align: center;
+        margin-bottom: 2rem;
     }
 
-    .dropdown-menu li {
-        margin: 0;
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 1rem;
     }
 
-    .dropdown-menu a {
-        padding: 0.5rem 2rem;
-        font-size: 1.1rem;
+    .footer-logo-img {
+        height: 60px;
     }
 
-    .donate-btn {
-        background: white;
-        color: var(--primary-color);
+    .footer-address {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .useful-links,
+    .other-resources {
+        text-align: center;
+    }
+
+    .footer-links ul {
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.5rem;
+    }
+
+    .slogan {
+        margin: 1rem 0;
+        font-size: 1rem;
+    }
+
+    .copyright {
         margin-top: 1rem;
-    }
-
-    .donate-btn:hover {
-        background: rgba(255, 255, 255, 0.9);
+        font-size: 0.9rem;
     }
 }
 
@@ -1411,7 +1403,9 @@ a[target="_blank"]:hover::after {
 }
 
 .form-group input[type="number"] {
+    -webkit-appearance: textfield;
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .form-group input[type="number"]::-webkit-outer-spin-button,
@@ -1912,4 +1906,25 @@ a[target="_blank"]:hover::after {
 
 .view-more-staff .btn:hover {
     background-color: var(--secondary-color);
+}
+
+/* Form Elements */
+input, select, textarea, button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: var(--border-radius);
+}
+
+/* Number Inputs */
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 } 
