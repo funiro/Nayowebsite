@@ -27,6 +27,9 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* Header and Navigation */
@@ -992,71 +995,90 @@ textarea:focus {
 @media (max-width: 768px) {
     body {
         overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .main-nav {
+        padding: 1rem;
+        width: 100%;
+        max-width: 100vw;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        left: 0;
         width: 100%;
         height: 100vh;
         background-color: var(--primary-color);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        transition: right 0.3s ease-in-out;
+        justify-content: flex-start;
+        gap: 1.5rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
         z-index: 1000;
-        padding: 2rem;
+        padding: 5rem 1.5rem 2rem;
+        overflow-y: auto;
     }
 
     .nav-links.active {
-        right: 0;
+        transform: translateX(0);
     }
 
     .nav-links li {
         width: 100%;
         text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 1rem;
     }
 
     .nav-links a {
         color: white;
         font-size: 1.2rem;
-        padding: 0.5rem 1rem;
+        padding: 0.8rem 0;
         display: block;
         width: 100%;
-    }
-
-    .nav-links a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
+        font-weight: 500;
     }
 
     .dropdown {
         width: 100%;
+        position: relative;
     }
 
     .dropdown-toggle {
         width: 100%;
         justify-content: center;
-        padding: 0.5rem 1rem;
+        padding: 0.8rem 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: white;
+        cursor: pointer;
     }
 
     .dropdown-toggle::after {
-        margin-left: 0.5rem;
+        content: '▼';
         font-size: 0.8em;
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.active .dropdown-toggle::after {
+        transform: rotate(180deg);
     }
 
     .dropdown-menu {
         position: static;
-        background-color: rgba(255, 255, 255, 0.1);
-        width: 100%;
+        background: transparent;
         box-shadow: none;
-        padding: 0;
-        margin-top: 0.5rem;
+        width: 100%;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;
+        padding: 0;
+        margin-top: 0.5rem;
     }
 
     .dropdown.active .dropdown-menu {
@@ -1066,50 +1088,35 @@ textarea:focus {
 
     .dropdown-menu li {
         padding: 0;
+        border-bottom: none;
     }
 
     .dropdown-menu a {
+        color: rgba(255, 255, 255, 0.9);
         padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
+        text-align: center;
         white-space: normal;
-        text-align: left;
         line-height: 1.4;
+        font-weight: normal;
+        background: rgba(255, 255, 255, 0.05);
+        margin: 0.3rem 0;
+        border-radius: 4px;
     }
 
     .dropdown-menu a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .dropdown-menu a[target="_blank"] {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .dropdown-menu a[target="_blank"]::after {
-        content: '\f35d';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        margin-left: 0.5rem;
-        font-size: 0.8em;
-    }
-
-    .nav-links li:last-child,
-    .nav-links li:nth-last-child(2) {
-        margin-top: 1rem;
+        background: rgba(255, 255, 255, 0.1);
     }
 
     .donate-btn {
-        background-color: #e74c3c;
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-        display: inline-block;
-        width: auto;
+        width: 100%;
         text-align: center;
+        margin-top: 1.5rem;
+        padding: 1rem;
+        font-size: 1.2rem;
+        background-color: #e74c3c;
+        border-radius: 4px;
+        font-weight: 500;
     }
 
     .donate-btn:hover {
@@ -1120,9 +1127,10 @@ textarea:focus {
         display: block;
         background: none;
         border: none;
-        cursor: pointer;
         padding: 0.5rem;
+        cursor: pointer;
         z-index: 1001;
+        position: relative;
     }
 
     .mobile-menu-toggle .fas {
@@ -1137,6 +1145,35 @@ textarea:focus {
 
     body.menu-open {
         overflow: hidden;
+    }
+
+    /* Close button for mobile menu */
+    .mobile-menu-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+    }
+
+    /* External link indicator in mobile menu */
+    .dropdown-menu a[target="_blank"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .dropdown-menu a[target="_blank"]::after {
+        content: '\f35d';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 0.8em;
     }
 }
 
