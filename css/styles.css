@@ -977,6 +977,11 @@ textarea:focus {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     .nav-links {
         display: none;
         position: fixed;
@@ -1133,6 +1138,141 @@ textarea:focus {
         overflow: hidden;
         position: fixed;
         width: 100%;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .service-card {
+        margin-bottom: 1rem;
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card img {
+        height: 200px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .view-more-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    /* Fix for main content container */
+    .our-approach,
+    .services,
+    .quote,
+    .stats,
+    .staff-section,
+    .youtube-links,
+    .map-section {
+        padding: 2rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Fix for hero section */
+    .hero {
+        height: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+
+    .hero-text .welcome-text {
+        font-size: 1rem;
+    }
+
+    /* Fix for stats section */
+    .stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .stat-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Fix for staff section */
+    .staff-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .staff-card {
+        max-width: 100%;
+    }
+
+    /* Fix for YouTube section */
+    .youtube-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    /* Fix for map section */
+    .map-container {
+        padding: 0 1rem;
+    }
+
+    .map-frame {
+        height: 300px;
+    }
+
+    /* Ensure all sections have proper spacing */
+    section {
+        margin: 0;
+        padding: 2rem 1rem;
+    }
+
+    /* Fix for footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .footer-info {
+        text-align: center;
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .useful-links,
+    .other-resources {
+        text-align: center;
     }
 }
 
