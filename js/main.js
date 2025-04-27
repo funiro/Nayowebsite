@@ -278,70 +278,205 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxImg.alt = images[currentImageIndex].alt;
     }
 
-    // Gallery Slider
-    const galleryGrids = document.querySelectorAll('.gallery-grid');
-    
-    galleryGrids.forEach(grid => {
-        const items = grid.querySelectorAll('.gallery-item');
-        const prevBtn = document.createElement('button');
-        const nextBtn = document.createElement('button');
-        
-        prevBtn.className = 'gallery-nav-prev';
-        nextBtn.className = 'gallery-nav-next';
-        prevBtn.innerHTML = '❮';
-        nextBtn.innerHTML = '❯';
-        
-        const navContainer = document.createElement('div');
-        navContainer.className = 'gallery-nav';
-        navContainer.appendChild(prevBtn);
-        navContainer.appendChild(nextBtn);
-        
-        grid.parentNode.insertBefore(navContainer, grid.nextSibling);
-        
-        prevBtn.addEventListener('click', () => {
-            grid.scrollBy({
-                left: -300,
-                behavior: 'smooth'
-            });
+    // Gallery functionality
+    const gallery = document.querySelector('.gallery');
+    const prevBtn = document.querySelector('.gallery-prev');
+    const nextBtn = document.querySelector('.gallery-next');
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function updateGallery() {
+        galleryItems.forEach((item, index) => {
+            item.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
         });
         
-        nextBtn.addEventListener('click', () => {
-            grid.scrollBy({
-                left: 300,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Touch swipe functionality
-        let touchStartX;
-        let touchEndX;
-        
-        grid.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        grid.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-        
-        function handleSwipe() {
-            const swipeDistance = touchEndX - touchStartX;
-            if (Math.abs(swipeDistance) > 50) {
-                if (swipeDistance > 0) {
-                    grid.scrollBy({
-                        left: -300,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    grid.scrollBy({
-                        left: 300,
-                        behavior: 'smooth'
-                    });
-                }
-            }
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === galleryItems.length - 1;
+    }
+
+    // Navigation buttons
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateGallery();
         }
     });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < galleryItems.length - 1) {
+            currentIndex++;
+            updateGallery();
+        }
+    });
+
+    // Touch events for mobile swipe
+    gallery.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    gallery.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const swipeDistance = touchEndX - touchStartX;
+
+        if (Math.abs(swipeDistance) > swipeThreshold) {
+            if (swipeDistance > 0 && currentIndex > 0) {
+                // Swipe right
+                currentIndex--;
+            } else if (swipeDistance < 0 && currentIndex < galleryItems.length - 1) {
+                // Swipe left
+                currentIndex++;
+            }
+            updateGallery();
+        }
+    }
+
+    // Initialize gallery
+    updateGallery();
+
+    // Gallery functionality for Antinatal and Youth Friendly
+    const antinatalGallery = document.querySelector('.antinatal-gallery');
+    const antinatalItems = document.querySelectorAll('.antinatal-gallery-item');
+    const antinatalPrevBtn = document.querySelector('.antinatal-gallery-prev');
+    const antinatalNextBtn = document.querySelector('.antinatal-gallery-next');
+    let antinatalCurrentIndex = 0;
+    let antinatalTouchStartX = 0;
+    let antinatalTouchEndX = 0;
+
+    // Youth Friendly Gallery
+    const youthGallery = document.querySelector('.youth-friendly-gallery');
+    const youthItems = document.querySelectorAll('.youth-friendly-gallery-item');
+    const youthPrevBtn = document.querySelector('.youth-friendly-gallery-prev');
+    const youthNextBtn = document.querySelector('.youth-friendly-gallery-next');
+    let youthCurrentIndex = 0;
+    let youthTouchStartX = 0;
+    let youthTouchEndX = 0;
+
+    // Antinatal Gallery Functions
+    function updateAntinatalGallery() {
+        antinatalItems.forEach((item, index) => {
+            item.style.transform = `translateX(${(index - antinatalCurrentIndex) * 100}%)`;
+        });
+        
+        // Update button states
+        if (antinatalPrevBtn) antinatalPrevBtn.disabled = antinatalCurrentIndex === 0;
+        if (antinatalNextBtn) antinatalNextBtn.disabled = antinatalCurrentIndex === antinatalItems.length - 1;
+    }
+
+    // Youth Friendly Gallery Functions
+    function updateYouthGallery() {
+        youthItems.forEach((item, index) => {
+            item.style.transform = `translateX(${(index - youthCurrentIndex) * 100}%)`;
+        });
+        
+        // Update button states
+        if (youthPrevBtn) youthPrevBtn.disabled = youthCurrentIndex === 0;
+        if (youthNextBtn) youthNextBtn.disabled = youthCurrentIndex === youthItems.length - 1;
+    }
+
+    // Antinatal Gallery Event Listeners
+    if (antinatalPrevBtn) {
+        antinatalPrevBtn.addEventListener('click', () => {
+            if (antinatalCurrentIndex > 0) {
+                antinatalCurrentIndex--;
+                updateAntinatalGallery();
+            }
+        });
+    }
+
+    if (antinatalNextBtn) {
+        antinatalNextBtn.addEventListener('click', () => {
+            if (antinatalCurrentIndex < antinatalItems.length - 1) {
+                antinatalCurrentIndex++;
+                updateAntinatalGallery();
+            }
+        });
+    }
+
+    // Youth Friendly Gallery Event Listeners
+    if (youthPrevBtn) {
+        youthPrevBtn.addEventListener('click', () => {
+            if (youthCurrentIndex > 0) {
+                youthCurrentIndex--;
+                updateYouthGallery();
+            }
+        });
+    }
+
+    if (youthNextBtn) {
+        youthNextBtn.addEventListener('click', () => {
+            if (youthCurrentIndex < youthItems.length - 1) {
+                youthCurrentIndex++;
+                updateYouthGallery();
+            }
+        });
+    }
+
+    // Antinatal Touch Events
+    if (antinatalGallery) {
+        antinatalGallery.addEventListener('touchstart', (e) => {
+            antinatalTouchStartX = e.changedTouches[0].screenX;
+        });
+
+        antinatalGallery.addEventListener('touchend', (e) => {
+            antinatalTouchEndX = e.changedTouches[0].screenX;
+            handleAntinatalSwipe();
+        });
+    }
+
+    // Youth Friendly Touch Events
+    if (youthGallery) {
+        youthGallery.addEventListener('touchstart', (e) => {
+            youthTouchStartX = e.changedTouches[0].screenX;
+        });
+
+        youthGallery.addEventListener('touchend', (e) => {
+            youthTouchEndX = e.changedTouches[0].screenX;
+            handleYouthSwipe();
+        });
+    }
+
+    function handleAntinatalSwipe() {
+        const swipeThreshold = 50;
+        const swipeDistance = antinatalTouchEndX - antinatalTouchStartX;
+
+        if (Math.abs(swipeDistance) > swipeThreshold) {
+            if (swipeDistance > 0 && antinatalCurrentIndex > 0) {
+                // Swipe right
+                antinatalCurrentIndex--;
+            } else if (swipeDistance < 0 && antinatalCurrentIndex < antinatalItems.length - 1) {
+                // Swipe left
+                antinatalCurrentIndex++;
+            }
+            updateAntinatalGallery();
+        }
+    }
+
+    function handleYouthSwipe() {
+        const swipeThreshold = 50;
+        const swipeDistance = youthTouchEndX - youthTouchStartX;
+
+        if (Math.abs(swipeDistance) > swipeThreshold) {
+            if (swipeDistance > 0 && youthCurrentIndex > 0) {
+                // Swipe right
+                youthCurrentIndex--;
+            } else if (swipeDistance < 0 && youthCurrentIndex < youthItems.length - 1) {
+                // Swipe left
+                youthCurrentIndex++;
+            }
+            updateYouthGallery();
+        }
+    }
+
+    // Initialize galleries
+    if (antinatalItems.length > 0) updateAntinatalGallery();
+    if (youthItems.length > 0) updateYouthGallery();
 });
 
 function openSponsorForm() {
