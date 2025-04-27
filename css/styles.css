@@ -2005,14 +2005,15 @@ a[target="_blank"]:hover::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto 0;
+    margin: 2rem auto;
     width: 100%;
     max-width: 1200px;
     padding: 0 1rem;
     text-align: center;
 }
 
-.view-more-staff .btn {
+.view-more-btn {
+    display: inline-block;
     padding: 0.8rem 2rem;
     font-size: 1.1rem;
     background-color: var(--primary-color);
@@ -2022,12 +2023,23 @@ a[target="_blank"]:hover::after {
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
-    display: inline-block;
+    text-decoration: none;
     margin: 0 auto;
 }
 
-.view-more-staff .btn:hover {
-    background-color: var(--secondary-color);
+.view-more-btn:hover {
+    background-color: #006b41;
+}
+
+@media (max-width: 768px) {
+    .view-more-staff {
+        padding: 0 1rem;
+    }
+    
+    .view-more-btn {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 /* Form Elements */
