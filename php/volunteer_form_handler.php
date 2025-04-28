@@ -1,5 +1,5 @@
 <?php
-require_once 'mail_config.php';
+require_once __DIR__ . '/mail_config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Collect form data
