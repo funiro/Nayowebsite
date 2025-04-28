@@ -36,23 +36,30 @@ class Mailer {
             
             // Create email body from form data
             $message = '
-            <div style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif; padding: 20px;">
+            <div style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif; padding: 20px; background-color: #f8f9fa;">
                 <h2 style="text-align: center; color: #2c3e50; margin-bottom: 20px;">New Volunteer Form Submission</h2>
-                <table style="width: 100%; border-collapse: collapse; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-                    <tr style="background-color: #f8f9fa;">
-                        <th style="padding: 12px; border: 1px solid #ddd; text-align: left; width: 40%;">Field</th>
-                        <th style="padding: 12px; border: 1px solid #ddd; text-align: left; width: 60%;">Value</th>
+                <table style="width: 100%; border-collapse: collapse; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px;">
+                    <tr style="background-color: #2c3e50; color: white;">
+                        <th style="padding: 15px; text-align: left; width: 40%;">Field</th>
+                        <th style="padding: 15px; text-align: left; width: 60%;">Value</th>
                     </tr>';
             
+            $rowCount = 0;
             foreach ($formData as $key => $value) {
+                $rowCount++;
+                $rowStyle = $rowCount % 2 === 0 ? 'background-color: #f8f9fa;' : '';
+                
                 // Special handling for Areas of Interest
                 if ($key === 'Areas of Interest') {
-                    $value = str_replace(',', '<br>', $value);
+                    $value = str_replace(',', '<br>• ', $value);
+                    if (!empty($value)) {
+                        $value = '• ' . $value;
+                    }
                 }
                 
                 $message .= '
-                    <tr>
-                        <td style="padding: 12px; border: 1px solid #ddd; background-color: #f8f9fa;"><strong>' . htmlspecialchars($key) . '</strong></td>
+                    <tr style="' . $rowStyle . '">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>' . htmlspecialchars($key) . '</strong></td>
                         <td style="padding: 12px; border: 1px solid #ddd;">' . htmlspecialchars($value) . '</td>
                     </tr>';
             }
