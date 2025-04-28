@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'Gender' => $_POST['gender'] ?? '',
         'Education Level' => $_POST['education'] ?? '',
         'Skills' => $_POST['skills'] ?? '',
-        'Areas of Interest' => $_POST['interests'] ?? '',
+        'Areas of Interest' => isset($_POST['interests']) ? implode(', ', $_POST['interests']) : '',
         'Availability' => $_POST['availability'] ?? '',
         'Previous Volunteer Experience' => $_POST['experience'] ?? '',
         'Why Volunteer' => $_POST['why_volunteer'] ?? '',
