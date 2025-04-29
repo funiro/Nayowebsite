@@ -85,12 +85,42 @@
             gap: 0.5rem;
             font-weight: normal;
             cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .checkbox-group label:hover {
+            background-color: #f5f5f5;
         }
 
         .checkbox-group input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             cursor: pointer;
+            margin: 0;
+            position: relative;
+            appearance: none;
+            -webkit-appearance: none;
+            border: 2px solid #2c3e50;
+            border-radius: 4px;
+            background-color: white;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-group input[type="checkbox"]:checked {
+            background-color: #2c3e50;
+            border-color: #2c3e50;
+        }
+
+        .checkbox-group input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .checkbox-label {
@@ -99,11 +129,48 @@
             gap: 0.5rem;
             font-size: 0.9rem;
             color: #666;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .checkbox-label:hover {
+            background-color: #f5f5f5;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin: 0;
+            position: relative;
+            appearance: none;
+            -webkit-appearance: none;
+            border: 2px solid #2c3e50;
+            border-radius: 4px;
+            background-color: white;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-label input[type="checkbox"]:checked {
+            background-color: #2c3e50;
+            border-color: #2c3e50;
+        }
+
+        .checkbox-label input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .checkbox-label a {
             color: #2c3e50;
             text-decoration: none;
+            font-weight: 600;
         }
 
         .checkbox-label a:hover {
@@ -260,24 +327,30 @@
 
                     <div class="form-group">
                         <label for="interests">Areas of Interest *</label>
-                        <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 10px;">
-                            <label style="display: flex; align-items: center; gap: 8px;">
-                                <input type="checkbox" name="interests[]" value="Healthcare"> Healthcare Services
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="interests[]" value="Healthcare">
+                                <span>Healthcare Services</span>
                             </label>
-                            <label style="display: flex; align-items: center; gap: 8px;">
-                                <input type="checkbox" name="interests[]" value="Education"> Education Support
+                            <label>
+                                <input type="checkbox" name="interests[]" value="Education">
+                                <span>Education Support</span>
                             </label>
-                            <label style="display: flex; align-items: center; gap: 8px;">
-                                <input type="checkbox" name="interests[]" value="Youth"> Youth Development
+                            <label>
+                                <input type="checkbox" name="interests[]" value="Youth">
+                                <span>Youth Development</span>
                             </label>
-                            <label style="display: flex; align-items: center; gap: 8px;">
-                                <input type="checkbox" name="interests[]" value="Community"> Community Outreach
+                            <label>
+                                <input type="checkbox" name="interests[]" value="Community">
+                                <span>Community Outreach</span>
                             </label>
-                            <label style="display: flex; align-items: center; gap: 8px;">
-                                <input type="checkbox" name="interests[]" value="Administration"> Administration
+                            <label>
+                                <input type="checkbox" name="interests[]" value="Administration">
+                                <span>Administration</span>
                             </label>
-                            <label style="display: flex; align-items: center; gap: 8px;">
-                                <input type="checkbox" name="interests[]" value="Other"> Other
+                            <label>
+                                <input type="checkbox" name="interests[]" value="Other">
+                                <span>Other</span>
                             </label>
                         </div>
                     </div>
@@ -289,8 +362,8 @@
 
                     <div class="form-group">
                         <label class="checkbox-label">
-                            <input type="checkbox" required>
-                            I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> *
+                            <input type="checkbox" name="terms" required>
+                            <span>I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> *</span>
                         </label>
                     </div>
 
@@ -374,13 +447,15 @@
                 // Redirect to thank you page
                 window.location.href = 'thank-you.html';
             } else {
-                // Show error message
-                alert(data.message || 'There was an error submitting your form. Please try again.');
+                // Show error message with debug info
+                const errorMessage = data.message + '\n\nDebug Information:\n' + data.debug;
+                console.error('Form submission error:', data.debug);
+                alert(errorMessage);
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('There was an error submitting your form. Please try again.');
+            alert('There was an error submitting your form. Please try again.\n\nError details: ' + error.message);
         })
         .finally(() => {
             // Reset button state
