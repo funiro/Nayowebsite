@@ -115,7 +115,7 @@
                         <li><a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank">NAYO UK FUNDRAISERS</a></li>
                     </ul>
                 </li>
-                <li><a href="volunteer.html">VOLUNTEER</a></li>
+                <li><a href="volunteer.php">VOLUNTEER</a></li>
                 <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
             </ul>
         </nav>

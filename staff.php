@@ -91,20 +91,6 @@
                         <li><a href="staff.php">STAFF</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">PARTNERS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://www.copred.org/" target="_blank">Copred</a></li>
-                        <li><a href="https://www.foccad.org/" target="_blank">FOCCAD</a></li>
-                        <li><a href="https://k2fasteners.ca/" target="_blank">K2 Fasteners</a></li>
-                        <li><a href="https://luena.org/" target="_blank">Luena Foundation</a></li>
-                        <li><a href="https://masanawawafrika.org" target="_blank">Masana Wa Wafrika</a></li>
-                        <li><a href="https://www.health.gov.mw" target="_blank">Malawi's Ministry of Health</a></li>
-                        <li><a href="https://stephenlewisfoundation.org" target="_blank">Stephen Lewis Foundation</a></li>
-                        <li><a href="https://www.unaids.org/en" target="_blank">UNAIDS</a></li>
-                        <li><a href="https://www.givey.com/nancholi-youth-organization?search_meta=" class="donate-btn">NAYO UK FUNDRAISERS</a></li>
-                    </ul>
-                </li>
                 <li><a href="volunteer.php">VOLUNTEER</a></li>
                 <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
             </ul>
