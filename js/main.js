@@ -1,3 +1,6 @@
+import { BaseGallery, AntinatalGallery, YouthGallery, Lightbox } from './modules/gallery.js';
+import { FormValidator, LoadingIndicator, KeyboardNavigation, AriaLabels } from './modules/formValidator.js';
+
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -94,70 +97,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Hero Slider
 class HeroSlider {
     constructor() {
         this.slides = document.querySelectorAll('.hero-slide');
         this.prevBtn = document.querySelector('.prev-slide');
         this.nextBtn = document.querySelector('.next-slide');
-        this.dots = document.querySelectorAll('.slider-dot');
-        this.currentSlide = 0;
-        this.slideInterval = null;
-        this.init();
+        this.currentIndex = 0;
+        this.setupEventListeners();
     }
 
-    init() {
-        if (this.slides.length === 0) return;
-        
-        // Show first slide
-        this.showSlide(0);
-        
-        // Add event listeners
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => this.prevSlide());
-        }
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => this.nextSlide());
-        }
-        
-        // Add dot event listeners
-        this.dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => this.showSlide(index));
+    setupEventListeners() {
+        this.prevBtn?.addEventListener('click', () => this.previous());
+        this.nextBtn?.addEventListener('click', () => this.next());
+
+        // Touch support
+        this.setupTouchEvents();
+
+        // Auto-slide
+        this.startAutoSlide();
+    }
+
+    setupTouchEvents() {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.querySelector('.hero-slider')?.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
         });
-
-        // Start autoplay
-        this.startAutoplay();
-    }
-
-    showSlide(index) {
-        // Hide all slides
-        this.slides.forEach(slide => {
-            slide.style.display = 'none';
-            slide.classList.remove('active');
-        });
-        
-        // Remove active class from all dots
-        this.dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Show current slide
-        this.slides[index].style.display = 'block';
-        this.slides[index].classList.add('active');
-        
-        // Add active class to current dot
-        this.dots[index].classList.add('active');
-        
-        this.currentSlide = index;
-    }
-
-    prevSlide() {
-        let newIndex = this.currentSlide - 1;
-        if (newIndex < 0) {
-            newIndex = this.slides.length - 1;
-        }
-        this.showSlide(newIndex);
-    }
-
-    nextSlide() {
         let newIndex = this.currentSlide + 1;
         if (newIndex >= this.slides.length) {
             newIndex = 0;

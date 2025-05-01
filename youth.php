@@ -1,13 +1,18 @@
+<?php
+// Include header and database connections if needed
+require_once 'includes/header.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youth Friendly Services - Nancholi Youth Organization</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/programs.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/programs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js" defer></script>
+    <script type="module" src="js/main.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,7 +47,7 @@
         <nav class="main-nav">
             <div class="logo">
                 <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
+                    <img src="/images/logo.png" alt="NAYO Logo" class="logo-img">
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
             </div>
@@ -81,7 +86,7 @@
         <section class="program-hero">
             <h1>Youth Friendly Services</h1>
             <div class="program-image">
-                <img src="images/youth.jpg" alt="Youth Friendly Services">
+                <img src="/images/youth.jpg" alt="Youth Friendly Services">
             </div>
         </section>
 
@@ -96,7 +101,7 @@
                 <h2>Our Youth-Friendly Environment</h2>
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="images/youth-friendly2.jpg" alt="Youth-friendly services in action">
+                        <img src="/images/youth-friendly2.jpg" alt="Youth-friendly services in action">
                         <div class="gallery-caption">Empowering youth through health education and support</div>
                     </div>
                     <div class="gallery-item">

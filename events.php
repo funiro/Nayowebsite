@@ -1,270 +1,309 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events & News | Community Programs | Nancholi Youth Organization</title>
-    
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Events & News | Community Programs | Nancholi Youth Organization">
-    <meta name="description" content="Stay updated with NAYO's latest events, community programs, and news in Blantyre, Malawi. Join our initiatives and make a difference in the community.">
-    <meta name="keywords" content="NAYO events Malawi, community programs Blantyre, youth events Malawi, charity events, community outreach Malawi, NAYO news, Malawi NGO events, volunteer opportunities Malawi">
-    <meta name="author" content="Nancholi Youth Organization">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nayomalawi.org/events.html">
-    <meta property="og:title" content="Events & News | Community Programs | Nancholi Youth Organization">
-    <meta property="og:description" content="Stay updated with NAYO's latest events, community programs, and news in Blantyre, Malawi. Join our initiatives and make a difference in the community.">
-    <meta property="og:image" content="https://nayomalawi.org/images/christmas-events.jpg">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/programs.css">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nayomalawi.org/events.html">
-    <meta property="twitter:title" content="Events & News | Community Programs | Nancholi Youth Organization">
-    <meta property="twitter:description" content="Stay updated with NAYO's latest events, community programs, and news in Blantyre, Malawi. Join our initiatives and make a difference in the community.">
-    <meta property="twitter:image" content="https://nayomalawi.org/images/christmas-events.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://nayomalawi.org/events.php">
-    
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/programs.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css">
-    <script src="js/main.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.min.js"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Nancholi Youth Organization (NAYO)",
-      "alternateName": "NAYO",
-      "url": "https://nayomalawi.org/",
-      "logo": "https://nayomalawi.org/images/logo.png",
-      "description": "NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.",
-      "email": "info@nayomalawi.org",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "P.O. Box 1624",
-        "addressLocality": "Blantyre",
-        "addressCountry": "MW"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "General Inquiries",
-        "email": "info@nayomalawi.org"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/nancholi-youth-organisation-nayo/",
-        "https://www.givey.com/nayoukschoolfundraiser20232024",
-        "https://www.every.org/nancholi-youth-organization"
-      ]
-    }
-    </script>
-</head>
-<body>
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
-                    <span class="tagline">One Heart,<br>One Community</span>
-                </a>
-            </div>
-            <button class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.php">HOME</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">PROJECTS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="art.php">ART</a></li>
-                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
-                        <li><a href="student.php">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
-                    </ul>
-                </li>
-                <li><a href="events.php">EVENTS</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">OUR PEOPLE</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="board.php">BOARD</a></li>
-                        <li><a href="staff.php">STAFF</a></li>
-                    </ul>
-                </li>
+<?php
+header('Content-Type: application/json');
 
-                <li><a href="volunteer.php">VOLUNTEER</a></li>
-                <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
-            </ul>
-        </nav>
-    </header>
+// Sample categories - in production, these would come from a database
+$categories = [
+    'Community',
+    'Health',
+    'Fundraising',
+    'Training',
+    'Volunteer',
+    'Education',
+    'Outreach'
+];
 
-    <main class="events-content">
-        <section class="events-hero">
-            <div class="container">
-                <h1>Upcoming Events & News</h1>
-                <p>Stay updated with our latest community programs and initiatives</p>
-            </div>
-        </section>
+// Sample events data - in production, this would come from a database
+$events = [
+    [
+        'id' => 1,
+        'title' => 'Christmas for the Elderly',
+        'date' => '2025-12-25',
+        'time' => '10:00 - 16:00',
+        'location' => 'Nancholi Community Center',
+        'image' => 'images/christmas-events.jpg',
+        'category' => 'Community',
+        'description' => 'Join us for a heartwarming celebration as we bring the joy of Christmas to our elderly community members.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 2,
+        'title' => 'Youth Health Fair',
+        'date' => '2025-06-15',
+        'time' => '09:00 - 15:00',
+        'location' => 'NAYO Health Center',
+        'image' => 'images/health-fair.jpg',
+        'category' => 'Health',
+        'description' => 'Annual health fair providing free medical check-ups and health education for youth.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 3,
+        'title' => 'Annual Fundraiser Gala',
+        'date' => '2025-08-12',
+        'time' => '19:00 - 23:00',
+        'location' => 'Blantyre Convention Center',
+        'image' => 'images/gala.jpg',
+        'category' => 'Fundraising',
+        'description' => 'Join us for an evening of entertainment and support for NAYO programs.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 4,
+        'title' => 'Palliative Care Training',
+        'date' => '2025-07-05',
+        'time' => '08:30 - 17:00',
+        'location' => 'NAYO Training Room',
+        'image' => 'images/training.jpg',
+        'category' => 'Training',
+        'description' => 'Professional training for healthcare workers in palliative care.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 5,
+        'title' => 'Youth Leadership Workshop',
+        'date' => '2025-06-20',
+        'time' => '09:00 - 16:00',
+        'location' => 'NAYO Community Hall',
+        'image' => 'images/leadership.jpg',
+        'category' => 'Education',
+        'description' => 'Empower young leaders with skills for community development.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 6,
+        'title' => 'HIV/AIDS Awareness Walk',
+        'date' => '2025-07-15',
+        'time' => '07:00 - 11:00',
+        'location' => 'Blantyre City Center',
+        'image' => 'images/awareness.jpg',
+        'category' => 'Health',
+        'description' => 'Join our community walk to raise awareness about HIV/AIDS prevention.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 7,
+        'title' => 'School Supplies Drive',
+        'date' => '2025-06-01',
+        'time' => '09:00 - 16:00',
+        'location' => 'NAYO Office',
+        'image' => 'images/school-supplies.jpg',
+        'category' => 'Outreach',
+        'description' => 'Donate school supplies to support local students.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 8,
+        'title' => 'Community Garden Launch',
+        'date' => '2025-06-10',
+        'time' => '10:00 - 13:00',
+        'location' => 'Nancholi Community Garden',
+        'image' => 'images/community-garden.jpg',
+        'category' => 'Community',
+        'description' => 'Help us launch our new community garden project.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 9,
+        'title' => 'Antenatal Care Workshop',
+        'date' => '2025-06-25',
+        'time' => '09:00 - 12:00',
+        'location' => 'NAYO Health Center',
+        'image' => 'images/antenatal.jpg',
+        'category' => 'Health',
+        'description' => 'Educational workshop for expectant mothers.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 10,
+        'title' => 'Youth Sports Tournament',
+        'date' => '2025-07-01',
+        'time' => '14:00 - 18:00',
+        'location' => 'NAYO Sports Field',
+        'image' => 'images/sports.jpg',
+        'category' => 'Community',
+        'description' => 'Annual sports tournament promoting healthy living among youth.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 11,
+        'title' => 'Nutrition Education Program',
+        'date' => '2025-07-10',
+        'time' => '09:00 - 12:00',
+        'location' => 'NAYO Training Room',
+        'image' => 'images/nutrition.jpg',
+        'category' => 'Health',
+        'description' => 'Learn about healthy eating and nutrition.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 12,
+        'title' => 'Volunteer Orientation',
+        'date' => '2025-06-15',
+        'time' => '14:00 - 16:00',
+        'location' => 'NAYO Office',
+        'image' => 'images/volunteer.jpg',
+        'category' => 'Volunteer',
+        'description' => 'Join us for our volunteer orientation session.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 13,
+        'title' => 'Art Therapy Workshop',
+        'date' => '2025-07-20',
+        'time' => '10:00 - 13:00',
+        'location' => 'NAYO Art Studio',
+        'image' => 'images/art-therapy.jpg',
+        'category' => 'Community',
+        'description' => 'Creative therapy session for community members.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 14,
+        'title' => 'Career Guidance Seminar',
+        'date' => '2025-06-30',
+        'time' => '14:00 - 17:00',
+        'location' => 'NAYO Conference Room',
+        'image' => 'images/career.jpg',
+        'category' => 'Education',
+        'description' => 'Learn about career opportunities and development.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 15,
+        'title' => 'Community Clean-Up',
+        'date' => '2025-06-28',
+        'time' => '08:00 - 11:00',
+        'location' => 'Nancholi Area',
+        'image' => 'images/clean-up.jpg',
+        'category' => 'Outreach',
+        'description' => 'Join us in keeping our community clean and healthy.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 16,
+        'title' => 'Youth Mentorship Program',
+        'date' => '2025-07-05',
+        'time' => '16:00 - 18:00',
+        'location' => 'NAYO Community Hall',
+        'image' => 'images/mentorship.jpg',
+        'category' => 'Education',
+        'description' => 'Monthly mentorship sessions for young people.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 17,
+        'title' => 'Health Screening Camp',
+        'date' => '2025-07-12',
+        'time' => '09:00 - 15:00',
+        'location' => 'NAYO Health Center',
+        'image' => 'images/health-screening.jpg',
+        'category' => 'Health',
+        'description' => 'Free health screenings for community members.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 18,
+        'title' => 'Youth Entrepreneurship Workshop',
+        'date' => '2025-07-18',
+        'time' => '10:00 - 14:00',
+        'location' => 'NAYO Training Room',
+        'image' => 'images/entrepreneurship.jpg',
+        'category' => 'Education',
+        'description' => 'Learn about starting and managing a business.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 19,
+        'title' => 'Community Theater Performance',
+        'date' => '2025-07-25',
+        'time' => '19:00 - 21:00',
+        'location' => 'NAYO Community Hall',
+        'image' => 'images/theater.jpg',
+        'category' => 'Community',
+        'description' => 'Enjoy a community theater performance.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ],
+    [
+        'id' => 20,
+        'title' => 'Annual Report Launch',
+        'date' => '2025-08-01',
+        'time' => '14:00 - 16:00',
+        'location' => 'NAYO Conference Room',
+        'image' => 'images/annual-report.jpg',
+        'category' => 'Education',
+        'description' => 'Presentation of our annual achievements and plans.',
+        'status' => 'upcoming',
+        'rsvp' => true
+    ]
+        'rsvp' => false
+    ]
+];
 
-        <div class="container">
-            <div class="events-filters">
-                <div class="filter-group">
-                    <label for="category-filter">Filter by Category:</label>
-                    <select id="category-filter" class="filter-select">
-                        <option value="">All Categories</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="status-filter">Filter by Status:</label>
-                    <select id="status-filter" class="filter-select">
-                        <option value="">All Status</option>
-                        <option value="upcoming">Upcoming</option>
-                        <option value="past">Past Events</option>
-                    </select>
-                </div>
-                <button id="calendar-view" class="btn secondary">
-                    <i class="fas fa-calendar-alt"></i> Calendar View
-                </button>
-            </div>
+// Get query parameters
+$category = $_GET['category'] ?? '';
+$status = $_GET['status'] ?? '';
+$eventId = $_GET['id'] ?? null;
 
-            <div class="events-container">
-                <div id="events-list" class="events-grid"></div>
-                <div id="calendar" class="calendar-view" style="display: none;"></div>
-            </div>
-        </div>
-    </main>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const eventsList = document.getElementById('events-list');
-        const categoryFilter = document.getElementById('category-filter');
-        const statusFilter = document.getElementById('status-filter');
-        const calendarView = document.getElementById('calendar-view');
-        const calendarContainer = document.getElementById('calendar');
-
-        let calendar = null;
-
-        function loadEvents() {
-            fetch('php/events.php')
-                .then(response => response.json())
-                .then(data => {
-                    // Populate category filter
-                    data.categories.forEach(category => {
-                        const option = document.createElement('option');
-                        option.value = category;
-                        option.textContent = category;
-                        categoryFilter.appendChild(option);
-                    });
-
-                    // Render events
-                    renderEvents(data.events);
-                })
-                .catch(error => console.error('Error loading events:', error));
-        }
-
-        function renderEvents(events) {
-            eventsList.innerHTML = events.map(event => `
-                <article class="event-card" data-id="${event.id}">
-                    <div class="event-image">
-                        <img src="${event.image}" alt="${event.title}">
-                    </div>
-                    <div class="event-content">
-                        <h3>${event.title}</h3>
-                        <div class="event-meta">
-                            <span class="event-date">${new Date(event.date).toLocaleDateString()}</span>
-                            <span class="event-time">${event.time}</span>
-                            <span class="event-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                ${event.location}
-                            </span>
-                        </div>
-                        <p class="event-description">${event.description}</p>
-                        ${event.rsvp ? '<button class="btn primary rsvp-btn">RSVP Now</button>' : ''}
-                    </div>
-                </article>
-            `).join('');
-
-            // Add click handlers for RSVP buttons
-            document.querySelectorAll('.rsvp-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const eventId = this.closest('.event-card').dataset.id;
-                    handleRSVP(eventId);
-                });
-            });
-
-            // Initialize calendar if needed
-            if (calendar) {
-                calendar.destroy();
-            }
-
-            calendar = new FullCalendar.Calendar(calendarContainer, {
-                initialView: 'dayGridMonth',
-                locale: 'en',
-                events: events.map(event => ({
-                    title: event.title,
-                    start: event.date,
-                    allDay: true,
-                    extendedProps: {
-                        id: event.id,
-                        location: event.location,
-                        description: event.description,
-                        rsvp: event.rsvp
-                    }
-                })),
-                eventClick: function(info) {
-                    window.location.href = `event-details.html?id=${info.event.extendedProps.id}`;
-                }
-            });
-
-            calendar.render();
-        }
-
-        function handleRSVP(eventId) {
-            // Implement RSVP functionality here
-            alert('RSVP functionality will be implemented soon!');
-        }
-
-        // Filter events
-        function filterEvents() {
-            const category = categoryFilter.value;
-            const status = statusFilter.value;
-            const params = new URLSearchParams();
-
-            if (category) params.append('category', category);
-            if (status) params.append('status', status);
-
-            fetch(`php/events.php?${params.toString()}`)
-                .then(response => response.json())
-                .then(data => renderEvents(data.events));
-        }
-
-        // Event listeners
-        categoryFilter.addEventListener('change', filterEvents);
-        statusFilter.addEventListener('change', filterEvents);
-        calendarView.addEventListener('click', function() {
-            calendarContainer.style.display = this.classList.toggle('active') ? 'block' : 'none';
-        });
-
-        // Initial load
-        loadEvents();
+// Get single event details
+if ($eventId) {
+    $event = array_filter($events, function($e) use ($eventId) {
+        return $e['id'] == $eventId;
     });
-    </script>
+    
+    if (count($event) > 0) {
+        $event = array_values($event)[0];
+        echo json_encode([
+            'id' => $event['id'],
+            'title' => $event['title'],
+            'date' => $event['date'],
+            'time' => $event['time'],
+            'location' => $event['location'],
+            'image' => $event['image'],
+            'category' => $event['category'],
+            'description' => $event['description'],
+            'status' => $event['status'],
+            'rsvp' => $event['rsvp'],
+            'highlights' => $event['highlights'],
+            'steps' => $event['steps'],
+            'items' => $event['items']
+        ]);
+        exit;
+    }
+}
 
-    <!-- Include footer -->
-    <?php include 'includes/footer.php'; ?>
-<!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>`n</body>
-</html>
+// Filter events
+$filteredEvents = array_filter($events, function($event) use ($category, $status) {
+    return ($category === '' || $event['category'] === $category) &&
+           ($status === '' || $event['status'] === $status);
+});
 
+// Return events or categories based on request
+if (isset($_GET['categories'])) {
+    echo json_encode(['categories' => array_unique(array_column($events, 'category'))]);
+} else {
+    echo json_encode([
+        'events' => array_values($filteredEvents),
+        'categories' => array_unique(array_column($events, 'category'))
+    ]);
+}
+
+?>
