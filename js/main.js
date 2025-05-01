@@ -499,6 +499,37 @@ window.addEventListener('click', function(event) {
     }
 });
 
+// Partners section navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const partnersScroll = document.querySelector('.partners-scroll');
+    const partnersGrid = document.querySelector('.partners-grid');
+    const prevButton = document.querySelector('.partners-nav.prev button');
+    const nextButton = document.querySelector('.partners-nav.next button');
+
+    function updateNavigation() {
+        const scrollLeft = partnersScroll.scrollLeft;
+        const scrollWidth = partnersGrid.scrollWidth;
+        const clientWidth = partnersScroll.clientWidth;
+
+        prevButton.style.display = scrollLeft > 0 ? 'flex' : 'none';
+        nextButton.style.display = scrollLeft < scrollWidth - clientWidth ? 'flex' : 'none';
+    }
+
+    prevButton.addEventListener('click', () => {
+        partnersScroll.scrollLeft -= partnersScroll.clientWidth;
+    });
+
+    nextButton.addEventListener('click', () => {
+        partnersScroll.scrollLeft += partnersScroll.clientWidth;
+    });
+
+    // Update navigation when scrolling
+    partnersScroll.addEventListener('scroll', updateNavigation);
+
+    // Initial update
+    updateNavigation();
+});
+
 // Contact Form Functionality
 const contactBtn = document.querySelector('.contact-btn');
 const contactModal = document.querySelector('.contact-form-modal');

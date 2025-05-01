@@ -47,7 +47,7 @@
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <a href="index.html" class="logo-link">
+                <a href="index.php" class="logo-link">
                     <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
@@ -56,19 +56,19 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.php">HOME</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">PROJECTS</a>
                     <ul class="dropdown-menu">
-                        <li><a href="art.html">ART</a></li>
-                        <li><a href="antenatal.html">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.html">PALLIATIVE CARE</a></li>
-                        <li><a href="student.html">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.html">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.html">YOUTH FRIENDLY SERVICES</a></li>
+                        <li><a href="art.php">ART</a></li>
+                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
+                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
+                        <li><a href="student.php">STUDENT SUPPORT</a></li>
+                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
+                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
                     </ul>
                 </li>
-                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="events.php">EVENTS</a></li>
                 <li><a href="index.html#staff">STAFF</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">PARTNERS</a>
@@ -84,7 +84,7 @@
                         <li><a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank">NAYO UK FUNDRAISERS</a></li>
                     </ul>
                 </li>
-                <li><a href="volunteer.html">VOLUNTEER</a></li>
+                <li><a href="volunteer.php">VOLUNTEER</a></li>
                 <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
             </ul>
         </nav>
@@ -339,33 +339,6 @@
     });
     </script>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="NAYO Logo">
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p>P.O. Box 1624, Blantyre, Malawi</p>
-                    <p>Email: info@nayomalawi.org</p>
-                </div>
-                <div class="footer-social">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/nancholi-youth-organisation-nayo/" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://www.every.org/nancholi-youth-organization" target="_blank">
-                            <i class="fas fa-hand-holding-heart"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nancholi Youth Organization. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
