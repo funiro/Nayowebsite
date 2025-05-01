@@ -1,0 +1,21 @@
+[build]
+  command = "npm install && npm run prepare-dist"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18.16.0"
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/events"
+  to = "/events.html"
+  status = 200
+
+[[redirects]]
+  from = "/event-details"
+  to = "/event-details.html"
+  status = 200

@@ -1,0 +1,31 @@
+{
+  "name": "nayo-website",
+  "version": "1.0.0",
+  "description": "NAYO Website",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./css/styles.css",
+    "build:js": "npx browserify src/js/main.js -o js/main.bundle.js",
+    "dev": "npm run dev:css & npm run dev:js",
+    "dev:css": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --watch",
+    "dev:js": "npx browserify src/js/main.js -o js/main.bundle.js --debug --watch",
+    "prepare-dist": "mkdir -p dist && xcopy index.html dist /Y && xcopy events.html dist /Y && xcopy event-details.html dist /Y && xcopy css dist\\css /E /Y && xcopy js dist\\js /E /Y && xcopy images dist\\images /E /Y && xcopy php dist\\php /E /Y"
+  },
+  "dependencies": {
+    "fullcalendar": "^6.1.8",
+    "jquery": "^3.7.1",
+    "moment": "^2.29.4",
+    "tailwindcss": "^3.3.3",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "browserify": "^17.0.0",
+    "concurrently": "^8.2.1"
+  },
+  "devDependencies": {
+    "@fullcalendar/core": "^6.1.8",
+    "@fullcalendar/daygrid": "^6.1.8",
+    "@fullcalendar/interaction": "^6.1.8",
+    "@fullcalendar/timegrid": "^6.1.8"
+  }
+}
