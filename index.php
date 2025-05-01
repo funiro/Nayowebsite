@@ -391,7 +391,6 @@
         </div>
     </section>
 
-    <!-- Include footer -->
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

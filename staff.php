@@ -323,5 +323,6 @@
     </main>
 
     <!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>
-</body>
+<!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>`n</body>
 </html> 
+

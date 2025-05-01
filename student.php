@@ -167,6 +167,15 @@
                 </div>
             </div>
 
+            <div class="get-involved">
+                <h2>Get Involved</h2>
+                <p>Support our Student Support program through donations or volunteering. Your contribution helps provide educational opportunities and resources to deserving students.</p>
+                <div class="action-buttons">
+                    <a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="btn donate-btn">Donate Now</a>
+                    <a href="volunteer.php" class="btn contact-btn">Volunteer</a>
+                </div>
+            </div>
+
             <!-- Sponsor Form Modal -->
             <div id="sponsor-modal" class="modal">
                 <div class="modal-content">
@@ -251,6 +260,7 @@
         </section>
     </main>
 
-    <!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>
+    <!-- Include footer -->
+    <?php include 'includes/footer.php'; ?>
 </body>
-</html> 
+</html>

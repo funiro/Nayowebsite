@@ -276,6 +276,8 @@
     });
     </script>
 
-    <!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>
-</body>
-</html> 
+    <!-- Include footer -->
+    <?php include 'includes/footer.php'; ?>
+<!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>`n</body>
+</html>
+
