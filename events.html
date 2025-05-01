@@ -19,6 +19,12 @@
     <meta property="og:description" content="Stay updated with NAYO's latest events, community programs, and news in Blantyre, Malawi. Join our initiatives and make a difference in the community.">
     <meta property="og:image" content="https://nayomalawi.org/images/christmas-events.jpg">
     
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/programs.css">
+    
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://nayomalawi.org/events.html">
@@ -32,7 +38,10 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/programs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css">
     <script src="js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.min.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -88,7 +97,13 @@
                     </ul>
                 </li>
                 <li><a href="events.html">EVENTS</a></li>
-                <li><a href="index.html#staff">STAFF</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">OUR PEOPLE</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="board.html">BOARD</a></li>
+                        <li><a href="staff.html">STAFF</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">PARTNERS</a>
                     <ul class="dropdown-menu">
@@ -111,115 +126,155 @@
 
     <main class="events-content">
         <section class="events-hero">
-            <h1>Events & News</h1>
-            <p>Stay updated with our latest events and community initiatives</p>
-        </section>
-
-        <section class="featured-event">
-            <div class="event-card">
-                <div class="event-image">
-                    <img src="images/christmas-events.jpg" alt="Christmas for the Elderly Event">
-                </div>
-                <div class="event-details">
-                    <div class="event-date">
-                        <span class="day">25</span>
-                        <span class="month">DEC</span>
-                        <span class="year">2025</span>
-                    </div>
-                    <h2>Christmas for the Elderly</h2>
-                    <p class="event-description">
-                        Join us in spreading joy and warmth to our elderly community members this Christmas season. 
-                        This special event brings together volunteers and community members to celebrate with our 
-                        senior citizens through music, food, and meaningful interactions.
-                    </p>
-                    <div class="event-info">
-                        <div class="info-item">
-                            <i class="fas fa-clock"></i>
-                            <span>10:00 AM - 4:00 PM</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Nancholi Community Center</span>
-                        </div>
-                    </div>
-                    <div class="event-cta">
-                        <a href="event-details.html" class="btn register-btn">Register to Volunteer</a>
-                        <a href="event-details.html" class="btn donate-btn">Donate to Event</a>
-                    </div>
-                </div>
+            <div class="container">
+                <h1>Upcoming Events & News</h1>
+                <p>Stay updated with our latest community programs and initiatives</p>
             </div>
         </section>
 
-        <section class="upcoming-events">
-            <h2>Upcoming Events</h2>
-            <div class="events-grid">
-                <div class="event-card-small">
-                    <div class="event-date-small">
-                        <span class="day">15</span>
-                        <span class="month">JAN</span>
-                    </div>
-                    <div class="event-content">
-                        <h3>Health Awareness Workshop</h3>
-                        <p>Community health education and screening event</p>
-                        <a href="event-details.html" class="btn view-more-btn">Learn More</a>
-                    </div>
+        <div class="container">
+            <div class="events-filters">
+                <div class="filter-group">
+                    <label for="category-filter">Filter by Category:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="">All Categories</option>
+                    </select>
                 </div>
-
-                <div class="event-card-small">
-                    <div class="event-date-small">
-                        <span class="day">20</span>
-                        <span class="month">JAN</span>
-                    </div>
-                    <div class="event-content">
-                        <h3>Youth Leadership Training</h3>
-                        <p>Empowering young leaders in our community</p>
-                        <a href="event-details.html" class="btn view-more-btn">Learn More</a>
-                    </div>
+                <div class="filter-group">
+                    <label for="status-filter">Filter by Status:</label>
+                    <select id="status-filter" class="filter-select">
+                        <option value="">All Status</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="past">Past Events</option>
+                    </select>
                 </div>
-
-                <div class="event-card-small">
-                    <div class="event-date-small">
-                        <span class="day">25</span>
-                        <span class="month">JAN</span>
-                    </div>
-                    <div class="event-content">
-                        <h3>Community Clean-up Day</h3>
-                        <p>Join us in keeping our community clean and green</p>
-                        <a href="event-details.html" class="btn view-more-btn">Learn More</a>
-                    </div>
-                </div>
+                <button id="calendar-view" class="btn secondary">
+                    <i class="fas fa-calendar-alt"></i> Calendar View
+                </button>
             </div>
-        </section>
 
-        <section class="news-section">
-            <h2>Latest News</h2>
-            <div class="news-grid">
-                <article class="news-card">
-                    <div class="news-image">
-                        <img src="images/student.jpg" alt="Student Success Story">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-date">December 10, 2023</span>
-                        <h3>Student Support Program Success</h3>
-                        <p>Celebrating the achievements of our sponsored students in their academic journey...</p>
-                        <a href="event-details.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="news-card">
-                    <div class="news-image">
-                        <img src="images/outreach.jpg" alt="Community Outreach">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-date">December 5, 2023</span>
-                        <h3>Expanding Our Reach</h3>
-                        <p>NAYO extends its services to three new communities in the region...</p>
-                        <a href="event-details.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+            <div class="events-container">
+                <div id="events-list" class="events-grid"></div>
+                <div id="calendar" class="calendar-view" style="display: none;"></div>
             </div>
-        </section>
+        </div>
     </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const eventsList = document.getElementById('events-list');
+        const categoryFilter = document.getElementById('category-filter');
+        const statusFilter = document.getElementById('status-filter');
+        const calendarView = document.getElementById('calendar-view');
+        const calendarContainer = document.getElementById('calendar');
+
+        let calendar = null;
+
+        function loadEvents() {
+            fetch('php/events.php')
+                .then(response => response.json())
+                .then(data => {
+                    // Populate category filter
+                    data.categories.forEach(category => {
+                        const option = document.createElement('option');
+                        option.value = category;
+                        option.textContent = category;
+                        categoryFilter.appendChild(option);
+                    });
+
+                    // Render events
+                    renderEvents(data.events);
+                })
+                .catch(error => console.error('Error loading events:', error));
+        }
+
+        function renderEvents(events) {
+            eventsList.innerHTML = events.map(event => `
+                <article class="event-card" data-id="${event.id}">
+                    <div class="event-image">
+                        <img src="${event.image}" alt="${event.title}">
+                    </div>
+                    <div class="event-content">
+                        <h3>${event.title}</h3>
+                        <div class="event-meta">
+                            <span class="event-date">${new Date(event.date).toLocaleDateString()}</span>
+                            <span class="event-time">${event.time}</span>
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                ${event.location}
+                            </span>
+                        </div>
+                        <p class="event-description">${event.description}</p>
+                        ${event.rsvp ? '<button class="btn primary rsvp-btn">RSVP Now</button>' : ''}
+                    </div>
+                </article>
+            `).join('');
+
+            // Add click handlers for RSVP buttons
+            document.querySelectorAll('.rsvp-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const eventId = this.closest('.event-card').dataset.id;
+                    handleRSVP(eventId);
+                });
+            });
+
+            // Initialize calendar if needed
+            if (calendar) {
+                calendar.destroy();
+            }
+
+            calendar = new FullCalendar.Calendar(calendarContainer, {
+                initialView: 'dayGridMonth',
+                locale: 'en',
+                events: events.map(event => ({
+                    title: event.title,
+                    start: event.date,
+                    allDay: true,
+                    extendedProps: {
+                        id: event.id,
+                        location: event.location,
+                        description: event.description,
+                        rsvp: event.rsvp
+                    }
+                })),
+                eventClick: function(info) {
+                    window.location.href = `event-details.html?id=${info.event.extendedProps.id}`;
+                }
+            });
+
+            calendar.render();
+        }
+
+        function handleRSVP(eventId) {
+            // Implement RSVP functionality here
+            alert('RSVP functionality will be implemented soon!');
+        }
+
+        // Filter events
+        function filterEvents() {
+            const category = categoryFilter.value;
+            const status = statusFilter.value;
+            const params = new URLSearchParams();
+
+            if (category) params.append('category', category);
+            if (status) params.append('status', status);
+
+            fetch(`php/events.php?${params.toString()}`)
+                .then(response => response.json())
+                .then(data => renderEvents(data.events));
+        }
+
+        // Event listeners
+        categoryFilter.addEventListener('change', filterEvents);
+        statusFilter.addEventListener('change', filterEvents);
+        calendarView.addEventListener('click', function() {
+            calendarContainer.style.display = this.classList.toggle('active') ? 'block' : 'none';
+        });
+
+        // Initial load
+        loadEvents();
+    });
+    </script>
 
     <footer>
         <div class="footer-content">

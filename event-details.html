@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christmas for the Elderly - NAYO Events</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Event Details - NAYO Events</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="js/events.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -86,23 +93,19 @@
     <main class="event-details-content">
         <section class="event-hero">
             <div class="event-hero-image">
-                <img src="images/christmas-events.jpg" alt="Christmas for the Elderly Event">
+                <img id="event-image" src="" alt="Event Image">
             </div>
             <div class="event-hero-content">
-                <h1>Christmas for the Elderly</h1>
+                <h1 id="event-title"></h1>
                 <div class="event-meta">
                     <div class="event-date">
-                        <span class="day">25</span>
-                        <span class="month">DEC</span>
-                        <span class="year">2025</span>
+                        <span class="day"></span>
+                        <span class="month"></span>
+                        <span class="year"></span>
                     </div>
                     <div class="event-location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Nancholi Community Center</span>
-                    </div>
-                    <div class="event-time">
-                        <i class="fas fa-clock"></i>
-                        <span>10:00 AM - 4:00 PM</span>
+                        <span id="event-location"></span>
                     </div>
                 </div>
             </div>
@@ -111,138 +114,258 @@
         <section class="event-description">
             <div class="event-main-content">
                 <h2>About the Event</h2>
-                <p>Join us for a heartwarming celebration as we bring the joy of Christmas to our elderly community members. This special event is designed to create meaningful connections and spread holiday cheer among our senior citizens who often feel isolated during the festive season.</p>
+                <div id="event-description"></div>
                 
-                <h3>Event Highlights</h3>
-                <ul>
-                    <li>Festive lunch and refreshments</li>
-                    <li>Live music and entertainment</li>
-                    <li>Gift distribution</li>
-                    <li>Health check-ups</li>
-                    <li>Interactive activities and games</li>
-                    <li>Photo booth for memorable moments</li>
-                </ul>
-
-                <h3>How You Can Help</h3>
-                <p>We welcome volunteers and donations to make this event a success. Here's how you can contribute:</p>
-                <ul>
-                    <li>Volunteer your time to assist with event activities</li>
-                    <li>Donate gifts or essential items for the elderly</li>
-                    <li>Sponsor a meal or refreshments</li>
-                    <li>Help with transportation for elderly attendees</li>
-                </ul>
-
-                <div class="event-cta">
-                    <a href="#" class="btn register-btn">Register to Volunteer</a>
-                    <a href="#" class="btn donate-btn">Donate to Event</a>
-                </div>
-            </div>
-
-            <div class="event-sidebar">
-                <div class="event-registration">
-                    <h3>Register for the Event</h3>
-                    <form id="event-registration-form" action="https://formspree.io/f/xgegqjqg" method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="_subject" value="New Event Registration">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://nayomalawi.org/thank-you.html">
-                        <input type="hidden" name="_autoresponse" value="Thank you for registering for our event. We look forward to seeing you there!">
-                        <input type="hidden" name="_replyto" value="info@nayomalawi.org">
-                        <div class="form-group">
-                            <input type="text" placeholder="Full Name" required name="name">
+                <div class="event-details-grid">
+                    <div class="event-detail">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Time</h3>
+                            <p id="event-time"></p>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email Address" required name="email">
+                    </div>
+                    <div class="event-detail">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3>Target Audience</h3>
+                            <p id="event-audience"></p>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required name="phone">
+                    </div>
+                    <div class="event-detail">
+                        <i class="fas fa-language"></i>
+                        <div>
+                            <h3>Language</h3>
+                            <p id="event-language"></p>
                         </div>
-                        <div class="form-group">
-                            <select required name="role">
-                                <option value="">Select Role</option>
-                                <option value="volunteer">Volunteer</option>
-                                <option value="donor">Donor</option>
-                                <option value="both">Both</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn submit-btn">Submit Registration</button>
-                    </form>
-                </div>
-
-                <div class="event-share">
-                    <h3>Share This Event</h3>
-                    <div class="social-share">
-                        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="event-gallery">
-            <h2>Event Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/christmas-events.jpg.jpg" alt="Previous Christmas Event">
+                <div class="event-content-section">
+                    <h3>Event Highlights</h3>
+                    <ul class="event-highlights" id="event-highlights"></ul>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/hero-1.jpg" alt="Community Gathering">
+
+                <div class="event-content-section">
+                    <h3>How to Participate</h3>
+                    <ol class="participation-steps" id="event-participation"></ol>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/hero-2.jpg" alt="Volunteers in Action">
+
+                <div class="event-content-section">
+                    <h3>What to Bring</h3>
+                    <ul class="items-to-bring" id="event-items"></ul>
+                </div>
+
+                <div class="event-content-section">
+                    <h3>Getting Here</h3>
+                    <div class="location-map">
+                        <iframe id="event-map" src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <p id="event-directions"></p>
+                </div>
+
+                <div class="event-content-section">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p id="event-email"></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p id="event-phone"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-content-section">
+                    <h3>Share This Event</h3>
+                    <div class="social-share">
+                        <a href="#" class="share-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Share on Facebook
+                        </a>
+                        <a href="#" class="share-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                            Tweet
+                        </a>
+                        <a href="#" class="share-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="event-content-section">
+                    <h3>RSVP Now</h3>
+                    <div class="rsvp-form">
+                        <form id="rsvp-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="volunteer">Would you like to volunteer?</label>
+                                <select id="volunteer" name="volunteer" required>
+                                    <option value="">Select</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dietary">Dietary Requirements</label>
+                                <textarea id="dietary" name="dietary"></textarea>
+                            </div>
+                            <button type="submit" class="btn primary">Submit RSVP</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const eventId = new URLSearchParams(window.location.search).get('id');
+        
+        if (!eventId) {
+            window.location.href = 'events.html';
+            return;
+        }
+
+        fetch(`php/events.php?id=${eventId}`)
+            .then(response => response.json())
+            .then(data => {
+                const event = data.events[0];
+                
+                // Update event details
+                document.getElementById('event-image').src = event.image;
+                document.getElementById('event-title').textContent = event.title;
+                
+                const date = new Date(event.date);
+                document.querySelector('.day').textContent = date.getDate();
+                document.querySelector('.month').textContent = date.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+                document.querySelector('.year').textContent = date.getFullYear();
+                
+                document.getElementById('event-location').textContent = event.location;
+                document.getElementById('event-description').innerHTML = event.description;
+                document.getElementById('event-time').textContent = event.time;
+                document.getElementById('event-audience').textContent = event.audience || 'Everyone';
+                document.getElementById('event-language').textContent = event.language || 'English';
+
+                // Update highlights
+                const highlights = event.highlights || [];
+                const highlightsList = document.getElementById('event-highlights');
+                highlightsList.innerHTML = highlights.map(highlight => `
+                    <li><i class="fas fa-check"></i> ${highlight}</li>
+                `).join('');
+
+                // Update participation steps
+                const participation = event.participation || [];
+                const participationList = document.getElementById('event-participation');
+                participationList.innerHTML = participation.map(step => `
+                    <li>${step}</li>
+                `).join('');
+
+                // Update items to bring
+                const items = event.items || [];
+                const itemsList = document.getElementById('event-items');
+                itemsList.innerHTML = items.map(item => `
+                    <li><i class="fas fa-check"></i> ${item}</li>
+                `).join('');
+
+                // Update map and directions
+                document.getElementById('event-map').src = event.map || '';
+                document.getElementById('event-directions').textContent = event.directions || '';
+
+                // Update contact info
+                document.getElementById('event-email').textContent = event.email || 'events@nayomalawi.org';
+                document.getElementById('event-phone').textContent = event.phone || '+265 123 456 789';
+            })
+            .catch(error => {
+                console.error('Error loading event details:', error);
+                window.location.href = 'events.html';
+            });
+
+        // Handle RSVP form submission
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            formData.append('eventId', eventId);
+
+            fetch('php/rsvp.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Thank you for RSVPing! We will send you a confirmation email shortly.');
+                    this.reset();
+                } else {
+                    alert('There was an error with your RSVP. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error processing RSVP:', error);
+                alert('There was an error with your RSVP. Please try again.');
+            });
+        });
+
+        // Handle social sharing
+        const shareButtons = document.querySelectorAll('.share-btn');
+        shareButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const url = window.location.href;
+                const title = document.title;
+
+                if (this.classList.contains('facebook')) {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&t=${encodeURIComponent(title)}`, '_blank');
+                } else if (this.classList.contains('twitter')) {
+                    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank');
+                } else if (this.classList.contains('whatsapp')) {
+                    window.open(`https://wa.me/?text=${encodeURIComponent(`${title}: ${url}`)}`, '_blank');
+                }
+            });
+        });
+    });
+    </script>
+
     <footer>
         <div class="footer-content">
             <div class="footer-info">
                 <div class="footer-logo">
-                    <a href="index.html" class="footer-logo-link">
-                        <img src="images/logo.png" alt="NAYO Logo" class="footer-logo-img">
-                    </a>
+                    <img src="images/logo.png" alt="NAYO Logo">
                 </div>
-                <div class="footer-address">
-                    <h4>Contact Us</h4>
-                    <p>Nancholi Youth Organisation (NAYO)</p>
-                    <p>P.O. Box 1624</p>
-                    <p>Blantyre, Malawi</p>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>P.O. Box 1624, Blantyre, Malawi</p>
                     <p>Email: info@nayomalawi.org</p>
                 </div>
-            </div>
-            <div class="footer-links">
-                <div class="useful-links">
-                    <h4>USEFUL LINKS</h4>
-                    <ul>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#careers">Careers</a></li>
-                        <li><a href="index.html#donate">Donate</a></li>
-                        <li><a href="index.html#terms">Terms & Conditions</a></li>
-                        <li><a href="index.html#privacy">Privacy Policy</a></li>
-                        <li><a href="index.html#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="other-resources">
-                    <h4>PROJECTS</h4>
-                    <ul>
-                        <li><a href="art.html">ART</a></li>
-                        <li><a href="antenatal.html">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.html">PALLIATIVE CARE</a></li>
-                        <li><a href="student.html">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.html">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.html">YOUTH FRIENDLY SERVICES</a></li>
-                    </ul>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/nancholi-youth-organisation-nayo/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.every.org/nancholi-youth-organization" target="_blank">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="slogan">
-            <a href="index.html">One Heart, One Community</a>
-        </div>
-        <div class="copyright">
-            <p>Copyright © NAYO2024</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nancholi Youth Organization. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
-</html> 
+</html>
