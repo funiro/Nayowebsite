@@ -1,55 +1,69 @@
 <?php
-    require_once __DIR__ . '/../includes/functions.php';
+$path = __DIR__;
+require_once __DIR__ . '/mail_config.php';
+require_once "$path/php/volunteer_form_handler.php";
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-    // Enable error reporting for debugging
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    try {
+        // Debug: Log received data
+        error_log("Received form data: " . print_r($_POST, true));
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        try {
-            // Debug: Log received data
-            error_log("Received form data: " . print_r($_POST, true));
+        // Collect only essential form data
+        $formData = array(
+            'Name' => $_POST['name'] ?? '',
+            'Email' => $_POST['email'] ?? '',
+            'Phone' => $_POST['phone'] ?? '',
+            'Areas of Interest' => isset($_POST['interests']) ? implode(', ', $_POST['interests']) : '',
+            'Availability' => $_POST['availability'] ?? '',
+            'Skills' => $_POST['skills'] ?? '',
+            'Why Volunteer' => $_POST['why_volunteer'] ?? '',
+            'Submission Date' => date('Y-m-d H:i:s')
+        );
 
-            // Collect only essential form data
-            $formData = array(
-                'Name' => $_POST['name'] ?? '',
-                'Email' => $_POST['email'] ?? '',
-                'Phone' => $_POST['phone'] ?? '',
-                'Areas of Interest' => isset($_POST['interests']) ? implode(', ', $_POST['interests']) : '',
-                'Availability' => $_POST['availability'] ?? '',
-                'Skills' => $_POST['skills'] ?? '',
-                'Why Volunteer' => $_POST['why_volunteer'] ?? '',
-                'Submission Date' => date('Y-m-d H:i:s')
-            );
+        // Debug: Log processed data
+        error_log("Processed form data: " . print_r($formData, true));
 
-            // Send email to NAYO
-            $result = sendVolunteerEmail($formData, 'info@nayomalawi.org', 'NAYO Team');
-            if ($result !== 1) {
-                throw new Exception("Email sending failed: " . $result);
-            }
+        // Initialize mailer
+        $mailer = new Mailer();
+        
+        // Send email
+        $result = $mailer->sendVolunteerForm($formData);
 
-            // Send confirmation to applicant
-            $result = sendVolunteerEmail($formData, $formData['Email'], $formData['Name']);
-            if ($result !== 1) {
-                throw new Exception("Confirmation email failed: " . $result);
-            }
+        // Debug: Log result
+        error_log("Mail sending result: " . print_r($result, true));
 
-            // Return success response
-            //header('Content-Type: application/json');
-            //echo json_encode(['success' => true, 'message' => 'Application submitted successfully']);
-            echo "Application submited successfuly";
-        } catch (Exception $e) {
-            error_log("Email sending failed: " . $e->getMessage());
+        // Return response
+        if ($result === true) {
             echo json_encode([
-                'success' => false,
-                'message' => 'There was an error submitting your form. Please try again later.'
+                'success' => true, 
+                'message' => 'Thank you for your submission! We will contact you soon.',
+                'debug' => 'Email sent successfully'
             ]);
-            exit;
+        } else {
+            echo json_encode([
+                'success' => false, 
+                'message' => 'There was an error submitting your form. Please try again later.',
+                'debug' => 'SMTP Error: ' . $result
+            ]);
         }
-    } else {
+    } catch (Exception $e) {
+        // Debug: Log exception
+        error_log("Exception occurred: " . $e->getMessage());
+        
         echo json_encode([
             'success' => false, 
-            'message' => 'Invalid request method'
+            'message' => 'There was an error submitting your form. Please try again later.',
+            'debug' => 'Exception: ' . $e->getMessage()
         ]);
     }
+} else {
+    echo json_encode([
+        'success' => false, 
+        'message' => 'Invalid request method',
+        'debug' => 'Request method: ' . $_SERVER['REQUEST_METHOD']
+    ]);
+}
 ?> 

@@ -1054,6 +1054,55 @@ footer {
     height: auto;
 }
 
+.footer-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.footer-address, .partners-section, .programs-section {
+    padding: var(--spacing-md);
+}
+
+.partners-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.programs-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.programs-section li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.programs-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-duration);
+}
+
+.programs-section a:hover {
+    color: var(--primary-color);
+}
+
 .footer-address {
     margin-bottom: 2rem;
 }
