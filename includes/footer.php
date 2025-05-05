@@ -3,66 +3,26 @@
         <div class="footer-info">
             <div class="footer-logo">
                 <a href="/" class="footer-logo-link">
-                    <img src="/images/logo.png" alt="NAYO Logo" class="footer-logo-img" loading="lazy">
+                    <img src="images/logo.png" alt="NAYO Logo" class="footer-logo-img" loading="lazy">
                 </a>
             </div>
             <div class="footer-address">
-                <h4>Contact Us</h4>
-                <p><a href="/contact.php">Contact Us</a></p>
                 <p>Nancholi Youth Organisation (NAYO)</p>
                 <p>P.O. Box 1624</p>
                 <p>Blantyre, Malawi</p>
                 <p>Email: info@nayomalawi.org</p>
             </div>
-            <div class="partners-section">
-                <h4>Our Partners</h4>
-                <div class="partners-grid">
-                    <div class="partner-logo">
-                        <a href="https://stephenlewisfoundation.org/" target="_blank">
-                            <img src="/images/Partners/Stephen.png" alt="Stephen Lewis Foundation" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="partner-logo">
-                        <a href="https://www.masanawaafrika.org/" target="_blank">
-                            <img src="/images/Partners/Masana+wa+Afrika.png" alt="Masana wa Africa" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="partner-logo">
-                        <a href="https://luena.org/" target="_blank">
-                            <img src="/images/Partners/Luena.png" alt="Luena Foundation" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="partner-logo">
-                        <a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank">
-                            <img src="/images/Partners/nayouk.png" alt="NAYO UK Fundraisers" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="partner-logo">
-                        <a href="https://k2.foundation/" target="_blank">
-                            <img src="/images/Partners/k2.png" alt="K2 Foundation" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="partner-logo">
-                        <a href="https://www.health.gov.mw/" target="_blank">
-                            <img src="/images/Partners/Malawi.png" alt="Ministry of Health" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="partner-logo">
-                        <a href="https://www.unaids.org/en" target="_blank">
-                            <img src="/images/Partners/Unaids.png" alt="UNAIDS" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="partner-logo">
-                        <a href="https://foccad.org/" target="_blank">
-                            <img src="/images/Partners/Foccad.jpg" alt="FOCCAD" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="partner-logo">
-                        <a href="https://www.copred.org/" target="_blank">
-                            <img src="/images/Partners/Copred.png" alt="COPRED" loading="lazy">
-                        </a>
-                    </div>
-                </div>
+            <div class="useful-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.php">About Us</a></li>
+                    <li><a href="/careers.php">Careers</a></li>
+                    <li><a href="/staff.php">Staff</a></li>
+                    <li><a href="/volunteer.php">Volunteer</a></li>
+                    <li><a href="/donate.php">Donate</a></li>
+                    <li><a href="/board-members.php">Board Members</a></li>
+                </ul>
             </div>
             <div class="programs-section">
                 <h4>Programs</h4>
@@ -78,10 +38,64 @@
         </div>
     </div>
 
-    <div class="slogan">
-        <a href="/">One Heart, One Community</a>
+    <div class="partners-section">
+        <h4>Our Partners</h4>
+        <div class="partners-line">
+            <div class="partner-logo">
+                <a href="https://stephenlewisfoundation.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                    <img src="images/Partners/Stephen.png" alt="Stephen Lewis Foundation" loading="lazy" width="80" height="auto">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://www.masanawaafrika.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                    <img src="images/Partners/Masana+wa+Afrika.png" alt="Masana wa Africa" loading="lazy" width="80" height="auto">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://luena.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                    <img src="images/Partners/Luena.png" alt="Luena Foundation" loading="lazy" width="80" height="auto">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank" rel="noopener noreferrer" class="partner-link">
+                    <img src="images/Partners/nayouk.png" alt="NAYO UK Fundraisers" loading="lazy" width="80" height="auto">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://k2.foundation/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                    <img src="images/Partners/k2.png" alt="K2 Foundation" loading="lazy" width="80" height="auto">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://www.health.gov.mw/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                    <img src="images/Partners/Malawi.png" alt="Ministry of Health" loading="lazy" width="80" height="auto">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://www.unaids.org/en" target="_blank" rel="noopener noreferrer" class="partner-link">
+                    <img src="images/Partners/Unaids.png" alt="UNAIDS" loading="lazy" width="80" height="auto">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://foccad.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                    <img src="images/Partners/Foccad.jpg" alt="FOCCAD" loading="lazy" width="80" height="auto">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="https://www.copred.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+                    <img src="images/Partners/Copred.png" alt="COPRED" loading="lazy" width="80" height="auto">
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="copyright">
-        <p>&copy; 2025 Nancholi Youth Organisation. All rights reserved.</p>
+
+    <div class="footer-bottom">
+        <div class="slogan">
+            <a href="/">One Heart, One Community</a>
+        </div>
+        <div class="divider"></div>
+        <div class="copyright">
+            &copy; 2025 Nancholi Youth Organisation. All rights reserved.
+        </div>
     </div>
 </footer>

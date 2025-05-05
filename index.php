@@ -4,6 +4,8 @@ session_start();
 
 // Include header configuration
 require_once 'includes/header.php';
+// Include slider configuration
+require_once 'includes/slider-config.php';
 ?>
 
 <!DOCTYPE html>
@@ -49,42 +51,70 @@ require_once 'includes/header.php';
     <script src="js/main.js?v=1.1" defer></script>
     <script>
         // Hero slider functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.slider-dot');
-        const prevButton = document.querySelector('.prev-slide');
-        const nextButton = document.querySelector('.next-slide');
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            const prevButton = document.querySelector('.prev-slide');
+            const nextButton = document.querySelector('.next-slide');
 
-        function showSlide(n) {
-            slides.forEach(slide => slide.style.display = 'none');
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].style.display = 'block';
-            dots[currentSlide].classList.add('active');
-        }
+            if (!slides.length) {
+                console.error('No slider images found');
+                return;
+            }
 
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
+            function showSlide(n) {
+                // Hide current slide
+                slides.forEach(slide => {
+                    slide.style.display = 'none';
+                    slide.classList.remove('active');
+                });
+                
+                // Update dots
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Calculate new slide index
+                currentSlide = (n + slides.length) % slides.length;
+                
+                // Show new slide
+                slides[currentSlide].style.display = 'block';
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
 
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
 
-        // Initialize
-        showSlide(currentSlide);
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
 
-        // Add event listeners
-        prevButton.addEventListener('click', prevSlide);
-        nextButton.addEventListener('click', nextSlide);
+            // Initialize
+            showSlide(0);
 
-        // Auto-advance slides
-        setInterval(nextSlide, 5000);
+            // Add event listeners
+            if (prevButton) prevButton.addEventListener('click', prevSlide);
+            if (nextButton) nextButton.addEventListener('click', nextSlide);
 
-        // Dot navigation
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => showSlide(index));
+            // Auto-advance slides
+            const autoAdvance = setInterval(nextSlide, 5000);
+
+            // Pause on hover
+            const heroSlider = document.querySelector('.hero-slider');
+            if (heroSlider) {
+                heroSlider.addEventListener('mouseenter', () => {
+                    clearInterval(autoAdvance);
+                });
+                heroSlider.addEventListener('mouseleave', () => {
+                    autoAdvance = setInterval(nextSlide, 5000);
+                });
+            }
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => showSlide(index));
+            });
         });
     </script>
     <script type="application/ld+json">
@@ -168,95 +198,7 @@ require_once 'includes/header.php';
     </header>
 
     <section class="hero">
-        <div class="hero-slider">
-            <div class="hero-slide">
-                <img src="/images/hero-1.jpg" alt="Hero Image 1">
-                <div class="hero-overlay"></div>
-                <div class="hero-text">
-                    <span class="welcome-text">WELCOME TO</span>
-                    <h1>NANCHOLI YOUTH ORGANIZATION</h1>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="/images/hero-2.jpg" alt="Hero Image 2">
-                <div class="hero-overlay"></div>
-                <div class="hero-text">
-                    <span class="welcome-text">WELCOME TO</span>
-                    <h1>NANCHOLI YOUTH ORGANIZATION</h1>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="/images/hero-3.jpg" alt="Hero Image 3">
-                <div class="hero-overlay"></div>
-                <div class="hero-text">
-                    <span class="welcome-text">WELCOME TO</span>
-                    <h1>NANCHOLI YOUTH ORGANIZATION</h1>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="/images/hero-4.jpg" alt="Hero Image 4">
-                <div class="hero-overlay"></div>
-                <div class="hero-text">
-                    <span class="welcome-text">WELCOME TO</span>
-                    <h1>NANCHOLI YOUTH ORGANIZATION</h1>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="/images/hero-5.jpg" alt="Hero Image 5">
-                <div class="hero-overlay"></div>
-                <div class="hero-text">
-                    <span class="welcome-text">WELCOME TO</span>
-                    <h1>NANCHOLI YOUTH ORGANIZATION</h1>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="/images/hero-6.jpg" alt="Hero Image 6">
-                <div class="hero-overlay"></div>
-                <div class="hero-text">
-                    <span class="welcome-text">WELCOME TO</span>
-                    <h1>NANCHOLI YOUTH ORGANIZATION</h1>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="/images/outreach.jpg" alt="Outreach Program">
-                <div class="hero-overlay"></div>
-                <div class="hero-text">
-                    <span class="welcome-text">WELCOME TO</span>
-                    <h1>NANCHOLI YOUTH ORGANIZATION</h1>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="/images/student.jpg" alt="Student Support">
-                <div class="hero-overlay"></div>
-                <div class="hero-text">
-                    <span class="welcome-text">WELCOME TO</span>
-                    <h1>NANCHOLI YOUTH ORGANIZATION</h1>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="/images/youth.jpg" alt="Youth Programs">
-                <div class="hero-overlay"></div>
-                <div class="hero-text">
-                    <span class="welcome-text">WELCOME TO</span>
-                    <h1>NANCHOLI YOUTH ORGANIZATION</h1>
-                </div>
-            </div>
-            
-            <div class="slider-controls">
-                <span class="slider-dot active"></span>
-                <span class="slider-dot"></span>
-                <span class="slider-dot"></span>
-                <span class="slider-dot"></span>
-                <span class="slider-dot"></span>
-                <span class="slider-dot"></span>
-                <span class="slider-dot"></span>
-                <span class="slider-dot"></span>
-                <span class="slider-dot"></span>
-            </div>
-            
-            <button class="prev-slide">❮</button>
-            <button class="next-slide">❯</button>
-        </div>
+        <?php echo generateSliderHTML($slider_images); ?>
     </section>
 
     <section class="our-approach">
@@ -316,17 +258,22 @@ require_once 'includes/header.php';
     </section>
 
     <section class="stats">
-        <div class="stat-item">
-            <h3>Programs</h3>
-            <p class="number" data-target="6">6</p>
+        <div class="stats-header">
+            <h2>IMPACT</h2>
         </div>
-        <div class="stat-item">
-            <h3>Districts</h3>
-            <p class="number" data-target="5">5</p>
-        </div>
-        <div class="stat-item">
-            <h3>Yearly Reach</h3>
-            <p class="number" data-target="35000+">35000+</p>
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>Programs</h3>
+                <p class="number" data-target="6">6</p>
+            </div>
+            <div class="stat-item">
+                <h3>Districts</h3>
+                <p class="number" data-target="5">5</p>
+            </div>
+            <div class="stat-item">
+                <h3>Yearly Reach</h3>
+                <p class="number" data-target="35000+">35000+</p>
+            </div>
         </div>
     </section>
 
@@ -392,7 +339,7 @@ require_once 'includes/header.php';
                 </div>
             </div>
             <div class="view-more-staff">
-                <a href="staff.html" class="btn view-more-btn">View More Staff</a>
+                <a href="staff.php" class="btn view-more-btn">View More Staff</a>
             </div>
         </div>
     </section>
@@ -423,115 +370,6 @@ require_once 'includes/header.php';
             </div>
         </div>
     </section>
-
-    <section class="map-section">
-        <div class="map-container">
-            <h2>FIND US</h2>
-            <iframe 
-                class="map-frame"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.566187043514!2d34.98016297378146!3d-15.826812323751433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18d84425915062bf%3A0x1181d8142e74ad86!2sNancholi%20Youth%20Organization!5e0!3m2!1sen!2smw!4v1744812140978!5m2!1sen!2smw"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-        <h3>Yearly Reach</h3>
-        <p class="number" data-target="35000+">35000+</p>
-    </div>
-</section>
-
-<section id="staff" class="staff-section">
-    <div class="staff-container">
-        <div class="staff-header">
-            <h2><a href="staff.php">OUR TEAM</a></h2>
-            <p>Meet the dedicated professionals who make our mission possible.</p>
-        </div>
-        <div class="staff-grid">
-            <div class="staff-card">
-                <div class="staff-image">
-                    <img src="images/staff/george-nedi.jpg" alt="George Nedi">
-                </div>
-                <div class="staff-info">
-                    <h3>George Nedi</h3>
-                    <p>Executive Director</p>
-                    <div class="staff-bio">
-                        <p>George Nedi brings over 20 years of experience and expertise to Nancholi Youth Organization. Currently serving as NAYO's Executive Director, George holds a Master's degree in Marketing and has helped position Nancholi Youth Organisation as one the leading Non-governmental Organisations in Malawi.</p>
-                    </div>
-                    <div class="staff-social">
-                        <a href="https://www.linkedin.com/in/george-nedi-5b74b332/" target="_blank" class="linkedin">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="staff-card">
-                <div class="staff-image">
-                    <img src="images/staff/watson-shuzi.jpg" alt="Watson Shuzi">
-                </div>
-                <div class="staff-info">
-                    <h3>Watson Shuzi</h3>
-                    <p>Head of Programs</p>
-                    <div class="staff-bio">
-                        <p>Watson Shuzi has a background in public health and community development. He is one of the founding members and has been instrumental in developing NAYO's health programs since its inception in 2004.</p>
-                    </div>
-                    <div class="staff-social">
-                        <a href="https://mw.linkedin.com/in/nancholi-youth-organisation-nayo-478a38141" target="_blank" class="linkedin">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="staff-card">
-                <div class="staff-image">
-                    <img src="images/staff/Patson.JPG" alt="Patson Gondwe">
-                </div>
-                <div class="staff-info">
-                    <h3>Patson Gondwe</h3>
-                    <p>Head of Finance</p>
-                    <div class="staff-bio">
-                        <p>Patson Gondwe is a Chartered Accountant and currently serves as the Head of Finance at Nancholi Youth Organisation. He joined the organisation in 2019 and has since brought a wealth of financial expertise and strategic insight to the team.</p>
-                    </div>
-                    <div class="staff-social">
-                        <a href="https://www.linkedin.com/in/patson-gondwe-531326107" target="_blank" class="linkedin">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="view-more-staff">
-            <a href="staff.html" class="btn view-more-btn">View More Staff</a>
-        </div>
-    </div>
-</section>
-
-<section class="youtube-links">
-    <div class="youtube-container">
-        <div class="youtube-box">
-            <iframe 
-                width="100%" 
-                height="315" 
-                src="https://www.youtube.com/embed/K5SwAaZv0aU" 
-                title="NAYO Video 1"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-            </iframe>
-        </div>
-        <div class="youtube-box">
-            <iframe 
-                width="100%" 
-                height="315" 
-                src="https://www.youtube.com/embed/OpfboVkl6gs" 
-                title="NAYO Video 2"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-            </iframe>
-        </div>
-    </div>
-</section>
-
 <section class="map-section">
     <div class="map-container">
         <h2>FIND US</h2>
