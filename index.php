@@ -268,19 +268,19 @@ require_once 'includes/header.php';
         <div class="service-grid">
             <div class="service-card">
                 <img src="images/antenetal.jpg" alt="Antenetal Care">
-                <h3>ANTENETAL<br>CARE</h3>
+                <h3><a href="antenatal.php">ANTENETAL<br>CARE</a></h3>
                 <p>Supporting expectant mothers with comprehensive prenatal care services.</p>
                 <a href="antenatal.html" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
                 <img src="images/art.jpg" alt="ART Program">
-                <h3>ART<br>PROGRAM</h3>
+                <h3><a href="art.php">ART<br>PROGRAM</a></h3>
                 <p>Providing comprehensive care and support for people living with HIV/AIDS.</p>
                 <a href="art.html" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
                 <img src="images/youth-services.jpg" alt="Youth Friendly Services">
-                <h3>YOUTH FRIENDLY<br>SERVICES</h3>
+                <h3><a href="youth.php">YOUTH FRIENDLY<br>SERVICES</a></h3>
                 <p>Offering specialized healthcare and support services for young people.</p>
                 <a href="youth.html" class="btn view-more-btn">View More</a>
             </div>
@@ -289,19 +289,19 @@ require_once 'includes/header.php';
         <div class="service-grid">
             <div class="service-card">
                 <img src="images/palliative.jpg" alt="Palliative Care">
-                <h3>PALLIATIVE<br>CARE</h3>
+                <h3><a href="palliative.php">PALLIATIVE<br>CARE</a></h3>
                 <p>Providing compassionate care and support for those with serious illnesses.</p>
                 <a href="palliative.html" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
                 <img src="images/student.jpg" alt="Student Support">
-                <h3>STUDENT<br>SUPPORT</h3>
+                <h3><a href="student.php">STUDENT<br>SUPPORT</a></h3>
                 <p>Helping students achieve their educational goals through various support programs.</p>
                 <a href="student.html" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
                 <img src="images/outreach.jpg" alt="Out-Reach Clinic">
-                <h3>OUT-REACH<br>CLINIC</h3>
+                <h3><a href="outreach.php">OUT-REACH<br>CLINIC</a></h3>
                 <p>Bringing healthcare services directly to underserved communities.</p>
                 <a href="outreach.html" class="btn view-more-btn">View More</a>
             </div>
@@ -333,7 +333,7 @@ require_once 'includes/header.php';
     <section id="staff" class="staff-section">
         <div class="staff-container">
             <div class="staff-header">
-                <h2>OUR TEAM</h2>
+                <h2><a href="staff.php">OUR TEAM</a></h2>
                 <p>Meet the dedicated professionals who make our mission possible.</p>
             </div>
             <div class="staff-grid">
@@ -441,7 +441,7 @@ require_once 'includes/header.php';
 <section id="staff" class="staff-section">
     <div class="staff-container">
         <div class="staff-header">
-            <h2>OUR TEAM</h2>
+            <h2><a href="staff.php">OUR TEAM</a></h2>
             <p>Meet the dedicated professionals who make our mission possible.</p>
         </div>
         <div class="staff-grid">

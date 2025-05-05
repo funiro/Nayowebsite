@@ -30,16 +30,49 @@
             <h4>Our Partners</h4>
             <div class="partners-grid">
                 <div class="partner-logo">
-                    <img src="/images/partners/partner1.png" alt="Partner 1" loading="lazy">
+                    <a href="https://stephenlewisfoundation.org/" target="_blank">
+                        <img src="/images/Partners/Stephen.png" alt="Stephen Lewis Foundation" loading="lazy">
+                    </a>
                 </div>
                 <div class="partner-logo">
-                    <img src="/images/partners/partner2.png" alt="Partner 2" loading="lazy">
+                    <a href="https://www.masanawaafrika.org/" target="_blank">
+                        <img src="/images/Partners/Masana+wa+Afrika.png" alt="Masana wa Africa" loading="lazy">
+                    </a>
                 </div>
                 <div class="partner-logo">
-                    <img src="/images/partners/partner3.png" alt="Partner 3" loading="lazy">
+                    <a href="https://luena.org/" target="_blank">
+                        <img src="/images/Partners/Luena.png" alt="Luena Foundation" loading="lazy">
+                    </a>
                 </div>
                 <div class="partner-logo">
-                    <img src="/images/partners/partner4.png" alt="Partner 4" loading="lazy">
+                    <a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank">
+                        <img src="/images/Partners/nayouk.png" alt="NAYO UK Fundraisers" loading="lazy">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="https://k2.foundation/" target="_blank">
+                        <img src="/images/Partners/k2.png" alt="K2 Foundation" loading="lazy">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="https://www.health.gov.mw/" target="_blank">
+                        <img src="/images/Partners/Malawi.png" alt="Ministry of Health" loading="lazy">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="https://www.unaids.org/en" target="_blank">
+                        <img src="/images/Partners/Unaids.png" alt="UNAIDS" loading="lazy">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="https://foccad.org/" target="_blank">
+                        <img src="/images/Partners/Foccad.jpg" alt="FOCCAD" loading="lazy">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="https://www.copred.org/" target="_blank">
+                        <img src="/images/Partners/Copred.png" alt="COPRED" loading="lazy">
+                    </a>
                 </div>
             </div>
         </div>

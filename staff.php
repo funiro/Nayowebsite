@@ -147,7 +147,7 @@
                             <img src="images/staff/Patson.jpg" alt="Patson Gondwe">
                         </div>
                         <div class="staff-info">
-                            <h3>Patson Gondwe</h3>
+                            <h3>Patson Gondwe1</h3>
                             <p>Head of Finance</p>
                             <div class="staff-bio">
                                 <p>Patson Gondwe is a Chartered Accountant and currently serves as the Head of Finance at Nancholi Youth Organisation. He joined the organisation in 2019 and has since brought a wealth of financial expertise and strategic insight to the team.</p>
