@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Volunteer Application - NAYO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #2c3e50;
+        }
+        .header img {
+            max-width: 200px;
+            height: auto;
+        }
+        .content {
+            padding: 20px 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .section p {
+            margin: 5px 0;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .section ul li {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .footer {
+            text-align: center;
+            color: #666;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://nayomalawi.org/images/logo.png" alt="NAYO Logo">
+            <h1>New Volunteer Application</h1>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Personal Information</h2>
+                <p><strong>Name:</strong> {name}</p>
+                <p><strong>Email:</strong> {email}</p>
+                <p><strong>Phone:</strong> {phone}</p>
+            </div>
+
+            <div class="section">
+                <h2>Skills and Expertise</h2>
+                <p>{skills}</p>
+            </div>
+
+            <div class="section">
+                <h2>Availability</h2>
+                <p>{availability}</p>
+            </div>
+
+            <div class="section">
+                <h2>Areas of Interest</h2>
+                <ul>
+                    {interests}
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Motivation</h2>
+                <p>{why_volunteer}</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for your interest in volunteering with NAYO!</p>
+            <p>For more information, please visit <a href="https://nayomalawi.org">nayomalawi.org</a></p>
+        </div>
+    </div>
+</body>
+</html>
