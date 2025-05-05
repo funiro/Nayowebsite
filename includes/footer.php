@@ -1,3 +1,54 @@
-<?php
-require_once dirname(__FILE__) . '/footer.html';
-?>
+<footer>
+    <div class="footer-content">
+        <div class="footer-info">
+            <div class="footer-logo">
+                <a href="/" class="footer-logo-link">
+                    <img src="/images/logo.png" alt="NAYO Logo" class="footer-logo-img" loading="lazy">
+                </a>
+            </div>
+            <div class="footer-address">
+                <h4>Contact Us</h4>
+                <p><a href="/contact.php">Contact Us</a></p>
+                <p>Nancholi Youth Organisation (NAYO)</p>
+                <p>P.O. Box 1624</p>
+                <p>Blantyre, Malawi</p>
+                <p>Email: info@nayomalawi.org</p>
+            </div>
+            <div class="other-resources">
+                <h4>PROJECTS</h4>
+                <ul>
+                    <li><a href="/art">ART</a></li>
+                    <li><a href="/antenatal">ANTENATAL CARE</a></li>
+                    <li><a href="/palliative">PALLIATIVE CARE</a></li>
+                    <li><a href="/student">STUDENT SUPPORT</a></li>
+                    <li><a href="/outreach">OUTREACH PROGRAMS</a></li>
+                    <li><a href="/youth">YOUTH FRIENDLY SERVICES</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="partners-section">
+            <h4>Our Partners</h4>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="/images/partners/partner1.png" alt="Partner 1" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="/images/partners/partner2.png" alt="Partner 2" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="/images/partners/partner3.png" alt="Partner 3" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="/images/partners/partner4.png" alt="Partner 4" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slogan">
+        <a href="/">One Heart, One Community</a>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2025 Nancholi Youth Organisation. All rights reserved.</p>
+    </div>
+</footer>

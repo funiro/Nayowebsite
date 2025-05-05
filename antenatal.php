@@ -11,8 +11,37 @@
     <meta name="keywords" content="antenatal care Malawi, maternal health Blantyre, prenatal care Malawi, pregnancy care, maternal healthcare Malawi, NAYO antenatal care, pregnancy support Malawi, maternal education">
     <meta name="author" content="Nancholi Youth Organization">
     <meta name="robots" content="index, follow">
+    // Select the mobile menu toggle button
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     
-    <!-- Open Graph / Facebook -->
+    // Add an event listener to toggle the mobile menu
+    mobileMenuToggle.addEventListener('click', () => {
+      // Toggle the mobile menu
+      const mobileMenu = document.querySelector('.nav-links');
+      mobileMenu.classList.toggle('active');
+    });<!-- ... existing code ... -->
+    
+    <!-- Add ARIA attributes to the hamburger button -->
+    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- ... existing code ... -->// Select the mobile menu toggle button
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    // Add an event listener to toggle the mobile menu
+    mobileMenuToggle.addEventListener('click', () => {
+      // Toggle the mobile menu
+      const mobileMenu = document.querySelector('.nav-links');
+      mobileMenu.classList.toggle('active');
+    });/* Add styles to toggle the mobile menu */
+    .nav-links {
+      display: none;
+    }
+    
+    .nav-links.active {
+      display: block;
+    }
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nayomalawi.org/antenatal.html">
     <meta property="og:title" content="Antenatal Care | Maternal Health Services | Nancholi Youth Organization">
@@ -198,6 +227,8 @@
     </main>
 
     <!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>
-<!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>`n</body>
+<!-- Include footer -->
+    <?php include 'includes/footer.php'; ?>
+</body>
 </html> 
 
