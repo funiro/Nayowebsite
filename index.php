@@ -46,7 +46,18 @@
       "name": "Nancholi Youth Organization (NAYO)",
       "alternateName": "NAYO",
       "url": "https://nayomalawi.org/",
-      "logo": "https://nayomalawi.org/images/logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nayomalawi.org/images/logo.png",
+        "width": 600,
+        "height": 600
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://nayomalawi.org/images/logo.png",
+        "width": 600,
+        "height": 600
+      },
       "description": "NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.",
       "email": "info@nayomalawi.org",
       "address": {
@@ -72,7 +83,7 @@
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <a href="index.html" class="logo-link">
+                <a href="index.php" class="logo-link">
                     <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
@@ -81,40 +92,27 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.php">HOME</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">PROJECTS</a>
                     <ul class="dropdown-menu">
-                        <li><a href="art.html">ART</a></li>
-                        <li><a href="antenatal.html">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.html">PALLIATIVE CARE</a></li>
-                        <li><a href="student.html">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.html">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.html">YOUTH FRIENDLY SERVICES</a></li>
+                        <li><a href="art.php">ART</a></li>
+                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
+                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
+                        <li><a href="student.php">STUDENT SUPPORT</a></li>
+                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
+                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
                     </ul>
                 </li>
-                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="events.php">EVENTS</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">OUR PEOPLE</a>
                     <ul class="dropdown-menu">
-                        <li><a href="board.html">BOARD</a></li>
-                        <li><a href="staff.html">STAFF</a></li>
+                        <li><a href="board.php">BOARD</a></li>
+                        <li><a href="staff.php">STAFF</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">PARTNERS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://www.copred.org/" target="_blank">Copred</a></li>
-                        <li><a href="https://www.foccad.org/" target="_blank">FOCCAD</a></li>
-                        <li><a href="https://k2fasteners.ca/" target="_blank">K2 Fasteners</a></li>
-                        <li><a href="https://luena.org/" target="_blank">Luena Foundation</a></li>
-                        <li><a href="https://www.masanawaafrika.org/" target="_blank">Masana Wa Wafrika</a></li>
-                        <li><a href="https://www.health.gov.mw" target="_blank">Malawi's Ministry of Health</a></li>
-                        <li><a href="https://stephenlewisfoundation.org" target="_blank">Stephen Lewis Foundation</a></li>
-                        <li><a href="https://www.unaids.org/en" target="_blank">UNAIDS</a></li>
-                        <li><a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank">NAYO UK FUNDRAISERS</a></li>
-                    </ul>
-                </li>
+
                 <li><a href="volunteer.php">VOLUNTEER</a></li>
                 <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
             </ul>
@@ -391,6 +389,9 @@
         </div>
     </section>
 
-    <?php include 'includes/footer.php'; ?>
+    <!-- Include footer -->
+    <?php
+    require_once 'includes/footer.php';
+    ?>
 </body>
 </html>
