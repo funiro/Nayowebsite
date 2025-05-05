@@ -14,16 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
             document.body.classList.toggle('menu-open');
-            
-            // Toggle hamburger icon
-            const icon = mobileMenuToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
         });
 
         // Close mobile menu when clicking outside
@@ -32,11 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 navLinks.classList.remove('active');
                 mobileMenuToggle.classList.remove('active');
                 document.body.classList.remove('menu-open');
-                
-                // Reset hamburger icon
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
             }
         });
 
@@ -69,11 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     navLinks.classList.remove('active');
                     mobileMenuToggle.classList.remove('active');
                     document.body.classList.remove('menu-open');
-                    
-                    // Reset hamburger icon
-                    const icon = mobileMenuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
                 }
             });
         });
@@ -88,10 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     const dropdown = toggle.parentElement;
                     dropdown.classList.remove('active');
                 });
-                // Reset hamburger icon
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
             }
         });
     }

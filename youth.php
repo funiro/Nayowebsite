@@ -1,86 +1,8 @@
 <?php
-// Include header and database connections if needed
+$page_title = 'Youth Friendly Services | Nancholi Youth Organization';
 require_once 'includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youth Friendly Services - Nancholi Youth Organization</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/programs.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script type="module" src="js/main.js"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Nancholi Youth Organization (NAYO)",
-      "alternateName": "NAYO",
-      "url": "https://nayomalawi.org/",
-      "logo": "https://nayomalawi.org/images/logo.png",
-      "description": "NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.",
-      "email": "info@nayomalawi.org",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "P.O. Box 1624",
-        "addressLocality": "Blantyre",
-        "addressCountry": "MW"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "General Inquiries",
-        "email": "info@nayomalawi.org"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/nancholi-youth-organisation-nayo/",
-        "https://www.givey.com/nayoukschoolfundraiser20232024",
-        "https://www.every.org/nancholi-youth-organization"
-      ]
-    }
-    </script>
-</head>
-<body>
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="/images/logo.png" alt="NAYO Logo" class="logo-img">
-                    <span class="tagline">One Heart,<br>One Community</span>
-                </a>
-            </div>
-            <button class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.php">HOME</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">PROJECTS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="art.php">ART</a></li>
-                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
-                        <li><a href="student.php">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
-                    </ul>
-                </li>
-                <li><a href="events.php">EVENTS</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">OUR PEOPLE</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="board.php">BOARD</a></li>
-                        <li><a href="staff.php">STAFF</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="volunteer.php">VOLUNTEER</a></li>
-                <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
-            </ul>
-        </nav>
-    </header>
+<link rel="stylesheet" href="/css/youth.css">
 
     <main class="program-content">
         <section class="program-hero">
@@ -105,11 +27,11 @@ require_once 'includes/header.php';
                         <div class="gallery-caption">Empowering youth through health education and support</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/youth-friendly3.jpg" alt="Youth engagement activities">
+                        <img src="/images/youth-friendly3.jpg" alt="Youth engagement activities">
                         <div class="gallery-caption">Creating safe spaces for youth engagement</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/outreach.jpg" alt="Youth community outreach">
+                        <img src="/images/outreach.jpg" alt="Youth community outreach">
                         <div class="gallery-caption">Community outreach and youth empowerment programs</div>
                     </div>
                 </div>

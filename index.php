@@ -7,10 +7,6 @@ require_once 'includes/header.php';
 // Include slider configuration
 require_once 'includes/slider-config.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi</title>
@@ -45,10 +41,10 @@ require_once 'includes/slider-config.php';
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nayomalawi.org/">
     
-    <link rel="stylesheet" href="css/styles.css?v=1.1">
-    <link rel="stylesheet" href="css/programs.css?v=1.1">
+    <link rel="stylesheet" href="/css/styles.css?v=1.1">
+    <link rel="stylesheet" href="/css/programs.css?v=1.1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js?v=1.1" defer></script>
+    <script src="/js/main.js?v=1.1" defer></script>
     <script>
         // Hero slider functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -158,44 +154,7 @@ require_once 'includes/slider-config.php';
     </script>
 </head>
 <body>
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
-                    <span class="tagline">One Heart,<br>One Community</span>
-                </a>
-            </div>
-            <button class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.php">HOME</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">PROJECTS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="art.php">ART</a></li>
-                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
-                        <li><a href="student.php">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
-                    </ul>
-                </li>
-                <li><a href="events.php">EVENTS</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">OUR PEOPLE</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="board.php">BOARD</a></li>
-                        <li><a href="staff.php">STAFF</a></li>
-                    </ul>
-                </li>
 
-                <li><a href="volunteer.php">VOLUNTEER</a></li>
-                <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <section class="hero">
         <?php echo generateSliderHTML($slider_images); ?>
