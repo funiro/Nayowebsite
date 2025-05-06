@@ -154,6 +154,37 @@
                     <a href="volunteer.php" class="btn contact-btn">Volunteer</a>
                 </div>
             </div>
+
+            <!-- FAQ Section -->
+            <section class="program-faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">Who can access ART services at NAYO?</div>
+                        <div class="faq-answer">
+                            <p>Anyone living with HIV/AIDS in our catchment area can access ART services. We provide care regardless of age, gender, or background.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is ART?</div>
+                        <div class="faq-answer">
+                            <p>ART stands for Antiretroviral Therapy, a treatment for HIV/AIDS that helps people live longer, healthier lives and reduces the risk of transmission.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is ART treatment free at NAYO?</div>
+                        <div class="faq-answer">
+                            <p>Yes, all ART services provided by NAYO are free of charge to clients.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I enroll in the ART program?</div>
+                        <div class="faq-answer">
+                            <p>Visit our facility or contact us directly. Our team will guide you through the enrollment process and provide the necessary support.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
 
