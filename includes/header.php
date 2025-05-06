@@ -8,6 +8,8 @@ ini_set('display_errors', 1);
 
 // Define base path
 $base_path = dirname(__DIR__);
+// Detect if on localhost or live server to set correct base URL
+$base_url = (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/dashboard/nayo-website' : '';
 ?>
 
 <!DOCTYPE html>
@@ -31,13 +33,13 @@ $base_path = dirname(__DIR__);
     <meta property="og:description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
     <meta property="og:image" content="https://nayomalawi.org/images/hero-1.jpg">
     
-    <link rel="stylesheet" href="/dashboard/nayo-website/css/styles.css">
-    <link rel="stylesheet" href="/dashboard/nayo-website/css/programs.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
     <?php if (isset($page_title) && strpos($page_title, 'Youth Friendly Services') !== false) { ?>
-        <link rel="stylesheet" href="/dashboard/nayo-website/css/youth.css">
+        <link rel="stylesheet" href="<?php echo $base_url; ?>/css/youth.css">
     <?php } ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="/dashboard/nayo-website/js/main.js" defer type="text/javascript"></script>
+    <script src="<?php echo $base_url; ?>/js/main.js" defer type="text/javascript"></script>
     <!-- Structured data for organization and logo (for search engines) -->
     <script type="application/ld+json">
     {
@@ -293,8 +295,8 @@ $base_path = dirname(__DIR__);
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <a href="/dashboard/nayo-website/index.php" class="logo-link">
-                    <img src="/dashboard/nayo-website/images/logo.png" alt="NAYO Logo" class="logo-img" style="max-height: 60px;">
+                <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
+                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img" style="max-height: 60px;">
                     <span class="tagline" style="font-size: 0.9rem; color: #333;">One Heart,<br>One Community</span>
                 </a>
             </div>
@@ -306,28 +308,28 @@ $base_path = dirname(__DIR__);
                 </span>
             </button>
             <ul class="nav-links">
-                <li><a href="/dashboard/nayo-website/index.php">HOME</a></li>
+                <li><a href="<?php echo $base_url; ?>/index.php">HOME</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">PROJECTS</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/dashboard/nayo-website/art.php">ART</a></li>
-                        <li><a href="/dashboard/nayo-website/antenatal.php">ANTENATAL CARE</a></li>
-                        <li><a href="/dashboard/nayo-website/palliative.php">PALLIATIVE CARE</a></li>
-                        <li><a href="/dashboard/nayo-website/student.php">STUDENT SUPPORT</a></li>
-                        <li><a href="/dashboard/nayo-website/outreach.php">OUTREACH PROGRAMS</a></li>
-                        <li><a href="/dashboard/nayo-website/youth.php">YOUTH FRIENDLY SERVICES</a></li>
+                        <li><a href="<?php echo $base_url; ?>/art.php">ART</a></li>
+                        <li><a href="<?php echo $base_url; ?>/antenatal.php">ANTENATAL CARE</a></li>
+                        <li><a href="<?php echo $base_url; ?>/palliative.php">PALLIATIVE CARE</a></li>
+                        <li><a href="<?php echo $base_url; ?>/student.php">STUDENT SUPPORT</a></li>
+                        <li><a href="<?php echo $base_url; ?>/outreach.php">OUTREACH PROGRAMS</a></li>
+                        <li><a href="<?php echo $base_url; ?>/youth.php">YOUTH FRIENDLY SERVICES</a></li>
                     </ul>
                 </li>
-                <li><a href="/dashboard/nayo-website/events.php">EVENTS</a></li>
+                <li><a href="<?php echo $base_url; ?>/events.php">EVENTS</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">OUR PEOPLE</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/dashboard/nayo-website/board.php">BOARD</a></li>
-                        <li><a href="/dashboard/nayo-website/staff.php">STAFF</a></li>
+                        <li><a href="<?php echo $base_url; ?>/board.php">BOARD</a></li>
+                        <li><a href="<?php echo $base_url; ?>/staff.php">STAFF</a></li>
                     </ul>
                 </li>
 
-                <li><a href="/dashboard/nayo-website/volunteer.php">VOLUNTEER</a></li>
+                <li><a href="<?php echo $base_url; ?>/volunteer.php">VOLUNTEER</a></li>
                 <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
             </ul>
         </nav>

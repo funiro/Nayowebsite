@@ -2,6 +2,7 @@
 // Start session first thing
 session_start();
 $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi";
+$base_url = "http://localhost/dashboard/nayo-website/";
 ?>
 
 <?php include_once 'includes/header.php'; ?>
@@ -9,7 +10,7 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
     <section class="hero">
         <div class="hero-slider">
             <div class="hero-slide active">
-                <img src="/dashboard/nayo-website/images/hero-1.jpg" alt="Hero Image 1">
+                <img src="<?php echo $base_url; ?>/images/hero-1.jpg" alt="Hero Image 1">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
@@ -21,7 +22,7 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="/dashboard/nayo-website/images/hero-2.jpg" alt="Hero Image 2">
+                <img src="<?php echo $base_url; ?>/images/hero-2.jpg" alt="Hero Image 2">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
@@ -33,7 +34,7 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="/dashboard/nayo-website/images/hero-3.jpg" alt="Hero Image 3">
+                <img src="<?php echo $base_url; ?>/images/hero-3.jpg" alt="Hero Image 3">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
@@ -45,7 +46,7 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="/dashboard/nayo-website/images/hero-4.jpg" alt="Hero Image 4">
+                <img src="<?php echo $base_url; ?>/images/hero-4.jpg" alt="Hero Image 4">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
@@ -57,7 +58,7 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="/dashboard/nayo-website/images/hero-5.jpg" alt="Hero Image 5">
+                <img src="<?php echo $base_url; ?>/images/hero-5.jpg" alt="Hero Image 5">
                 <div class="hero-overlay"></div>
                 <div class="hero-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 10; width: 90%; max-width: 900px; padding: 2rem;">
                     <div style="margin-bottom: 1.5rem;">
@@ -69,7 +70,7 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="/dashboard/nayo-website/images/hero-6.jpg" alt="Hero Image 6">
+                <img src="<?php echo $base_url; ?>/images/hero-6.jpg" alt="Hero Image 6">
                 <div class="hero-overlay"></div>
                 <div class="hero-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 10; width: 90%; max-width: 900px; padding: 2rem;">
                     <div style="margin-bottom: 1.5rem;">
@@ -99,43 +100,43 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
     <section class="services">
         <div class="service-grid">
             <div class="service-card">
-                <img src="/dashboard/nayo-website/images/antenatal.jpg" alt="Antenatal Care">
-                <h3><a href="/dashboard/nayo-website/antenatal.php">ANTENATAL<br>CARE</a></h3>
+                <img src="<?php echo $base_url; ?>/images/antenatal.jpg" alt="Antenatal Care">
+                <h3><a href="<?php echo $base_url; ?>/antenatal.php">ANTENATAL<br>CARE</a></h3>
                 <p>Supporting expectant mothers with comprehensive prenatal care services.</p>
-                <a href="/dashboard/nayo-website/antenatal.php" class="btn view-more-btn">View More</a>
+                <a href="<?php echo $base_url; ?>/antenatal.php" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
-                <img src="/dashboard/nayo-website/images/art.jpg" alt="ART Program">
-                <h3><a href="/dashboard/nayo-website/art.php">ART<br>PROGRAM</a></h3>
+                <img src="<?php echo $base_url; ?>/images/art.jpg" alt="ART Program">
+                <h3><a href="<?php echo $base_url; ?>/art.php">ART<br>PROGRAM</a></h3>
                 <p>Providing comprehensive care and support for people living with HIV/AIDS.</p>
-                <a href="/dashboard/nayo-website/art.php" class="btn view-more-btn">View More</a>
+                <a href="<?php echo $base_url; ?>/art.php" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
-                <img src="/dashboard/nayo-website/images/youth-services.jpg" alt="Youth Friendly Services">
-                <h3><a href="/dashboard/nayo-website/youth.php">YOUTH FRIENDLY<br>SERVICES</a></h3>
+                <img src="<?php echo $base_url; ?>/images/youth-services.jpg" alt="Youth Friendly Services">
+                <h3><a href="<?php echo $base_url; ?>/youth.php">YOUTH FRIENDLY<br>SERVICES</a></h3>
                 <p>Offering specialized healthcare and support services for young people.</p>
-                <a href="/dashboard/nayo-website/youth.php" class="btn view-more-btn">View More</a>
+                <a href="<?php echo $base_url; ?>/youth.php" class="btn view-more-btn">View More</a>
             </div>
         </div>
 
         <div class="service-grid">
             <div class="service-card">
-                <img src="/dashboard/nayo-website/images/palliative.jpg" alt="Palliative Care">
-                <h3><a href="/dashboard/nayo-website/palliative.php">PALLIATIVE<br>CARE</a></h3>
+                <img src="<?php echo $base_url; ?>/images/palliative.jpg" alt="Palliative Care">
+                <h3><a href="<?php echo $base_url; ?>/palliative.php">PALLIATIVE<br>CARE</a></h3>
                 <p>Providing compassionate care and support for those with serious illnesses.</p>
-                <a href="/dashboard/nayo-website/palliative.php" class="btn view-more-btn">View More</a>
+                <a href="<?php echo $base_url; ?>/palliative.php" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
-                <img src="/dashboard/nayo-website/images/student.jpg" alt="Student Support">
-                <h3><a href="/dashboard/nayo-website/student.php">STUDENT<br>SUPPORT</a></h3>
+                <img src="<?php echo $base_url; ?>/images/student.jpg" alt="Student Support">
+                <h3><a href="<?php echo $base_url; ?>/student.php">STUDENT<br>SUPPORT</a></h3>
                 <p>Helping students achieve their educational goals through various support programs.</p>
-                <a href="/dashboard/nayo-website/student.php" class="btn view-more-btn">View More</a>
+                <a href="<?php echo $base_url; ?>/student.php" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
-                <img src="/dashboard/nayo-website/images/outreach.jpg" alt="Outreach Clinic">
-                <h3><a href="/dashboard/nayo-website/outreach.php">OUTREACH<br>CLINIC</a></h3>
+                <img src="<?php echo $base_url; ?>/images/outreach.jpg" alt="Outreach Clinic">
+                <h3><a href="<?php echo $base_url; ?>/outreach.php">OUTREACH<br>CLINIC</a></h3>
                 <p>Bringing healthcare services directly to underserved communities.</p>
-                <a href="/dashboard/nayo-website/outreach.php" class="btn view-more-btn">View More</a>
+                <a href="<?php echo $base_url; ?>/outreach.php" class="btn view-more-btn">View More</a>
             </div>
         </div>
     </section>
@@ -180,7 +181,7 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
             <div class="staff-grid">
                 <div class="staff-card">
                     <div class="staff-image">
-                        <img src="images/staff/george-nedi.jpg" alt="George Nedi">
+                        <img src="<?php echo $base_url; ?>/images/staff/george-nedi.jpg" alt="George Nedi">
                     </div>
                     <div class="staff-info">
                         <h3>George Nedi</h3>
@@ -198,7 +199,7 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
 
                 <div class="staff-card">
                     <div class="staff-image">
-                        <img src="images/staff/watson-shuzi.jpg" alt="Watson Shuzi">
+                        <img src="<?php echo $base_url; ?>/images/staff/watson-shuzi.jpg" alt="Watson Shuzi">
                     </div>
                     <div class="staff-info">
                         <h3>Watson Shuzi</h3>
@@ -216,7 +217,7 @@ $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthca
 
                 <div class="staff-card">
                     <div class="staff-image">
-                        <img src="images/staff/Patson.JPG" alt="Patson Gondwe">
+                        <img src="<?php echo $base_url; ?>/images/staff/Patson.JPG" alt="Patson Gondwe">
                     </div>
                     <div class="staff-info">
                         <h3>Patson Gondwe</h3>

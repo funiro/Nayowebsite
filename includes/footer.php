@@ -4,8 +4,8 @@
             <div class="footer-columns" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
                 <div class="footer-column" style="flex: 1; min-width: 200px;">
                     <div class="footer-logo" style="margin-bottom: 15px;">
-                        <a href="/dashboard/nayo-website/index.php" style="display: inline-block;">
-                            <img src="/dashboard/nayo-website/images/logo.png" alt="NAYO Logo" class="footer-logo-img" style="max-width: 100px; height: auto;" loading="lazy">
+                        <a href="<?php echo $base_url; ?>/dashboard/nayo-website/index.php" style="display: inline-block;">
+                            <img src="<?php echo $base_url; ?>/images/nayo-logo.png" alt="NAYO Logo" class="footer-logo-img" style="max-width: 100px; height: auto;" loading="lazy">
                         </a>
                     </div>
                     <div class="footer-address" style="color: white;">
@@ -23,30 +23,30 @@
                 <div class="footer-column" style="flex: 1; min-width: 200px;">
                     <h4 style="color: white; margin-top: 0; margin-bottom: 20px; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase;">USEFUL LINKS</h4>
                     <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/index.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Home</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/contact.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Contact Us</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/staff.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Staff</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/volunteer.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Volunteer</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/contact.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Donate</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/board.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Board Members</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/index.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Home</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/contact.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Contact Us</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/staff.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Staff</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/volunteer.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Volunteer</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/contact.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Donate</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/board.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Board Members</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column" style="flex: 1; min-width: 200px;">
                     <h4 style="color: white; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; letter-spacing: 1px; text-transform: uppercase;">PROGRAMS</h4>
                     <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/art.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> ART</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/antenatal.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Antenatal Care</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/palliative.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Palliative Care</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/student.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Student Support</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/outreach.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Outreach Programs</a></li>
-                        <li style="margin-bottom: 10px;"><a href="/dashboard/nayo-website/youth.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Youth Friendly Services</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/art.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> ART</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/antenatal.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Antenatal Care</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/palliative.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Palliative Care</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/student.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Student Support</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/outreach.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Outreach Programs</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/youth.php" style="color: white; text-decoration: none; display: flex; align-items: center;"><i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-right: 8px; color: rgba(255,255,255,0.7);"></i> Youth Friendly Services</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     
-    <h4 style="text-align: center; margin-top: 40px; margin-bottom: 25px; max-width: 1200px; margin: 40px auto 25px auto;"><a href="/dashboard/nayo-website/partners.php" class="partner-heading" style="color: white; text-decoration: none; font-size: 1.8rem; font-weight: bold; letter-spacing: 1px;">OUR PARTNERS</a></h4>
+    <h4 style="text-align: center; margin-top: 40px; margin-bottom: 25px; max-width: 1200px; margin: 40px auto 25px auto;"><a href="<?php echo $base_url; ?>/dashboard/nayo-website/partners.php" class="partner-heading" style="color: white; text-decoration: none; font-size: 1.8rem; font-weight: bold; letter-spacing: 1px;">OUR PARTNERS</a></h4>
     <div class="partners-container" style="width: 100%; max-width: 1200px; margin: 0 auto; background-color: white; padding: 30px 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
             <div class="partners-scroll" style="position: relative; overflow: hidden; margin: 0 40px;">
                 <div class="partners-nav prev" id="partners-prev" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background-color: rgba(255,255,255,0.8); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
@@ -74,31 +74,31 @@
                 </style>
                     <!-- Official NAYO partners only -->
                     <a href="https://stephenlewisfoundation.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="/dashboard/nayo-website/images/Partners/Stephen.png" alt="Stephen Lewis Foundation" style="max-width: 100%; max-height: 100%;" loading="lazy">
+                        <img src="<?php echo $base_url; ?>/images/partners/Stephen.png" alt="Stephen Lewis Foundation" style="max-width: 100%; max-height: 100%;" loading="lazy">
                     </a>
                     <a href="https://www.masanawaafrika.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="/dashboard/nayo-website/images/Partners/Masana+wa+Afrika.png" alt="Masana wa Africa" style="max-width: 100%; max-height: 100%;" loading="lazy">
+                        <img src="<?php echo $base_url; ?>/images/partners/Masana+wa+Afrika.png" alt="Masana wa Africa" style="max-width: 100%; max-height: 100%;" loading="lazy">
                     </a>
                     <a href="https://luena.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="/dashboard/nayo-website/images/Partners/Luena.png" alt="Luena Foundation" style="max-width: 100%; max-height: 100%;" loading="lazy">
+                        <img src="<?php echo $base_url; ?>/images/partners/Luena.png" alt="Luena Foundation" style="max-width: 100%; max-height: 100%;" loading="lazy">
                     </a>
                     <a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="/dashboard/nayo-website/images/Partners/nayouk.png" alt="NAYO UK Fundraisers" style="max-width: 100%; max-height: 100%;" loading="lazy">
+                        <img src="<?php echo $base_url; ?>/images/partners/nayouk.png" alt="NAYO UK Fundraisers" style="max-width: 100%; max-height: 100%;" loading="lazy">
                     </a>
                     <a href="https://k2.foundation/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="/dashboard/nayo-website/images/Partners/k2.png" alt="K2 Foundation" style="max-width: 100%; max-height: 100%;" loading="lazy">
+                        <img src="<?php echo $base_url; ?>/images/partners/k2.png" alt="K2 Foundation" style="max-width: 100%; max-height: 100%;" loading="lazy">
                     </a>
                     <a href="https://www.health.gov.mw/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="/dashboard/nayo-website/images/Partners/Malawi.png" alt="Ministry of Health" style="max-width: 100%; max-height: 100%;" loading="lazy">
+                        <img src="<?php echo $base_url; ?>/images/partners/Malawi.png" alt="Ministry of Health" style="max-width: 100%; max-height: 100%;" loading="lazy">
                     </a>
                     <a href="https://www.unaids.org/en" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="/dashboard/nayo-website/images/Partners/Unaids.png" alt="UNAIDS" style="max-width: 100%; max-height: 100%;" loading="lazy">
+                        <img src="<?php echo $base_url; ?>/images/partners/Unaids.png" alt="UNAIDS" style="max-width: 100%; max-height: 100%;" loading="lazy">
                     </a>
                     <a href="https://foccad.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="/dashboard/nayo-website/images/Partners/Foccad.jpg" alt="FOCCAD" style="max-width: 100%; max-height: 100%;" loading="lazy">
+                        <img src="<?php echo $base_url; ?>/images/partners/Foccad.jpg" alt="FOCCAD" style="max-width: 100%; max-height: 100%;" loading="lazy">
                     </a>
                     <a href="https://www.copred.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="/dashboard/nayo-website/images/Partners/Copred.png" alt="COPRED" style="max-width: 100%; max-height: 100%;" loading="lazy">
+                        <img src="<?php echo $base_url; ?>/images/partners/Copred.png" alt="COPRED" style="max-width: 100%; max-height: 100%;" loading="lazy">
                     </a>
                 </div>
             </div>
@@ -125,7 +125,7 @@
     <div class="footer-bottom" style="background-color: #006b41; padding: 30px 0;">
         <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div class="footer-slogan" style="text-align: center; font-size: 1.2rem; font-weight: normal; color: white; margin-bottom: 15px; letter-spacing: 1px;">
-                <a href="/dashboard/nayo-website/index.php" style="color: white; text-decoration: none;" class="typewrite" data-period="2000" data-type='[ "One Heart, One Community", "Empowering Youth", "Building Communities", "Changing Lives" ]'><span class="wrap"></span></a>
+                <a href="<?php echo $base_url; ?>/dashboard/nayo-website/index.php" style="color: white; text-decoration: none;" class="typewrite" data-period="2000" data-type='[ "One Heart, One Community", "Empowering Youth", "Building Communities", "Changing Lives" ]'><span class="wrap"></span></a>
             </div>
             <script>
             // Typing effect for footer slogan

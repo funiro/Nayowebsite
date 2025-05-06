@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    // Detect if on localhost or live server to set correct base URL
+    $base_url = (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/dashboard/nayo-website' : '';
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antenatal Care | Maternal Health Services | Nancholi Youth Organization</title>
@@ -11,37 +15,34 @@
     <meta name="keywords" content="antenatal care Malawi, maternal health Blantyre, prenatal care Malawi, pregnancy care, maternal healthcare Malawi, NAYO antenatal care, pregnancy support Malawi, maternal education">
     <meta name="author" content="Nancholi Youth Organization">
     <meta name="robots" content="index, follow">
+    
+    <script>
     // Select the mobile menu toggle button
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        
+        // Add an event listener to toggle the mobile menu
+        mobileMenuToggle.addEventListener('click', () => {
+          // Toggle the mobile menu
+          const mobileMenu = document.querySelector('.nav-links');
+          mobileMenu.classList.toggle('active');
+        });
+    });
+    </script>
     
-    // Add an event listener to toggle the mobile menu
-    mobileMenuToggle.addEventListener('click', () => {
-      // Toggle the mobile menu
-      const mobileMenu = document.querySelector('.nav-links');
-      mobileMenu.classList.toggle('active');
-    });<!-- ... existing code ... -->
-    
-    <!-- Add ARIA attributes to the hamburger button -->
-    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-        <i class="fas fa-bars"></i>
-    </button>
-    
-    <!-- ... existing code ... -->// Select the mobile menu toggle button
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    
-    // Add an event listener to toggle the mobile menu
-    mobileMenuToggle.addEventListener('click', () => {
-      // Toggle the mobile menu
-      const mobileMenu = document.querySelector('.nav-links');
-      mobileMenu.classList.toggle('active');
-    });/* Add styles to toggle the mobile menu */
-    .nav-links {
-      display: none;
+    <style>
+    /* Add styles to toggle the mobile menu */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+        
+        .nav-links.active {
+            display: block;
+        }
     }
+    </style>
     
-    .nav-links.active {
-      display: block;
-    }
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nayomalawi.org/antenatal.html">
     <meta property="og:title" content="Antenatal Care | Maternal Health Services | Nancholi Youth Organization">
@@ -58,10 +59,10 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nayomalawi.org/antenatal.php">
     
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/programs.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js" defer></script>
+    <script src="<?php echo $base_url; ?>/js/main.js" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -95,8 +96,8 @@
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
+                <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
+                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img">
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
             </div>
@@ -104,28 +105,28 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="index.php">HOME</a></li>
+                <li><a href="<?php echo $base_url; ?>/index.php">HOME</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">PROJECTS</a>
                     <ul class="dropdown-menu">
-                        <li><a href="art.php">ART</a></li>
-                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
-                        <li><a href="student.php">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
+                        <li><a href="<?php echo $base_url; ?>/art.php">ART</a></li>
+                        <li><a href="<?php echo $base_url; ?>/antenatal.php">ANTENATAL CARE</a></li>
+                        <li><a href="<?php echo $base_url; ?>/palliative.php">PALLIATIVE CARE</a></li>
+                        <li><a href="<?php echo $base_url; ?>/student.php">STUDENT SUPPORT</a></li>
+                        <li><a href="<?php echo $base_url; ?>/outreach.php">OUTREACH PROGRAMS</a></li>
+                        <li><a href="<?php echo $base_url; ?>/youth.php">YOUTH FRIENDLY SERVICES</a></li>
                     </ul>
                 </li>
-                <li><a href="events.php">EVENTS</a></li>
+                <li><a href="<?php echo $base_url; ?>/events.php">EVENTS</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">OUR PEOPLE</a>
                     <ul class="dropdown-menu">
-                        <li><a href="board.php">BOARD</a></li>
-                        <li><a href="staff.php">STAFF</a></li>
+                        <li><a href="<?php echo $base_url; ?>/board.php">BOARD</a></li>
+                        <li><a href="<?php echo $base_url; ?>/staff.php">STAFF</a></li>
                     </ul>
                 </li>
 
-                <li><a href="volunteer.php">VOLUNTEER</a></li>
+                <li><a href="<?php echo $base_url; ?>/volunteer.php">VOLUNTEER</a></li>
                 <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
             </ul>
         </nav>
@@ -135,7 +136,7 @@
         <section class="program-hero">
             <h1>Antenatal Care Program</h1>
             <div class="program-image">
-                <img src="images/antenatal.jpg" alt="Antenatal Care Program">
+                <img src="<?php echo $base_url; ?>/images/antenatal.jpg" alt="Antenatal Care Program">
             </div>
         </section>
 
@@ -180,7 +181,7 @@
                 <p>Support our Antenatal Care program through donations or volunteering. Your contribution helps ensure healthy mothers and babies in our community.</p>
                 <div class="action-buttons">
                     <a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="btn donate-btn">Donate Now</a>
-                    <a href="volunteer.php" class="btn contact-btn">Volunteer</a>
+                    <a href="<?php echo $base_url; ?>/volunteer.php" class="btn contact-btn">Volunteer</a>
                 </div>
             </div>
 
@@ -220,25 +221,25 @@
             <div class="gallery-container">
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="images/Gallery/Antinetal/antinatal-1.jpg" alt="Antenatal Care Activity">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Antinetal/antinatal-1.jpg" alt="Antenatal Care Activity">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Antinetal/antinatal-2.jpg" alt="Antenatal Care Support">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Antinetal/antinatal-2.jpg" alt="Antenatal Care Support">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Antinetal/antinatal-3.jpg" alt="Antenatal Care Team">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Antinetal/antinatal-3.jpg" alt="Antenatal Care Team">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Antinetal/antinatal-4.jpg" alt="Antenatal Care Service">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Antinetal/antinatal-4.jpg" alt="Antenatal Care Service">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Antinetal/antinatal-5.jpg" alt="Antenatal Care Program">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Antinetal/antinatal-5.jpg" alt="Antenatal Care Program">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Antinetal/antinatal-6.jpg" alt="Antenatal Care Outreach">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Antinetal/antinatal-6.jpg" alt="Antenatal Care Outreach">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Antinetal/antinatal-7.jpg" alt="Antenatal Care Community">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Antinetal/antinatal-7.jpg" alt="Antenatal Care Community">
                     </div>
                 </div>
             </div>
@@ -260,4 +261,3 @@
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>
-
