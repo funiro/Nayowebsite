@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <!-- Main Pages -->
     <url>
         <loc>https://nayomalawi.org/</loc>
-        <lastmod>2025-05-01</lastmod>
+        <lastmod>2025-05-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://nayomalawi.org/dashboard/nayo-website/images/logo.png</image:loc>
+            <image:title>Nancholi Youth Organisation (NAYO) Logo</image:title>
+            <image:caption>NAYO - One Heart, One Community</image:caption>
+        </image:image>
     </url>
     
     <!-- Project Pages -->
@@ -79,8 +84,16 @@
     <!-- Thank You Page -->
     <url>
         <loc>https://nayomalawi.org/thank-you.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <lastmod>2025-05-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
+    </url>
+    
+    <!-- Partners Page -->
+    <url>
+        <loc>https://nayomalawi.org/partners.php</loc>
+        <lastmod>2025-05-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

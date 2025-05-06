@@ -1,14 +1,16 @@
 <?php
-$page_title = 'Youth Friendly Services | Nancholi Youth Organization';
-require_once 'includes/header.php';
+// Start session first thing
+session_start();
+$page_title = "Youth Friendly Services - Nancholi Youth Organization";
 ?>
-<link rel="stylesheet" href="/css/youth.css">
+
+<?php include_once 'includes/header.php'; ?>
 
     <main class="program-content">
         <section class="program-hero">
             <h1>Youth Friendly Services</h1>
             <div class="program-image">
-                <img src="/images/youth.jpg" alt="Youth Friendly Services">
+                <img src="/dashboard/nayo-website/images/youth.jpg" alt="Youth Friendly Services">
             </div>
         </section>
 
@@ -23,15 +25,15 @@ require_once 'includes/header.php';
                 <h2>Our Youth-Friendly Environment</h2>
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="/images/youth-friendly2.jpg" alt="Youth-friendly services in action">
+                        <img src="/dashboard/nayo-website/images/youth-friendly2.jpg" alt="Youth-friendly services in action">
                         <div class="gallery-caption">Empowering youth through health education and support</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="/images/youth-friendly3.jpg" alt="Youth engagement activities">
+                        <img src="/dashboard/nayo-website/images/youth-friendly3.jpg" alt="Youth engagement activities">
                         <div class="gallery-caption">Creating safe spaces for youth engagement</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="/images/outreach.jpg" alt="Youth community outreach">
+                        <img src="/dashboard/nayo-website/images/outreach.jpg" alt="Youth community outreach">
                         <div class="gallery-caption">Community outreach and youth empowerment programs</div>
                     </div>
                 </div>
@@ -51,6 +53,20 @@ require_once 'includes/header.php';
 
             <div class="program-impact">
                 <h2>Our Impact</h2>
+                <div class="impact-stats">
+                    <div class="stat-box">
+                        <h3>Youth Reached</h3>
+                        <p class="number">5,000+</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Testing Services</h3>
+                        <p class="number">2,500+</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Support Groups</h3>
+                        <p class="number">15+</p>
+                    </div>
+                </div>
                 <div class="achievement-box">
                     <p>Since 2004, NAYO has been making significant strides in:</p>
                     <ul>
@@ -70,6 +86,33 @@ require_once 'includes/header.php';
                     <a href="volunteer.php" class="btn contact-btn">Volunteer</a>
                 </div>
             </div>
+            
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3 class="faq-question">What services are available for youth?</h3>
+                        <div class="faq-answer">
+                            <p>Our youth-friendly services include HIV testing and counseling, access to contraceptives, sexual and reproductive health education, and support for youth living with HIV/AIDS.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Is the service confidential?</h3>
+                        <div class="faq-answer">
+                            <p>Yes, all our services are completely confidential. We create a safe and non-judgmental environment where youth can seek help without fear of stigma.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">How can I access these services?</h3>
+                        <div class="faq-answer">
+                            <p>You can visit our center in Nancholi, Blantyre, or contact us to learn about our mobile outreach programs that bring services directly to communities.</p>
+                        </div>
+                    </div>
+                </div>
+                    <a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="btn donate-btn">Donate Now</a>
+                    <a href="volunteer.php" class="btn contact-btn">Volunteer</a>
+                </div>
+            </div>
 
             <div class="program-faq">
                 <h2>Frequently Asked Questions</h2>
@@ -77,7 +120,7 @@ require_once 'includes/header.php';
                     <div class="faq-item">
                         <div class="faq-question">What is Nancholi Youth Organization (NAYO)?</div>
                         <div class="faq-answer">
-                            <p>NAYO is a community-based organization founded in 2004. It focuses on combating HIV/AIDS, promoting human rights, environmental protection, and youth empowerment in Nancholi and surrounding areas.</p>
+                            <p>NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.</p>
                         </div>
                     </div>
 
@@ -148,7 +191,9 @@ require_once 'includes/header.php';
         </section>
     </main>
 
-    <!-- Include footer -->
-    <?php include 'includes/footer.php'; ?>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+<?php include_once 'includes/footer.php'; ?>
 </body>
 </html>

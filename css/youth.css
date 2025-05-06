@@ -1,20 +1,21 @@
 /* Youth Friendly Page Styles */
 
 .program-content {
-    padding: var(--spacing-xl) 5%;
+    padding: 4rem 5%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .program-hero {
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin: 0 auto;
+    margin-bottom: 3rem;
 }
 
 .program-hero h1 {
-    font-size: clamp(2rem, 5vw, 2.5rem);
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-md);
+    font-size: 2.5rem;
+    color: #008751;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
@@ -22,9 +23,9 @@
     max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    margin-bottom: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
 }
 
 .program-image img {

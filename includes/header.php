@@ -15,11 +15,47 @@ $base_path = dirname(__DIR__);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($page_title) ? htmlspecialchars($page_title) : 'Nancholi Youth Organization (NAYO)'; ?></title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/programs.css">
+    <title>Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi">
+    <meta name="description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
+    <meta name="keywords" content="Nancholi Youth Organisation, NAYO, NGO Malawi, Blantyre NGO, youth development Malawi, HIV/AIDS care Malawi, palliative care Malawi, antenatal care Malawi, student support Malawi, outreach programs Malawi, youth friendly services Malawi">
+    <meta name="author" content="Nancholi Youth Organization">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nayomalawi.org/">
+    <meta property="og:title" content="Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi">
+    <meta property="og:description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
+    <meta property="og:image" content="https://nayomalawi.org/images/hero-1.jpg">
+    
+    <link rel="stylesheet" href="/dashboard/nayo-website/css/styles.css">
+    <link rel="stylesheet" href="/dashboard/nayo-website/css/programs.css">
+    <?php if (isset($page_title) && strpos($page_title, 'Youth Friendly Services') !== false) { ?>
+        <link rel="stylesheet" href="/dashboard/nayo-website/css/youth.css">
+    <?php } ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="/js/main.js" defer></script>
+    <script src="/dashboard/nayo-website/js/main.js" defer type="text/javascript"></script>
+    <!-- Structured data for organization and logo (for search engines) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Nancholi Youth Organisation",
+      "alternateName": "NAYO",
+      "url": "https://nayomalawi.org",
+      "logo": "https://nayomalawi.org/dashboard/nayo-website/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/nayomalawi/",
+        "https://twitter.com/nayomalawi",
+        "https://www.instagram.com/nayomalawi/"
+      ],
+      "slogan": "One Heart, One Community",
+      "description": "NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas."
+    }
+    </script>
     <style>
         /* Youth Friendly Page Styles */
         .program-content {
@@ -257,16 +293,16 @@ $base_path = dirname(__DIR__);
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="/images/logo.png" alt="NAYO Logo" class="logo-img" style="max-height: 60px;">
+                <a href="/dashboard/nayo-website/index.php" class="logo-link">
+                    <img src="/dashboard/nayo-website/images/logo.png" alt="NAYO Logo" class="logo-img" style="max-height: 60px;">
                     <span class="tagline" style="font-size: 0.9rem; color: #333;">One Heart,<br>One Community</span>
                 </a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                <span class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" style="background-color: #006b41; border-radius: 4px; padding: 8px; border: none; cursor: pointer; z-index: 1003;">
+                <span class="hamburger" style="display: flex; flex-direction: column; justify-content: space-between; height: 24px;">
+                    <span class="bar" style="display: block; width: 30px; height: 3px; background-color: white; border-radius: 3px; transition: all 0.3s ease;"></span>
+                    <span class="bar" style="display: block; width: 30px; height: 3px; background-color: white; border-radius: 3px; transition: all 0.3s ease;"></span>
+                    <span class="bar" style="display: block; width: 30px; height: 3px; background-color: white; border-radius: 3px; transition: all 0.3s ease;"></span>
                 </span>
             </button>
             <ul class="nav-links">

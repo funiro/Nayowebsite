@@ -226,9 +226,7 @@
         </div>
     </main>
 
-    <!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>
-<!-- Include footer -->
     <?php include 'includes/footer.php'; ?>
 </body>
-</html> 
+</html>
 

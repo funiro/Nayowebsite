@@ -1,164 +1,95 @@
 <?php
 // Start session first thing
 session_start();
-
-// Include header configuration
-require_once 'includes/header.php';
-// Include slider configuration
-require_once 'includes/slider-config.php';
+$page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi";
 ?>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi</title>
-    
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi">
-    <meta name="description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
-    <meta name="keywords" content="Nancholi Youth Organisation, NAYO, NGO Malawi, Blantyre NGO, youth development Malawi, HIV/AIDS care Malawi, palliative care Malawi, antenatal care Malawi, student support Malawi, outreach programs Malawi, youth friendly services Malawi">
-    <meta name="author" content="Nancholi Youth Organization">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nayomalawi.org/">
-    <meta property="og:title" content="Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi">
-    <meta property="og:description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
-    <meta property="og:image" content="https://nayomalawi.org/images/logo.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nayomalawi.org/">
-    <meta property="twitter:title" content="Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi">
-    <meta property="twitter:description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
-    <meta property="twitter:image" content="https://nayomalawi.org/images/logo.png">
-    
-    <!-- Additional Meta Tags -->
-    <meta name="geo.region" content="MW-BT">
-    <meta name="geo.placename" content="Blantyre">
-    <meta name="geo.position" content="-15.826812;34.980163">
-    <meta name="ICBM" content="-15.826812, 34.980163">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://nayomalawi.org/">
-    
-    <link rel="stylesheet" href="/css/styles.css?v=1.1">
-    <link rel="stylesheet" href="/css/programs.css?v=1.1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="/js/main.js?v=1.1" defer></script>
-    <script>
-        // Hero slider functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            let currentSlide = 0;
-            const slides = document.querySelectorAll('.hero-slide');
-            const dots = document.querySelectorAll('.slider-dot');
-            const prevButton = document.querySelector('.prev-slide');
-            const nextButton = document.querySelector('.next-slide');
 
-            if (!slides.length) {
-                console.error('No slider images found');
-                return;
-            }
-
-            function showSlide(n) {
-                // Hide current slide
-                slides.forEach(slide => {
-                    slide.style.display = 'none';
-                    slide.classList.remove('active');
-                });
-                
-                // Update dots
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                // Calculate new slide index
-                currentSlide = (n + slides.length) % slides.length;
-                
-                // Show new slide
-                slides[currentSlide].style.display = 'block';
-                slides[currentSlide].classList.add('active');
-                dots[currentSlide].classList.add('active');
-            }
-
-            function nextSlide() {
-                showSlide(currentSlide + 1);
-            }
-
-            function prevSlide() {
-                showSlide(currentSlide - 1);
-            }
-
-            // Initialize
-            showSlide(0);
-
-            // Add event listeners
-            if (prevButton) prevButton.addEventListener('click', prevSlide);
-            if (nextButton) nextButton.addEventListener('click', nextSlide);
-
-            // Auto-advance slides
-            const autoAdvance = setInterval(nextSlide, 5000);
-
-            // Pause on hover
-            const heroSlider = document.querySelector('.hero-slider');
-            if (heroSlider) {
-                heroSlider.addEventListener('mouseenter', () => {
-                    clearInterval(autoAdvance);
-                });
-                heroSlider.addEventListener('mouseleave', () => {
-                    autoAdvance = setInterval(nextSlide, 5000);
-                });
-            }
-
-            // Dot navigation
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => showSlide(index));
-            });
-        });
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Nancholi Youth Organization (NAYO)",
-      "alternateName": "NAYO",
-      "url": "https://nayomalawi.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://nayomalawi.org/images/logo.png",
-        "width": 600,
-        "height": 600
-      },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://nayomalawi.org/images/logo.png",
-        "width": 600,
-        "height": 600
-      },
-      "description": "NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.",
-      "email": "info@nayomalawi.org",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "P.O. Box 1624",
-        "addressLocality": "Blantyre",
-        "addressCountry": "MW"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "General Inquiries",
-        "email": "info@nayomalawi.org"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/nancholi-youth-organisation-nayo/",
-        "https://www.givey.com/nayoukschoolfundraiser20232024",
-        "https://www.every.org/nancholi-youth-organization"
-      ]
-    }
-    </script>
-</head>
-<body>
-
+<?php include_once 'includes/header.php'; ?>
 
     <section class="hero">
-        <?php echo generateSliderHTML($slider_images); ?>
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="/dashboard/nayo-website/images/hero-1.jpg" alt="Hero Image 1">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
+                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    </div>
+                    <p>Empowering Youth Through Education, Healthcare, and Community Development</p>
+
+                </div>
+            </div>
+            <div class="hero-slide">
+                <img src="/dashboard/nayo-website/images/hero-2.jpg" alt="Hero Image 2">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
+                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    </div>
+                    <p>Providing Quality Healthcare in Blantyre</p>
+
+                </div>
+            </div>
+            <div class="hero-slide">
+                <img src="/dashboard/nayo-website/images/hero-3.jpg" alt="Hero Image 3">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
+                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    </div>
+                    <p>Supporting Education and Community Growth</p>
+
+                </div>
+            </div>
+            <div class="hero-slide">
+                <img src="/dashboard/nayo-website/images/hero-4.jpg" alt="Hero Image 4">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
+                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    </div>
+                    <p>Dedicated to Youth Empowerment and Healthcare Access</p>
+
+                </div>
+            </div>
+            <div class="hero-slide">
+                <img src="/dashboard/nayo-website/images/hero-5.jpg" alt="Hero Image 5">
+                <div class="hero-overlay"></div>
+                <div class="hero-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 10; width: 90%; max-width: 900px; padding: 2rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
+                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    </div>
+                    <p>Building Stronger Communities Through Outreach Programs</p>
+
+                </div>
+            </div>
+            <div class="hero-slide">
+                <img src="/dashboard/nayo-website/images/hero-6.jpg" alt="Hero Image 6">
+                <div class="hero-overlay"></div>
+                <div class="hero-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 10; width: 90%; max-width: 900px; padding: 2rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
+                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    </div>
+                    <p>Serving the Community Since 2004</p>
+
+                </div>
+            </div>
+        </div>
     </section>
+    <div class="slider-dots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+        <span class="dot" data-slide="4"></span>
+        <span class="dot" data-slide="5"></span>
+    </div>
 
     <section class="our-approach">
         <h2>OUR APPROACH</h2>
@@ -168,43 +99,43 @@ require_once 'includes/slider-config.php';
     <section class="services">
         <div class="service-grid">
             <div class="service-card">
-                <img src="images/antenetal.jpg" alt="Antenetal Care">
-                <h3><a href="antenatal.php">ANTENETAL<br>CARE</a></h3>
+                <img src="/dashboard/nayo-website/images/antenatal.jpg" alt="Antenatal Care">
+                <h3><a href="/dashboard/nayo-website/antenatal.php">ANTENATAL<br>CARE</a></h3>
                 <p>Supporting expectant mothers with comprehensive prenatal care services.</p>
-                <a href="antenatal.html" class="btn view-more-btn">View More</a>
+                <a href="/dashboard/nayo-website/antenatal.php" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
-                <img src="images/art.jpg" alt="ART Program">
-                <h3><a href="art.php">ART<br>PROGRAM</a></h3>
+                <img src="/dashboard/nayo-website/images/art.jpg" alt="ART Program">
+                <h3><a href="/dashboard/nayo-website/art.php">ART<br>PROGRAM</a></h3>
                 <p>Providing comprehensive care and support for people living with HIV/AIDS.</p>
-                <a href="art.html" class="btn view-more-btn">View More</a>
+                <a href="/dashboard/nayo-website/art.php" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
-                <img src="images/youth-services.jpg" alt="Youth Friendly Services">
-                <h3><a href="youth.php">YOUTH FRIENDLY<br>SERVICES</a></h3>
+                <img src="/dashboard/nayo-website/images/youth-services.jpg" alt="Youth Friendly Services">
+                <h3><a href="/dashboard/nayo-website/youth.php">YOUTH FRIENDLY<br>SERVICES</a></h3>
                 <p>Offering specialized healthcare and support services for young people.</p>
-                <a href="youth.html" class="btn view-more-btn">View More</a>
+                <a href="/dashboard/nayo-website/youth.php" class="btn view-more-btn">View More</a>
             </div>
         </div>
 
         <div class="service-grid">
             <div class="service-card">
-                <img src="images/palliative.jpg" alt="Palliative Care">
-                <h3><a href="palliative.php">PALLIATIVE<br>CARE</a></h3>
+                <img src="/dashboard/nayo-website/images/palliative.jpg" alt="Palliative Care">
+                <h3><a href="/dashboard/nayo-website/palliative.php">PALLIATIVE<br>CARE</a></h3>
                 <p>Providing compassionate care and support for those with serious illnesses.</p>
-                <a href="palliative.html" class="btn view-more-btn">View More</a>
+                <a href="/dashboard/nayo-website/palliative.php" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
-                <img src="images/student.jpg" alt="Student Support">
-                <h3><a href="student.php">STUDENT<br>SUPPORT</a></h3>
+                <img src="/dashboard/nayo-website/images/student.jpg" alt="Student Support">
+                <h3><a href="/dashboard/nayo-website/student.php">STUDENT<br>SUPPORT</a></h3>
                 <p>Helping students achieve their educational goals through various support programs.</p>
-                <a href="student.html" class="btn view-more-btn">View More</a>
+                <a href="/dashboard/nayo-website/student.php" class="btn view-more-btn">View More</a>
             </div>
             <div class="service-card">
-                <img src="images/outreach.jpg" alt="Out-Reach Clinic">
-                <h3><a href="outreach.php">OUT-REACH<br>CLINIC</a></h3>
+                <img src="/dashboard/nayo-website/images/outreach.jpg" alt="Outreach Clinic">
+                <h3><a href="/dashboard/nayo-website/outreach.php">OUTREACH<br>CLINIC</a></h3>
                 <p>Bringing healthcare services directly to underserved communities.</p>
-                <a href="outreach.html" class="btn view-more-btn">View More</a>
+                <a href="/dashboard/nayo-website/outreach.php" class="btn view-more-btn">View More</a>
             </div>
         </div>
     </section>
@@ -216,22 +147,26 @@ require_once 'includes/slider-config.php';
         <cite>George Nedi - Executive Director</cite>
     </section>
 
-    <section class="stats">
-        <div class="stats-header">
-            <h2>IMPACT</h2>
-        </div>
-        <div class="stats-container">
-            <div class="stat-item">
-                <h3>Programs</h3>
-                <p class="number" data-target="6">6</p>
-            </div>
-            <div class="stat-item">
-                <h3>Districts</h3>
-                <p class="number" data-target="5">5</p>
-            </div>
-            <div class="stat-item">
-                <h3>Yearly Reach</h3>
-                <p class="number" data-target="35000+">35000+</p>
+    <section class="stats" style="padding: 4rem 0; background-color: #f9f9f9;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="color: #008751; font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; text-align: center;">OUR IMPACT</h2>
+            <p style="max-width: 800px; margin: 0 auto 3rem auto; font-size: 1.1rem; color: #555; text-align: center;">Since 2004, Nancholi Youth Organisation has been making a difference in communities across Malawi.</p>
+            
+            <div class="stats-container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div class="stat-item" style="text-align: left; flex: 1; min-width: 200px; background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+                    <h3 style="color: #555; margin-bottom: 0.5rem; font-size: 1.5rem;">Programs</h3>
+                    <p class="number" data-target="6" style="color: #008751; font-size: 3.5rem; font-weight: bold; margin: 0;">6</p>
+                </div>
+                
+                <div class="stat-item" style="text-align: center; flex: 1; min-width: 200px; background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+                    <h3 style="color: #555; margin-bottom: 0.5rem; font-size: 1.5rem;">Districts</h3>
+                    <p class="number" data-target="5" style="color: #008751; font-size: 3.5rem; font-weight: bold; margin: 0;">5</p>
+                </div>
+                
+                <div class="stat-item" style="text-align: right; flex: 1; min-width: 200px; background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+                    <h3 style="color: #555; margin-bottom: 0.5rem; font-size: 1.5rem;">Yearly Reach</h3>
+                    <p class="number" data-target="35000+" style="color: #008751; font-size: 3.5rem; font-weight: bold; margin: 0;">35000+</p>
+                </div>
             </div>
         </div>
     </section>
@@ -304,11 +239,12 @@ require_once 'includes/slider-config.php';
     </section>
 
     <section class="youtube-links">
+        <h2>OUR VIDEOS</h2>
         <div class="youtube-container">
             <div class="youtube-box">
                 <iframe 
                     width="100%" 
-                    height="315" 
+                    height="200" 
                     src="https://www.youtube.com/embed/K5SwAaZv0aU" 
                     title="NAYO Video 1"
                     frameborder="0" 
@@ -319,7 +255,7 @@ require_once 'includes/slider-config.php';
             <div class="youtube-box">
                 <iframe 
                     width="100%" 
-                    height="315" 
+                    height="200" 
                     src="https://www.youtube.com/embed/OpfboVkl6gs" 
                     title="NAYO Video 2"
                     frameborder="0" 
@@ -329,7 +265,7 @@ require_once 'includes/slider-config.php';
             </div>
         </div>
     </section>
-<section class="map-section">
+<section class="map-section" style="margin-top: 0; padding-top: 0;">
     <div class="map-container">
         <h2>FIND US</h2>
         <iframe 
@@ -344,6 +280,9 @@ require_once 'includes/slider-config.php';
 
 
     <!-- Include footer -->
-    <?php require_once 'includes/footer.php'; ?>
+    <?php
+// Include footer
+include 'includes/footer.php';
+?>
 </body>
 </html>
