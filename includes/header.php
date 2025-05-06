@@ -306,28 +306,28 @@ $base_path = dirname(__DIR__);
                 </span>
             </button>
             <ul class="nav-links">
-                <li><a href="index.php">HOME</a></li>
+                <li><a href="/dashboard/nayo-website/index.php">HOME</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">PROJECTS</a>
                     <ul class="dropdown-menu">
-                        <li><a href="art.php">ART</a></li>
-                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
-                        <li><a href="student.php">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
+                        <li><a href="/dashboard/nayo-website/art.php">ART</a></li>
+                        <li><a href="/dashboard/nayo-website/antenatal.php">ANTENATAL CARE</a></li>
+                        <li><a href="/dashboard/nayo-website/palliative.php">PALLIATIVE CARE</a></li>
+                        <li><a href="/dashboard/nayo-website/student.php">STUDENT SUPPORT</a></li>
+                        <li><a href="/dashboard/nayo-website/outreach.php">OUTREACH PROGRAMS</a></li>
+                        <li><a href="/dashboard/nayo-website/youth.php">YOUTH FRIENDLY SERVICES</a></li>
                     </ul>
                 </li>
-                <li><a href="events.php">EVENTS</a></li>
+                <li><a href="/dashboard/nayo-website/events.php">EVENTS</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">OUR PEOPLE</a>
                     <ul class="dropdown-menu">
-                        <li><a href="board.php">BOARD</a></li>
-                        <li><a href="staff.php">STAFF</a></li>
+                        <li><a href="/dashboard/nayo-website/board.php">BOARD</a></li>
+                        <li><a href="/dashboard/nayo-website/staff.php">STAFF</a></li>
                     </ul>
                 </li>
 
-                <li><a href="volunteer.php">VOLUNTEER</a></li>
+                <li><a href="/dashboard/nayo-website/volunteer.php">VOLUNTEER</a></li>
                 <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
             </ul>
         </nav>
