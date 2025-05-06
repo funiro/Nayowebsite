@@ -290,6 +290,78 @@ $base_url = (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'loca
             }
         }
     </style>
+    <!-- Slider JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevArrow = document.getElementById('prev-slide');
+            const nextArrow = document.getElementById('next-slide');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                showSlide(currentIndex);
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                showSlide(currentIndex);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    currentIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(currentIndex);
+                    stopAutoSlide(); // Stop auto-slide on user interaction
+                    setTimeout(startAutoSlide, 10000); // Resume after 10 seconds of inactivity
+                });
+            });
+
+            if (prevArrow && nextArrow) {
+                prevArrow.addEventListener('click', function() {
+                    prevSlide();
+                    stopAutoSlide(); // Stop auto-slide on user interaction
+                    setTimeout(startAutoSlide, 10000); // Resume after 10 seconds of inactivity
+                });
+                nextArrow.addEventListener('click', function() {
+                    nextSlide();
+                    stopAutoSlide(); // Stop auto-slide on user interaction
+                    setTimeout(startAutoSlide, 10000); // Resume after 10 seconds of inactivity
+                });
+            }
+
+            // Start auto-sliding on page load
+            startAutoSlide();
+        });
+    </script>
 </head>
 <body>
     <header>

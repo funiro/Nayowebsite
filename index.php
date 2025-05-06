@@ -2,7 +2,8 @@
 // Start session first thing
 session_start();
 $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi";
-$base_url = "http://localhost/dashboard/nayo-website/";
+// Include dynamic base URL configuration
+include_once 'base_url.php';
 ?>
 
 <?php include_once 'includes/header.php'; ?>
@@ -10,7 +11,7 @@ $base_url = "http://localhost/dashboard/nayo-website/";
     <section class="hero">
         <div class="hero-slider">
             <div class="hero-slide active">
-                <img src="<?php echo $base_url; ?>/images/hero-1.jpg" alt="Hero Image 1">
+                <img src="<?php echo $base_url; ?>/images/hero-1.jpg" alt="Hero Image 1" class="hero-image active">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
@@ -18,11 +19,10 @@ $base_url = "http://localhost/dashboard/nayo-website/";
                         <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
                     <p>Empowering Youth Through Education, Healthcare, and Community Development</p>
-
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="<?php echo $base_url; ?>/images/hero-2.jpg" alt="Hero Image 2">
+                <img src="<?php echo $base_url; ?>/images/hero-2.jpg" alt="Hero Image 2" class="hero-image">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
@@ -30,11 +30,10 @@ $base_url = "http://localhost/dashboard/nayo-website/";
                         <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
                     <p>Providing Quality Healthcare in Blantyre</p>
-
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="<?php echo $base_url; ?>/images/hero-3.jpg" alt="Hero Image 3">
+                <img src="<?php echo $base_url; ?>/images/hero-3.jpg" alt="Hero Image 3" class="hero-image">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
@@ -42,11 +41,10 @@ $base_url = "http://localhost/dashboard/nayo-website/";
                         <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
                     <p>Supporting Education and Community Growth</p>
-
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="<?php echo $base_url; ?>/images/hero-4.jpg" alt="Hero Image 4">
+                <img src="<?php echo $base_url; ?>/images/hero-4.jpg" alt="Hero Image 4" class="hero-image">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
@@ -54,43 +52,44 @@ $base_url = "http://localhost/dashboard/nayo-website/";
                         <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
                     <p>Dedicated to Youth Empowerment and Healthcare Access</p>
-
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="<?php echo $base_url; ?>/images/hero-5.jpg" alt="Hero Image 5">
+                <img src="<?php echo $base_url; ?>/images/hero-5.jpg" alt="Hero Image 5" class="hero-image">
                 <div class="hero-overlay"></div>
-                <div class="hero-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 10; width: 90%; max-width: 900px; padding: 2rem;">
+                <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
                         <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
                         <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
                     <p>Building Stronger Communities Through Outreach Programs</p>
-
                 </div>
             </div>
             <div class="hero-slide">
-                <img src="<?php echo $base_url; ?>/images/hero-6.jpg" alt="Hero Image 6">
+                <img src="<?php echo $base_url; ?>/images/hero-6.jpg" alt="Hero Image 6" class="hero-image">
                 <div class="hero-overlay"></div>
-                <div class="hero-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 10; width: 90%; max-width: 900px; padding: 2rem;">
+                <div class="hero-content">
                     <div style="margin-bottom: 1.5rem;">
                         <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
                         <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
                     <p>Serving the Community Since 2004</p>
-
                 </div>
             </div>
         </div>
+        <div class="slider-controls">
+            <div class="slider-arrow left-arrow" id="prev-slide">&#10094;</div>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+                <span class="dot" data-slide="4"></span>
+                <span class="dot" data-slide="5"></span>
+            </div>
+            <div class="slider-arrow right-arrow" id="next-slide">&#10095;</div>
+        </div>
     </section>
-    <div class="slider-dots">
-        <span class="dot active" data-slide="0"></span>
-        <span class="dot" data-slide="1"></span>
-        <span class="dot" data-slide="2"></span>
-        <span class="dot" data-slide="3"></span>
-        <span class="dot" data-slide="4"></span>
-        <span class="dot" data-slide="5"></span>
-    </div>
 
     <section class="our-approach">
         <h2>OUR APPROACH</h2>
@@ -217,7 +216,7 @@ $base_url = "http://localhost/dashboard/nayo-website/";
 
                 <div class="staff-card">
                     <div class="staff-image">
-                        <img src="<?php echo $base_url; ?>/images/staff/Patson.JPG" alt="Patson Gondwe">
+                        <img src="<?php echo $base_url; ?>/images/staff/Patson.jpg" alt="Patson Gondwe">
                     </div>
                     <div class="staff-info">
                         <h3>Patson Gondwe</h3>

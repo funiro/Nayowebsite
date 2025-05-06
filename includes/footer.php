@@ -4,7 +4,7 @@
             <div class="footer-columns" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
                 <div class="footer-column" style="flex: 1; min-width: 200px;">
                     <div class="footer-logo" style="margin-bottom: 15px;">
-                        <a href="<?php echo $base_url; ?>/dashboard/nayo-website/index.php" style="display: inline-block;">
+                        <a href="<?php echo $base_url; ?>/index.php" style="display: inline-block;">
                             <img src="<?php echo $base_url; ?>/images/nayo-logo.png" alt="NAYO Logo" class="footer-logo-img" style="max-width: 100px; height: auto;" loading="lazy">
                         </a>
                     </div>
