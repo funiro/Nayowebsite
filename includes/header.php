@@ -375,8 +375,8 @@ $base_url = $is_localhost ? '/dashboard/nayo-website' : '';
         "logo": "https://nayomalawi.org/images/logo.png",
         "sameAs": [
             "https://www.facebook.com/nayomalawi/",
-            "https://twitter.com/nayomalawi",
-            "https://www.instagram.com/nayomalawi/",
+            "https://x.com/nayo_malawi?t=wtvMMN8hWUn3ZA-5r5GbLg&s=09",
+            "https://www.instagram.com/nayo_malawi/profilecard/?igsh=ZDFnbDdkN2huOHB4",
             "https://mw.linkedin.com/in/nancholi-youth-organisation-nayo-478a38141"
         ],
         "address": {

@@ -1,5 +1,5 @@
-<footer>
-    <div class="footer-top" style="background-color: #006b41; padding: 40px 0;">
+<footer style="background-color: #006b41; width: 100%; margin: 0; padding: 0;">
+    <div class="footer-top" style="padding: 40px 0;">
         <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div class="footer-columns" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
                 <div class="footer-column" style="flex: 1; min-width: 200px;">
@@ -14,8 +14,8 @@
                         <p style="margin: 0 0 5px 0;">Email: info@nayomalawi.org</p>
                         <div class="footer-social-top" style="display: flex; gap: 15px; margin-top: 12px;">
                             <a href="https://www.facebook.com/nayomalawi/" target="_blank" rel="noopener noreferrer" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
-                            <a href="https://twitter.com/nayomalawi" target="_blank" rel="noopener noreferrer" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.instagram.com/nayomalawi/" target="_blank" rel="noopener noreferrer" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                            <a href="https://x.com/nayo_malawi?t=wtvMMN8hWUn3ZA-5r5GbLg&s=09" target="_blank" rel="noopener noreferrer" style="color: white; font-size: 1.2rem;"><i class="fab fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/nayo_malawi/profilecard/?igsh=ZDFnbDdkN2huOHB4" target="_blank" rel="noopener noreferrer" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
         });
     </script>
     
-    <div class="footer-bottom" style="background-color: #006b41; padding: 30px 0;">
+    <div class="footer-bottom" style="padding: 30px 0;">
         <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div class="footer-slogan" style="text-align: center; font-size: 1.2rem; font-weight: normal; color: white; margin-bottom: 15px; letter-spacing: 1px;">
                 <a href="<?php echo $base_url; ?>/index.php" style="color: white; text-decoration: none;" class="typewrite" data-period="2000" data-type='[ "One Heart, One Community", "Empowering Youth", "Building Communities", "Changing Lives" ]'><span class="wrap"></span></a>

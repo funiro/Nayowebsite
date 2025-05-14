@@ -334,6 +334,10 @@ body {
 /* Footer Styles */
 footer {
     background-color: #006b41;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 /* Partners Section Styles */
