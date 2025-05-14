@@ -1,8 +1,22 @@
 <?php
-// Detect if on localhost or live server to set correct base URL
-// If on localhost, use '/dashboard/nayo-website'; if on live server, use the correct path based on Hostinger structure
-$base_url = (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/dashboard/nayo-website' : '';
-// Since the site is in public_html on Hostinger, ensure paths are relative to root or adjust if in subdirectory
-// If images are directly under public_html/images, no additional path is needed for base_url, keeping it empty for live server
-// $base_url = (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/dashboard/nayo-website' : '/nayo-website';
+/**
+ * Dynamic Base URL Configuration
+ * 
+ * This file determines the correct base URL for the website based on the environment.
+ * - For localhost: Uses '/dashboard/nayo-website'
+ * - For production: Uses an empty string as the site is at the root of the domain
+ */
+
+// Get server name in lowercase for consistent comparison
+$server_name = isset($_SERVER['SERVER_NAME']) ? strtolower($_SERVER['SERVER_NAME']) : '';
+
+// Check if running on localhost (either by name or IP)
+$is_localhost = (strpos($server_name, 'localhost') !== false) || 
+                (strpos($server_name, '127.0.0.1') !== false);
+
+// Set the base URL accordingly
+$base_url = $is_localhost ? '/dashboard/nayo-website' : '';
+
+// Debug information (comment out in production)
+// error_log('Server: ' . $server_name . ', Is localhost: ' . ($is_localhost ? 'true' : 'false') . ', Base URL: ' . $base_url);
 ?>

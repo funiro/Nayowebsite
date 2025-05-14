@@ -1,3 +1,6 @@
+<?php
+include 'includes/header-config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +29,9 @@
     <meta property="twitter:description" content="Meet the dedicated professionals at NAYO who make our mission possible. Our team of experts works tirelessly to serve communities in Malawi.">
     <meta property="twitter:image" content="https://nayomalawi.org/images/logo.png">
     
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js" defer></script>
+    <script src="<?php echo $base_url; ?>/js/main.js" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -63,7 +66,7 @@
         <nav class="main-nav">
             <div class="logo">
                 <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
+                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img">
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
             </div>
@@ -108,7 +111,7 @@
                 <div class="staff-grid">
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/george-nedi.jpg" alt="George Nedi">
+                            <img src="<?php echo $base_url; ?>/images/staff/george-nedi.jpg" alt="George Nedi">
                         </div>
                         <div class="staff-info">
                             <h3>George Nedi</h3>
@@ -126,7 +129,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/watson-shuzi.jpg" alt="Watson Shuzi">
+                            <img src="<?php echo $base_url; ?>/images/staff/watson-shuzi.jpg" alt="Watson Shuzi">
                         </div>
                         <div class="staff-info">
                             <h3>Watson Shuzi</h3>
@@ -144,7 +147,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/Patson.jpg" alt="Patson Gondwe">
+                            <img src="<?php echo $base_url; ?>/images/staff/Patson.jpg" alt="Patson Gondwe">
                         </div>
                         <div class="staff-info">
                             <h3>Patson Gondwe1</h3>
@@ -162,7 +165,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/moses-mageza.jpg" alt="Moses Mageza">
+                            <img src="<?php echo $base_url; ?>/images/staff/moses-mageza.jpg" alt="Moses Mageza">
                         </div>
                         <div class="staff-info">
                             <h3>Moses Mageza</h3>
@@ -180,7 +183,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/mloiso.JPG" alt="Mloiso M Katete">
+                            <img src="<?php echo $base_url; ?>/images/staff/mloiso.JPG" alt="Mloiso M Katete">
                         </div>
                         <div class="staff-info">
                             <h3>Mloiso M Katete</h3>
@@ -198,7 +201,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/Chifuniro.jpg" alt="Chifuniro Masamba">
+                            <img src="<?php echo $base_url; ?>/images/staff/Chifuniro.jpg" alt="Chifuniro Masamba">
                         </div>
                         <div class="staff-info">
                             <h3>Chifuniro Masamba</h3>
@@ -216,7 +219,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/Annie.jpg" alt="Annie Magoli">
+                            <img src="<?php echo $base_url; ?>/images/staff/Annie.jpg" alt="Annie Magoli">
                         </div>
                         <div class="staff-info">
                             <h3>Annie Magoli</h3>
@@ -234,7 +237,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/Rabecca.jpg" alt="Rabecca Nanungu">
+                            <img src="<?php echo $base_url; ?>/images/staff/Rabecca.jpg" alt="Rabecca Nanungu">
                         </div>
                         <div class="staff-info">
                             <h3>Rabecca Nanungu</h3>
@@ -252,7 +255,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/Tamanda.jpg" alt="Tamanda Moyo">
+                            <img src="<?php echo $base_url; ?>/images/staff/Tamanda.jpg" alt="Tamanda Moyo">
                         </div>
                         <div class="staff-info">
                             <h3>Tamanda Moyo</h3>
@@ -270,7 +273,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/Philip.jpg" alt="Philip Puluputu">
+                            <img src="<?php echo $base_url; ?>/images/staff/Philip.jpg" alt="Philip Puluputu">
                         </div>
                         <div class="staff-info">
                             <h3>Philip Puluputu</h3>
@@ -288,7 +291,7 @@
 
                     <div class="staff-card">
                         <div class="staff-image">
-                            <img src="images/staff/Chikumbutso.jpg" alt="Chikumbutso Chimphamba Nyanyaliwa">
+                            <img src="<?php echo $base_url; ?>/images/staff/Chikumbutso.jpg" alt="Chikumbutso Chimphamba Nyanyaliwa">
                         </div>
                         <div class="staff-info">
                             <h3>Chikumbutso Chimphamba Nyanyaliwa</h3>
@@ -308,7 +311,7 @@
         </section>
     </main>
 
-    <!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>
-<!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>`n</body>
+    <?php include 'includes/footer.php'; ?>
+</body>
 </html> 
 

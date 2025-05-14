@@ -1,3 +1,11 @@
+<?php
+// Start session first thing
+session_start();
+$page_title = "Palliative Care | End-of-Life Support | Nancholi Youth Organization";
+// Include dynamic base URL configuration
+include_once 'base_url.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,11 +37,11 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nayomalawi.org/palliative.php">
     
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/programs.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js" defer></script>
+    <script src="<?php echo $base_url; ?>/js/main.js" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -67,8 +75,8 @@
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
+                <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
+                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img">
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
             </div>
@@ -101,7 +109,7 @@
         <section class="program-hero">
             <h1>Palliative Care Program</h1>
             <div class="program-image">
-                <img src="images/palliative.jpg" alt="Palliative Care Program">
+                <img src="<?php echo $base_url; ?>/images/palliative.jpg" alt="Palliative Care Program">
             </div>
         </section>
 
@@ -155,25 +163,25 @@
             <div class="gallery-container">
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="images/Gallery/Palliative/palliative-1.jpg" alt="Palliative Care Activity">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Palliative/palliative-1.jpg" alt="Palliative Care Activity">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Palliative/palliative-2.jpg" alt="Palliative Care Support">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Palliative/palliative-2.jpg" alt="Palliative Care Support">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Palliative/palliative-3.jpg" alt="Palliative Care Team">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Palliative/palliative-3.jpg" alt="Palliative Care Team">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Palliative/palliative-4.jpg" alt="Palliative Care Service">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Palliative/palliative-4.jpg" alt="Palliative Care Service">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Palliative/palliative-5.jpg" alt="Palliative Care Program">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Palliative/palliative-5.jpg" alt="Palliative Care Program">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Palliative/palliative-6.jpg" alt="Palliative Care Outreach">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Palliative/palliative-6.jpg" alt="Palliative Care Outreach">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/Gallery/Palliative/Palliative-7.jpg" alt="Palliative Care Community">
+                        <img src="<?php echo $base_url; ?>/images/Gallery/Palliative/Palliative-7.jpg" alt="Palliative Care Community">
                     </div>
                 </div>
             </div>

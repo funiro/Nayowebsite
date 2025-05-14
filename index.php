@@ -20,7 +20,7 @@ include_once 'base_url.php';
                     </div>
                     <p>Empowering Youth Through Education, Healthcare, and Community Development</p>
                 </div>
-            </div>
+            </div> 
             <div class="hero-slide">
                 <img src="<?php echo $base_url; ?>/images/hero-2.jpg" alt="Hero Image 2" class="hero-image">
                 <div class="hero-overlay"></div>

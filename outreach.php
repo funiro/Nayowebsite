@@ -1,3 +1,11 @@
+<?php
+// Start session first thing
+session_start();
+$page_title = "Outreach Programs | Community Health Services | Nancholi Youth Organization";
+// Include dynamic base URL configuration
+include_once 'base_url.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,10 +37,10 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nayomalawi.org/outreach.php">
     
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/programs.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js" defer></script>
+    <script src="<?php echo $base_url; ?>/js/main.js" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -66,8 +74,8 @@
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
+                <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
+                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img">
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
             </div>
@@ -100,7 +108,7 @@
         <section class="program-hero">
             <h1>Community Outreach Program</h1>
             <div class="program-image">
-                <img src="images/outreach.jpg" alt="Community Outreach Program">
+                <img src="<?php echo $base_url; ?>/images/outreach.jpg" alt="Community Outreach Program">
             </div>
         </section>
 
@@ -145,7 +153,7 @@
                 <p>Support our Outreach Programs through donations or volunteering. Your contribution helps us bring healthcare services to underserved communities.</p>
                 <div class="action-buttons">
                     <a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="btn donate-btn">Donate Now</a>
-                    <a href="volunteer.php" class="btn contact-btn">Volunteer</a>
+                    <a href="<?php echo $base_url; ?>/volunteer.php" class="btn contact-btn">Volunteer</a>
                 </div>
             </div>
 

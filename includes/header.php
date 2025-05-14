@@ -9,7 +9,9 @@ ini_set('display_errors', 1);
 // Define base path
 $base_path = dirname(__DIR__);
 // Detect if on localhost or live server to set correct base URL
-$base_url = (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/dashboard/nayo-website' : '';
+$server_name = isset($_SERVER['SERVER_NAME']) ? strtolower($_SERVER['SERVER_NAME']) : '';
+$is_localhost = (strpos($server_name, 'localhost') !== false) || (strpos($server_name, '127.0.0.1') !== false);
+$base_url = $is_localhost ? '/dashboard/nayo-website' : '';
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +50,7 @@ $base_url = (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'loca
       "name": "Nancholi Youth Organisation",
       "alternateName": "NAYO",
       "url": "https://nayomalawi.org",
-      "logo": "https://nayomalawi.org/dashboard/nayo-website/images/logo.png",
+      "logo": "https://nayomalawi.org/images/logo.png",
       "sameAs": [
         "https://www.facebook.com/nayomalawi/",
         "https://twitter.com/nayomalawi",
@@ -361,6 +363,34 @@ $base_url = (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'loca
             // Start auto-sliding on page load
             startAutoSlide();
         });
+    </script>
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Nancholi Youth Organisation",
+        "alternateName": "NAYO",
+        "url": "https://nayomalawi.org",
+        "logo": "https://nayomalawi.org/images/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/nayomalawi/",
+            "https://twitter.com/nayomalawi",
+            "https://www.instagram.com/nayomalawi/",
+            "https://mw.linkedin.com/in/nancholi-youth-organisation-nayo-478a38141"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Nancholi",
+            "addressLocality": "Blantyre",
+            "addressRegion": "Southern Region",
+            "postalCode": "1624",
+            "addressCountry": "MW"
+        },
+        "description": "Nancholi Youth Organisation (NAYO) is a youth-focused NGO in Malawi dedicated to empowering youth through education, healthcare, and community development initiatives.",
+        "areaServed": "Blantyre, Malawi",
+        "email": "info@nayomalawi.org"
+    }
     </script>
 </head>
 <body>

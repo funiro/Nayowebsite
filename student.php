@@ -1,3 +1,11 @@
+<?php
+// Start session first thing
+session_start();
+$page_title = "Student Support Program | Educational Assistance | Nancholi Youth Organization";
+// Include dynamic base URL configuration
+include_once 'base_url.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,10 +37,10 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nayomalawi.org/student.php">
     
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/programs.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js" defer></script>
+    <script src="<?php echo $base_url; ?>/js/main.js" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -66,8 +74,8 @@
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
+                <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
+                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img">
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
             </div>
@@ -75,11 +83,11 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="index.php">HOME</a></li>
+                <li><a href="<?php echo $base_url; ?>/index.php">HOME</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">PROJECTS</a>
                     <ul class="dropdown-menu">
-                        <li><a href="art.php">ART</a></li>
+                        <li><a href="<?php echo $base_url; ?>/art.php">ART</a></li>
                         <li><a href="antenatal.php">ANTENATAL CARE</a></li>
                         <li><a href="palliative.php">PALLIATIVE CARE</a></li>
                         <li><a href="student.php">STUDENT SUPPORT</a></li>
@@ -96,7 +104,7 @@
                     </ul>
                 </li>
 
-                <li><a href="volunteer.php">VOLUNTEER</a></li>
+                <li><a href="<?php echo $base_url; ?>/volunteer.php">VOLUNTEER</a></li>
                 <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
             </ul>
         </nav>
@@ -106,7 +114,7 @@
         <section class="program-hero">
             <h1>Student Support Program</h1>
             <div class="program-image">
-                <img src="images/student.jpg" alt="Student Support">
+                <img src="<?php echo $base_url; ?>/images/student.jpg" alt="Student Support">
             </div>
         </section>
 
@@ -159,7 +167,7 @@
                 <p>Support our Student Support program through donations or volunteering. Your contribution helps provide educational opportunities and resources to deserving students.</p>
                 <div class="action-buttons">
                     <a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="btn donate-btn">Donate Now</a>
-                    <a href="volunteer.php" class="btn contact-btn">Volunteer</a>
+                    <a href="<?php echo $base_url; ?>/volunteer.php" class="btn contact-btn">Volunteer</a>
                 </div>
             </div>
 
