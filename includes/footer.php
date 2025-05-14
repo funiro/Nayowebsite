@@ -73,22 +73,30 @@
                     }
                 </style>
                     <!-- Official NAYO partners only -->
-                    <a href="https://stephenlewisfoundation.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="<?php echo $base_url; ?>/images/partners/Stephen.png" alt="Stephen Lewis Foundation" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/Stephen.png';" loading="lazy">
-                    </a>
-                    <a href="https://www.masanawaafrika.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="<?php echo $base_url; ?>/images/partners/Masana+wa+Afrika.png" alt="Masana wa Africa" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/Masana+wa+Afrika.png';" loading="lazy">
-                    </a>
-                    <a href="https://luena.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="<?php echo $base_url; ?>/images/partners/Luena.png" alt="Luena Foundation" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/Luena.png';" loading="lazy">
-                    </a>
-                    <a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="<?php echo $base_url; ?>/images/partners/nayouk.png" alt="NAYO UK Fundraisers" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/nayouk.png';" loading="lazy">
-                    </a>
-                    <a href="https://k2.foundation/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="<?php echo $base_url; ?>/images/partners/k2.png" alt="K2 Foundation" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/k2.png';" loading="lazy">
-                    </a>
-                    <a href="https://www.health.gov.mw/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <?php
+                    $partners = [
+                        ['name' => 'Stephen Lewis Foundation', 'url' => 'https://stephenlewisfoundation.org/', 'image' => 'Stephen.png'],
+                        ['name' => 'Masana wa Africa', 'url' => 'https://www.masanawaafrika.org/', 'image' => 'Masana+wa+Afrika.png'],
+                        ['name' => 'Luena Foundation', 'url' => 'https://luena.org/', 'image' => 'Luena.png'],
+                        ['name' => 'NAYO UK Fundraisers', 'url' => 'https://www.givey.com/nayoukschoolfundraiser20232024', 'image' => 'nayouk.png'],
+                        ['name' => 'K2 Foundation', 'url' => 'https://k2.foundation/', 'image' => 'k2.png'],
+                        ['name' => 'Ministry of Health', 'url' => 'https://www.health.gov.mw/', 'image' => 'Malawi.png'],
+                        ['name' => 'UNAIDS', 'url' => 'https://www.unaids.org/', 'image' => 'UNAIDS.png'],
+                        ['name' => 'FOCCAD', 'url' => '#', 'image' => 'FOCCAD.png'],
+                        ['name' => 'COPRED', 'url' => '#', 'image' => 'COPRED.png']
+                    ];
+
+                    foreach ($partners as $partner): ?>
+                        <a href="<?php echo $partner['url']; ?>" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                            <img 
+                                src="<?php echo $base_url; ?>/images/partners/<?php echo $partner['image']; ?>" 
+                                alt="<?php echo $partner['name']; ?>" 
+                                style="max-width: 100%; max-height: 100%; object-fit: contain;" 
+                                onerror="this.onerror=null; this.src=this.src.replace('<?php echo $base_url; ?>/images/partners/', '<?php echo $base_url; ?>/images/'); this.onerror=null;" 
+                                loading="lazy"
+                            >
+                        </a>
+                    <?php endforeach; ?>
                         <img src="<?php echo $base_url; ?>/images/partners/Malawi.png" alt="Ministry of Health" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/Malawi.png';" loading="lazy">
                     </a>
                     <a href="https://www.unaids.org/en" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">

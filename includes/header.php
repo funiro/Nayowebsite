@@ -295,43 +295,38 @@ $base_url = $is_localhost ? '/dashboard/nayo-website' : '';
     <!-- Slider JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Hero Slider functionality
             const slides = document.querySelectorAll('.hero-slide');
-            const dots = document.querySelectorAll('.dot');
-            const prevArrow = document.getElementById('prev-slide');
-            const nextArrow = document.getElementById('next-slide');
-            let currentIndex = 0;
-            const totalSlides = slides.length;
-            let autoSlideInterval;
+            const dots = document.querySelectorAll('.slider-dot');
+            const prevBtn = document.querySelector('.prev-slide');
+            const nextBtn = document.querySelector('.next-slide');
+            let currentSlide = 0;
+            let slideInterval;
 
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    if (i === index) {
-                        slide.classList.add('active');
-                    } else {
-                        slide.classList.remove('active');
-                    }
-                });
-                dots.forEach((dot, i) => {
-                    if (i === index) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
+            function showSlide(n) {
+                // Remove active class from current slide and dot
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                
+                // Calculate new slide index
+                currentSlide = (n + slides.length) % slides.length;
+                
+                // Add active class to new slide and dot
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
             }
 
             function nextSlide() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                showSlide(currentIndex);
+                showSlide(currentSlide + 1);
             }
 
             function prevSlide() {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                showSlide(currentIndex);
+                showSlide(currentSlide - 1);
             }
 
             function startAutoSlide() {
-                autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+                stopAutoSlide(); // Clear any existing interval
+                slideInterval = setInterval(nextSlide, 5000);
             }
 
             function stopAutoSlide() {

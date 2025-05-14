@@ -254,8 +254,6 @@ $events = [
         'status' => 'upcoming',
         'rsvp' => true
     ]
-        'rsvp' => false
-    ]
 ];
 
 // Get query parameters
