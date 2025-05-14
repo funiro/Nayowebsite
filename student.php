@@ -121,6 +121,30 @@ include_once 'base_url.php';
         <section class="program-details">
             <div class="program-overview">
                 <h2>Program Overview</h2>
+                <p>NAYO's Student Support Program is dedicated to empowering young learners in our community through comprehensive educational support. We believe that education is a fundamental right and work to ensure that financial constraints do not hinder academic progress.</p>
+                <p>Through partnerships with local schools and international supporters, we provide essential educational resources, mentorship, and financial assistance to deserving students, helping them achieve their academic goals and build a brighter future.</p>
+            </div>
+
+            <section class="program-gallery">
+                <h2>Our Support in Action</h2>
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="<?php echo $base_url; ?>/images/student2.jpg" alt="Students receiving support">
+                        <div class="gallery-caption">Providing essential educational resources</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="<?php echo $base_url; ?>/images/student3.jpg" alt="Academic mentorship">
+                        <div class="gallery-caption">Academic mentorship and guidance</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="<?php echo $base_url; ?>/images/student4.jpg" alt="School supplies distribution">
+                        <div class="gallery-caption">Distribution of school supplies</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="program-services">
+                <h2>Our Services</h2>
                 <p>Our Student Support program aims to help students achieve their educational goals through various support initiatives. We provide academic assistance, mentorship, and resources to ensure students have the tools they need to succeed.</p>
             </div>
 

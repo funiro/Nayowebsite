@@ -19,7 +19,11 @@ $base_url = $is_localhost ? '/dashboard/nayo-website' : '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi</title>
+    <title><?php echo isset($page_title) ? $page_title . ' - NAYO' : 'NAYO - Empowering Communities in Malawi'; ?></title>
+    <link rel="preload" href="<?php echo $base_url; ?>/images/logo.png" as="image">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/optimized.css">
     
     <!-- Primary Meta Tags -->
     <meta name="title" content="Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi">
@@ -35,13 +39,15 @@ $base_url = $is_localhost ? '/dashboard/nayo-website' : '';
     <meta property="og:description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
     <meta property="og:image" content="https://nayomalawi.org/images/hero-1.jpg">
     
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
     <?php if (isset($page_title) && strpos($page_title, 'Youth Friendly Services') !== false) { ?>
         <link rel="stylesheet" href="<?php echo $base_url; ?>/css/youth.css">
     <?php } ?>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <script src="<?php echo $base_url; ?>/js/main.js" defer type="text/javascript"></script>
+    <script src="<?php echo $base_url; ?>/js/lazy-load.js" defer type="text/javascript"></script>
     <!-- Structured data for organization and logo (for search engines) -->
     <script type="application/ld+json">
     {
@@ -393,7 +399,7 @@ $base_url = $is_localhost ? '/dashboard/nayo-website' : '';
         <nav class="main-nav">
             <div class="logo">
                 <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
-                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img" style="max-height: 60px;">
+                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img" width="150" height="60" fetchpriority="high" loading="lazy"> 
                     <span class="tagline" style="font-size: 0.9rem; color: #333;">One Heart,<br>One Community</span>
                 </a>
             </div>

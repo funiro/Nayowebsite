@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',function(){const e=document.querySelectorAll('img[data-src]'),t=new IntersectionObserver(n=>{n.forEach(n=>{if(n.isIntersecting){const o=n.target;o.src=o.dataset.src,o.classList.add('loaded'),t.unobserve(o)}})});e.forEach(e=>t.observe(e))});

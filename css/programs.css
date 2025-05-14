@@ -18,19 +18,19 @@
 }
 
 .program-image {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-bottom: 2rem;
-    border-radius: 10px;
-    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16/9;
 }
 
 .program-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -548,6 +548,21 @@
 }
 
 @media (max-width: 768px) {
+    .program-content {
+        padding: 2rem 5%;
+    }
+
+    .program-image {
+        max-width: 100%;
+        margin: 0 auto 1.5rem;
+        aspect-ratio: 16/9;
+        padding: 0 1rem;
+    }
+
+    .program-hero h1 {
+        font-size: 2rem;
+    }
+
     .volunteer-content {
         padding-top: 60px;
     }

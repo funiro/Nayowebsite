@@ -74,6 +74,10 @@
                 </style>
                     <!-- Official NAYO partners only -->
                     <?php
+                    // Define image paths for both localhost and live server
+                    $isLocalhost = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false || strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== false;
+                    $imagePath = $isLocalhost ? '/dashboard/nayo-website/images/Partners/' : '/images/Partners/';
+                    
                     $partners = [
                         ['name' => 'Stephen Lewis Foundation', 'url' => 'https://stephenlewisfoundation.org/', 'image' => 'Stephen.png'],
                         ['name' => 'Masana wa Africa', 'url' => 'https://www.masanawaafrika.org/', 'image' => 'Masana+wa+Afrika.png'],
@@ -81,33 +85,21 @@
                         ['name' => 'NAYO UK Fundraisers', 'url' => 'https://www.givey.com/nayoukschoolfundraiser20232024', 'image' => 'nayouk.png'],
                         ['name' => 'K2 Foundation', 'url' => 'https://k2.foundation/', 'image' => 'k2.png'],
                         ['name' => 'Ministry of Health', 'url' => 'https://www.health.gov.mw/', 'image' => 'Malawi.png'],
-                        ['name' => 'UNAIDS', 'url' => 'https://www.unaids.org/', 'image' => 'UNAIDS.png'],
-                        ['name' => 'FOCCAD', 'url' => '#', 'image' => 'FOCCAD.png'],
-                        ['name' => 'COPRED', 'url' => '#', 'image' => 'COPRED.png']
+                        ['name' => 'UNAIDS', 'url' => 'https://www.unaids.org/', 'image' => 'Unaids.png'],
+                        ['name' => 'FOCCAD', 'url' => 'https://foccad.org', 'image' => 'Foccad.jpg'],
+                        ['name' => 'COPRED', 'url' => '#', 'image' => 'Copred.png']
                     ];
-
+                    
                     foreach ($partners as $partner): ?>
                         <a href="<?php echo $partner['url']; ?>" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                             <img 
-                                src="<?php echo $base_url; ?>/images/partners/<?php echo $partner['image']; ?>" 
+                                src="<?php echo $imagePath . $partner['image']; ?>" 
                                 alt="<?php echo $partner['name']; ?>" 
                                 style="max-width: 100%; max-height: 100%; object-fit: contain;" 
-                                onerror="this.onerror=null; this.src=this.src.replace('<?php echo $base_url; ?>/images/partners/', '<?php echo $base_url; ?>/images/'); this.onerror=null;" 
                                 loading="lazy"
                             >
                         </a>
                     <?php endforeach; ?>
-                        <img src="<?php echo $base_url; ?>/images/partners/Malawi.png" alt="Ministry of Health" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/Malawi.png';" loading="lazy">
-                    </a>
-                    <a href="https://www.unaids.org/en" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="<?php echo $base_url; ?>/images/partners/Unaids.png" alt="UNAIDS" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/Unaids.png';" loading="lazy">
-                    </a>
-                    <a href="https://foccad.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="<?php echo $base_url; ?>/images/partners/Foccad.jpg" alt="FOCCAD" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/Foccad.jpg';" loading="lazy">
-                    </a>
-                    <a href="https://www.copred.org/" target="_blank" class="partner-logo" style="display: flex; align-items: center; justify-content: center; width: 140px; height: 80px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                        <img src="<?php echo $base_url; ?>/images/partners/Copred.png" alt="COPRED" style="max-width: 100%; max-height: 100%;" onerror="this.src='images/partners/Copred.png';" loading="lazy">
-                    </a>
                 </div>
             </div>
         </div>

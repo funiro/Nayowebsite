@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    // Detect if on localhost or live server to set correct base URL
+    $base_url = (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/dashboard/nayo-website' : '';
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ART Program | HIV/AIDS Treatment & Care | Nancholi Youth Organization</title>
@@ -29,10 +33,10 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nayomalawi.org/art.php">
     
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/programs.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js" defer></script>
+    <script src="<?php echo $base_url; ?>/js/main.js" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -66,8 +70,8 @@
     <header>
         <nav class="main-nav">
             <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
+                <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
+                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img">
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
             </div>
@@ -106,7 +110,7 @@
         <section class="program-hero">
             <h1>ART Program</h1>
             <div class="program-image">
-                <img src="images/art.jpg" alt="ART Program">
+                <img src="<?php echo $base_url; ?>/images/art.jpg" alt="ART Program">
             </div>
         </section>
 
