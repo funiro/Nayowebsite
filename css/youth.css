@@ -194,24 +194,48 @@
 }
 
 .action-buttons {
-    display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
-    margin-top: var(--spacing-lg);
+    display: flex !important;
+    gap: 1.5rem !important;
+    justify-content: center !important;
+    margin-top: 2rem !important;
+    flex-wrap: wrap !important;
 }
 
-.action-buttons a {
-    flex: 1;
-    min-width: 150px;
-    padding: var(--spacing-md);
-    font-size: 1rem;
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    transition: transform var(--transition-duration);
+.action-buttons a.btn {
+    flex: 0 1 auto !important;
+    display: inline-block !important;
+    padding: 0.8rem 2rem !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    min-width: 180px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    border: 2px solid transparent !important;
+    font-size: 1rem !important;
 }
 
-.action-buttons a:hover {
-    transform: translateY(-2px);
+.action-buttons a.donate-btn {
+    background-color: #008751 !important;
+    color: white !important;
+    border: 2px solid #008751 !important;
+}
+
+.action-buttons a.contact-btn {
+    background-color: #e74c3c !important;
+    color: white !important;
+    border: 2px solid #e74c3c !important;
+}
+
+.action-buttons a.btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+    opacity: 0.9 !important;
+}
+
+.action-buttons a.btn:active {
+    transform: translateY(0) !important;
 }
 
 /* FAQ Section */

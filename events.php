@@ -1,5 +1,15 @@
 <?php
-header('Content-Type: application/json');
+session_start();
+$page_title = "Events | Nancholi Youth Organization (NAYO)";
+
+// Include base URL configuration
+require_once 'base_url.php';
+
+// Include header
+include_once 'includes/header.php';
+
+// Add events.css stylesheet
+echo '<link rel="stylesheet" href="' . $base_url . '/css/events.css">';
 
 // Sample categories - in production, these would come from a database
 $categories = [
@@ -259,49 +269,115 @@ $events = [
 // Get query parameters
 $category = $_GET['category'] ?? '';
 $status = $_GET['status'] ?? '';
-$eventId = $_GET['id'] ?? null;
+$search = $_GET['search'] ?? '';
 
-// Get single event details
-if ($eventId) {
-    $event = array_filter($events, function($e) use ($eventId) {
-        return $e['id'] == $eventId;
-    });
+// Filter events based on parameters
+$filteredEvents = array_filter($events, function($event) use ($category, $status, $search) {
+    $matches = true;
     
-    if (count($event) > 0) {
-        $event = array_values($event)[0];
-        echo json_encode([
-            'id' => $event['id'],
-            'title' => $event['title'],
-            'date' => $event['date'],
-            'time' => $event['time'],
-            'location' => $event['location'],
-            'image' => $event['image'],
-            'category' => $event['category'],
-            'description' => $event['description'],
-            'status' => $event['status'],
-            'rsvp' => $event['rsvp'],
-            'highlights' => $event['highlights'],
-            'steps' => $event['steps'],
-            'items' => $event['items']
-        ]);
-        exit;
+    if ($category && $event['category'] !== $category) {
+        $matches = false;
     }
-}
-
-// Filter events
-$filteredEvents = array_filter($events, function($event) use ($category, $status) {
-    return ($category === '' || $event['category'] === $category) &&
-           ($status === '' || $event['status'] === $status);
+    
+    if ($status && $event['status'] !== strtolower($status)) {
+        $matches = false;
+    }
+    
+    if ($search) {
+        $search = strtolower($search);
+        if (strpos(strtolower($event['title']), $search) === false && 
+            strpos(strtolower($event['description']), $search) === false) {
+            $matches = false;
+        }
+    }
+    
+    return $matches;
 });
 
-// Return events or categories based on request
-if (isset($_GET['categories'])) {
-    echo json_encode(['categories' => array_unique(array_column($events, 'category'))]);
-} else {
-    echo json_encode([
-        'events' => array_values($filteredEvents),
-        'categories' => array_unique(array_column($events, 'category'))
-    ]);
-}
-
+// Get unique categories from events
+$allCategories = array_values(array_unique(array_merge($categories, array_column($events, 'category'))));
 ?>
+
+<main class="events-page">
+    <section class="page-header">
+        <h1>Upcoming Events</h1>
+        <p>Join us for our upcoming events and activities in the community</p>
+    </section>
+
+    <div class="events-container">
+        <aside class="events-sidebar">
+            <div class="events-filter">
+                <h3>Filter Events</h3>
+                <form method="get" action="" class="filter-form">
+                    <div class="form-group">
+                        <input type="text" name="search" placeholder="Search events..." value="<?php echo htmlspecialchars($search); ?>">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="category">
+                            <option value="">All Categories</option>
+                            <?php foreach ($allCategories as $cat): ?>
+                                <option value="<?php echo htmlspecialchars($cat); ?>" <?php echo $category === $cat ? 'selected' : ''; ?>>
+                                    <?php echo htmlspecialchars($cat); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="status">
+                            <option value="">All Statuses</option>
+                            <option value="upcoming" <?php echo $status === 'upcoming' ? 'selected' : ''; ?>>Upcoming</option>
+                            <option value="past" <?php echo $status === 'past' ? 'selected' : ''; ?>>Past Events</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn">Apply Filters</button>
+                    <?php if ($category || $status || $search): ?>
+                        <a href="events.php" class="btn btn-outline">Clear Filters</a>
+                    <?php endif; ?>
+                </form>
+            </div>
+        </aside>
+
+        <div class="events-list">
+            <?php if (empty($filteredEvents)): ?>
+                <div class="no-events">
+                    <p>No events found matching your criteria.</p>
+                    <a href="events.php" class="btn">View All Events</a>
+                </div>
+            <?php else: ?>
+                <?php foreach ($filteredEvents as $event): ?>
+                    <article class="event-card">
+                        <div class="event-image">
+                            <img src="<?php echo $base_url . '/' . htmlspecialchars($event['image']); ?>" alt="<?php echo htmlspecialchars($event['title']); ?>">
+                            <span class="event-category"><?php echo htmlspecialchars($event['category']); ?></span>
+                        </div>
+                        <div class="event-details">
+                            <div class="event-date">
+                                <span class="day"><?php echo date('d', strtotime($event['date'])); ?></span>
+                                <span class="month"><?php echo date('M', strtotime($event['date'])); ?></span>
+                            </div>
+                            <div class="event-info">
+                                <h3><?php echo htmlspecialchars($event['title']); ?></h3>
+                                <div class="event-meta">
+                                    <span><i class="fas fa-clock"></i> <?php echo htmlspecialchars($event['time']); ?></span>
+                                    <span><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($event['location']); ?></span>
+                                </div>
+                                <p><?php echo htmlspecialchars($event['description']); ?></p>
+                                <div class="event-actions">
+                                    <?php if ($event['rsvp']): ?>
+                                        <a href="#" class="btn">RSVP Now</a>
+                                    <?php endif; ?>
+                                    <a href="#" class="btn btn-outline">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</main>
+
+<?php include_once 'includes/footer.php'; ?>

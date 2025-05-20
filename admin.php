@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAYO Admin Portal</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="js/main.js" defer></script>
+<?php
+// Start session first thing
+session_start();
+$page_title = "Admin Portal | Nancholi Youth Organization";
+
+// Include header
+include_once 'includes/header.php';
+?>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -233,6 +231,7 @@
         </div>
     </div>
 
-    <script src="js/admin.js"></script>
-<!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>`n</body>
-</html> 
+    <script src="<?php echo $base_url; ?>/js/admin.js"></script>
+    <?php include_once 'includes/footer.php'; ?>
+</body>
+</html>

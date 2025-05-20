@@ -3,107 +3,10 @@
 session_start();
 $page_title = "Palliative Care | End-of-Life Support | Nancholi Youth Organization";
 // Include dynamic base URL configuration
-include_once 'base_url.php';
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palliative Care | End-of-Life Support | Nancholi Youth Organization</title>
-    
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Palliative Care | End-of-Life Support | Nancholi Youth Organization">
-    <meta name="description" content="NAYO's Palliative Care program provides compassionate end-of-life care and support services in Blantyre, Malawi. Specialized care for patients with life-limiting illnesses and their families.">
-    <meta name="keywords" content="palliative care Malawi, end of life care Blantyre, hospice care Malawi, pain management Malawi, terminal illness support, NAYO palliative care, compassionate care Malawi, bereavement support Malawi">
-    <meta name="author" content="Nancholi Youth Organization">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nayomalawi.org/palliative.html">
-    <meta property="og:title" content="Palliative Care | End-of-Life Support | Nancholi Youth Organization">
-    <meta property="og:description" content="NAYO's Palliative Care program provides compassionate end-of-life care and support services in Blantyre, Malawi. Specialized care for patients with life-limiting illnesses and their families.">
-    <meta property="og:image" content="https://nayomalawi.org/images/palliative.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nayomalawi.org/palliative.html">
-    <meta property="twitter:title" content="Palliative Care | End-of-Life Support | Nancholi Youth Organization">
-    <meta property="twitter:description" content="NAYO's Palliative Care program provides compassionate end-of-life care and support services in Blantyre, Malawi. Specialized care for patients with life-limiting illnesses and their families.">
-    <meta property="twitter:image" content="https://nayomalawi.org/images/palliative.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://nayomalawi.org/palliative.php">
-    
-    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
-    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
-    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="<?php echo $base_url; ?>/js/main.js" defer></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Nancholi Youth Organization (NAYO)",
-      "alternateName": "NAYO",
-      "url": "https://nayomalawi.org/",
-      "logo": "https://nayomalawi.org/images/logo.png",
-      "description": "NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.",
-      "email": "info@nayomalawi.org",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "P.O. Box 1624",
-        "addressLocality": "Blantyre",
-        "addressCountry": "MW"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "General Inquiries",
-        "email": "info@nayomalawi.org"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/nancholi-youth-organisation-nayo/",
-        "https://www.givey.com/nayoukschoolfundraiser20232024",
-        "https://www.every.org/nancholi-youth-organization"
-      ]
-    }
-    </script>
-</head>
-<body>
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
-                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img">
-                    <span class="tagline">One Heart,<br>One Community</span>
-                </a>
-            </div>
-            <button class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.php">HOME</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">PROJECTS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="art.php">ART</a></li>
-                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
-                        <li><a href="student.php">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
-                    </ul>
-                </li>
-                <li><a href="events.php">EVENTS</a></li>
-                <li><a href="index.html#staff">STAFF</a></li>
-
-                <li><a href="volunteer.php">VOLUNTEER</a></li>
-                <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php include_once 'includes/header.php'; ?>
 
     <main class="program-content">
         <section class="program-hero">

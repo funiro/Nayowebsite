@@ -1,17 +1,10 @@
 <?php
-// Database connection (if needed)
-// $conn = new mysqli('localhost', 'username', 'password', 'database');
+// Include base URL configuration
+require_once dirname(__DIR__) . '/base_url.php';
 
 // Error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-// Define base path
-$base_path = dirname(__DIR__);
-// Detect if on localhost or live server to set correct base URL
-$server_name = isset($_SERVER['SERVER_NAME']) ? strtolower($_SERVER['SERVER_NAME']) : '';
-$is_localhost = (strpos($server_name, 'localhost') !== false) || (strpos($server_name, '127.0.0.1') !== false);
-$base_url = $is_localhost ? '/dashboard/nayo-website' : '';
 ?>
 
 <!DOCTYPE html>
@@ -23,13 +16,22 @@ $base_url = $is_localhost ? '/dashboard/nayo-website' : '';
     <link rel="preload" href="<?php echo $base_url; ?>/images/logo.png" as="image">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/optimized.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/navigation.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/slider.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/index.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/staff.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/impact.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/footer.css?ver=1.2">
     
     <!-- Primary Meta Tags -->
     <meta name="title" content="Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi">
     <meta name="description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
     <meta name="keywords" content="Nancholi Youth Organisation, NAYO, NGO Malawi, Blantyre NGO, youth development Malawi, HIV/AIDS care Malawi, palliative care Malawi, antenatal care Malawi, student support Malawi, outreach programs Malawi, youth friendly services Malawi">
     <meta name="author" content="Nancholi Youth Organization">
+    <script defer src="<?php echo $base_url; ?>/js/lazy-load.js"></script>
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
@@ -39,15 +41,12 @@ $base_url = $is_localhost ? '/dashboard/nayo-website' : '';
     <meta property="og:description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
     <meta property="og:image" content="https://nayomalawi.org/images/hero-1.jpg">
     
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
-    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/programs.css">
     <?php if (isset($page_title) && strpos($page_title, 'Youth Friendly Services') !== false) { ?>
         <link rel="stylesheet" href="<?php echo $base_url; ?>/css/youth.css">
     <?php } ?>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-    <script src="<?php echo $base_url; ?>/js/main.js" defer type="text/javascript"></script>
-    <script src="<?php echo $base_url; ?>/js/lazy-load.js" defer type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="<?php echo $base_url; ?>/js/main.js" defer></script>
+    <script src="<?php echo $base_url; ?>/js/lazy-load.js" defer></script>
     <!-- Structured data for organization and logo (for search engines) -->
     <script type="application/ld+json">
     {
@@ -400,14 +399,14 @@ $base_url = $is_localhost ? '/dashboard/nayo-website' : '';
             <div class="logo">
                 <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
                     <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img" width="150" height="60" fetchpriority="high" loading="lazy"> 
-                    <span class="tagline" style="font-size: 0.9rem; color: #333;">One Heart,<br>One Community</span>
+                    <span class="tagline">One Heart,<br>One Community</span>
                 </a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" style="background-color: #006b41; border-radius: 4px; padding: 8px; border: none; cursor: pointer; z-index: 1003;">
-                <span class="hamburger" style="display: flex; flex-direction: column; justify-content: space-between; height: 24px;">
-                    <span class="bar" style="display: block; width: 30px; height: 3px; background-color: white; border-radius: 3px; transition: all 0.3s ease;"></span>
-                    <span class="bar" style="display: block; width: 30px; height: 3px; background-color: white; border-radius: 3px; transition: all 0.3s ease;"></span>
-                    <span class="bar" style="display: block; width: 30px; height: 3px; background-color: white; border-radius: 3px; transition: all 0.3s ease;"></span>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </span>
             </button>
             <ul class="nav-links">

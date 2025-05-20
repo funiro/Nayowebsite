@@ -1,11 +1,15 @@
 /* CSS Variables for consistent theming */
 :root {
-    --primary-color: #006b41;
-    --secondary-color: #f4f4f4;
+    --primary-color: #006241;
     --text-color: #333;
     --light-bg: #f9f9f9;
-    --border-radius: 4px;
-    --transition: all .3s ease;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    --border-radius: 8px;
+    --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+    --bg-light: #f9f9f9;
 }
 
 * {
@@ -19,6 +23,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
+    padding-top: 80px; /* Add padding to account for fixed header */
 }
 
 img {
@@ -26,59 +31,204 @@ img {
     height: auto;
 }
 
-/* ... rest of the code remains the same ... */
+/* Common Section Heading Styles */
+.section-heading {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
 
-.hero-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Our Approach Section */
+.our-approach {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #f7f7f7 !important;
+}
+
+/* Director's Quote Section */
+.quote {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #f7f7f7 !important;
+}
+
+.our-approach h2,
+.services h2,
+.staff-section h2,
+.youtube-links h2,
+.map-section h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.our-approach p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
     width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.hero-slide.active {
-    opacity: 1;
-    z-index: 1;
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    width: 100%;
 }
 
-.hero-slide img {
-    position: absolute;
-    top: 0;
-    left: 0;
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .section-heading {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* Staff Section Styles */
+.staff-section {
+    padding: var(--spacing-lg);
+    background: var(--light-bg);
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.staff-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+}
+
+.staff-image {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.staff-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
-    z-index: 1;
-    pointer-events: none;
+.staff-card:hover .staff-image img {
+    transform: scale(1.1);
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+.staff-info {
+    padding: var(--spacing-md);
+}
+
+.staff-info h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.staff-info p {
+    color: #666;
+    margin-bottom: var(--spacing-md);
+}
+
+.staff-bio {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.staff-social {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.staff-social a {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.staff-social a:hover {
+    color: var(--primary-color);
+}
+
+.view-more-staff {
     text-align: center;
-    color: white;
-    width: 90%;
-    max-width: 900px;
-    padding: 2rem;
+    margin-top: var(--spacing-lg);
 }
 
-/* Mobile staff section styles */
+.view-more-btn {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #005234;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .staff-card {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .staff-image {
+        max-height: 300px;
+    }
+    
+    .staff-info {
+        padding: var(--spacing-md);
+    }
+}
 @media (max-width: 768px) {
     .staff-grid {
         grid-template-columns: 1fr;

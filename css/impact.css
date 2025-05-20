@@ -1,0 +1,132 @@
+/* Standardized Impact Section Styles */
+.impact-section {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+}
+
+.impact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.impact-heading {
+    color: #008751;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.impact-subheading {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 200px;
+    background-color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.stat-item h3 {
+    color: #555;
+    margin: 0 0 0.75rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.stat-number {
+    color: #008751;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .stats-container {
+        gap: 1.25rem;
+    }
+    
+    .stat-item {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .impact-heading {
+        font-size: 2.25rem;
+    }
+    
+    .impact-subheading {
+        font-size: 1.05rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .impact-section {
+        padding: 3rem 0;
+    }
+    
+    .impact-heading {
+        font-size: 2rem;
+    }
+    
+    .impact-subheading {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 10px;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.35rem;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .impact-section {
+        padding: 2.5rem 0;
+    }
+    
+    .impact-heading {
+        font-size: 1.75rem;
+        padding: 0 15px;
+    }
+    
+    .stat-item {
+        min-width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .stat-item:last-child {
+        margin-bottom: 0;
+    }
+}

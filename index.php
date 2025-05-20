@@ -1,183 +1,201 @@
 <?php
 // Start session first thing
 session_start();
+
+// Include base URL configuration
+require_once __DIR__ . '/base_url.php';
+
 $page_title = "Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi";
-// Include dynamic base URL configuration
-include_once 'base_url.php';
+
+// Include header files
+require_once 'includes/header-config.php';
+require_once 'includes/header.php';
 ?>
 
-<?php include_once 'includes/header.php'; ?>
-
-    <section class="hero">
+<!-- Slider/Hero Section -->
+<section class="hero">
         <div class="hero-slider">
             <div class="hero-slide active">
                 <img src="<?php echo $base_url; ?>/images/hero-1.jpg" alt="Hero Image 1" class="hero-image active">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <div style="margin-bottom: 1.5rem;">
-                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
-                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    <div class="hero-welcome">
+                        <span>WELCOME TO</span>
+                        <h1>NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
-                    <p>Empowering Youth Through Education, Healthcare, and Community Development</p>
                 </div>
             </div> 
             <div class="hero-slide">
                 <img src="<?php echo $base_url; ?>/images/hero-2.jpg" alt="Hero Image 2" class="hero-image">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <div style="margin-bottom: 1.5rem;">
-                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
-                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    <div class="hero-welcome">
+                        <span>WELCOME TO</span>
+                        <h1>NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
-                    <p>Providing Quality Healthcare in Blantyre</p>
                 </div>
             </div>
             <div class="hero-slide">
                 <img src="<?php echo $base_url; ?>/images/hero-3.jpg" alt="Hero Image 3" class="hero-image">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <div style="margin-bottom: 1.5rem;">
-                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
-                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    <div class="hero-welcome">
+                        <span>WELCOME TO</span>
+                        <h1>NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
-                    <p>Supporting Education and Community Growth</p>
                 </div>
             </div>
             <div class="hero-slide">
                 <img src="<?php echo $base_url; ?>/images/hero-4.jpg" alt="Hero Image 4" class="hero-image">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <div style="margin-bottom: 1.5rem;">
-                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
-                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    <div class="hero-welcome">
+                        <span>WELCOME TO</span>
+                        <h1>NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
-                    <p>Dedicated to Youth Empowerment and Healthcare Access</p>
                 </div>
             </div>
             <div class="hero-slide">
                 <img src="<?php echo $base_url; ?>/images/hero-5.jpg" alt="Hero Image 5" class="hero-image">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <div style="margin-bottom: 1.5rem;">
-                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
-                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    <div class="hero-welcome">
+                        <span>WELCOME TO</span>
+                        <h1>NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
-                    <p>Building Stronger Communities Through Outreach Programs</p>
                 </div>
             </div>
             <div class="hero-slide">
                 <img src="<?php echo $base_url; ?>/images/hero-6.jpg" alt="Hero Image 6" class="hero-image">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <div style="margin-bottom: 1.5rem;">
-                        <span style="display: block; font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); color: #ffffff;">WELCOME TO</span>
-                        <h1 style="font-size: 3rem; font-weight: 700; margin: 0.5rem 0 1.5rem 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); letter-spacing: 2px; color: #ffffff; text-transform: uppercase;">NANCHOLI YOUTH ORGANISATION</h1>
+                    <div class="hero-welcome">
+                        <span>WELCOME TO</span>
+                        <h1>NANCHOLI YOUTH ORGANISATION</h1>
                     </div>
-                    <p>Serving the Community Since 2004</p>
                 </div>
             </div>
         </div>
         <div class="slider-controls">
-            <div class="slider-arrow left-arrow" id="prev-slide">&#10094;</div>
-            <div class="slider-dots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-                <span class="dot" data-slide="2"></span>
-                <span class="dot" data-slide="3"></span>
-                <span class="dot" data-slide="4"></span>
-                <span class="dot" data-slide="5"></span>
+            <button class="slider-arrow prev-slide" aria-label="Previous slide">&#10094;</button>
+            <div class="slider-dots" role="tablist">
+                <span class="dot active" data-slide="0" role="tab" aria-selected="true" tabindex="0"></span>
+                <span class="dot" data-slide="1" role="tab" aria-selected="false" tabindex="0"></span>
+                <span class="dot" data-slide="2" role="tab" aria-selected="false" tabindex="0"></span>
+                <span class="dot" data-slide="3" role="tab" aria-selected="false" tabindex="0"></span>
+                <span class="dot" data-slide="4" role="tab" aria-selected="false" tabindex="0"></span>
+                <span class="dot" data-slide="5" role="tab" aria-selected="false" tabindex="0"></span>
             </div>
-            <div class="slider-arrow right-arrow" id="next-slide">&#10095;</div>
+            <button class="slider-arrow next-slide" aria-label="Next slide">&#10095;</button>
         </div>
     </section>
 
-    <section class="our-approach">
-        <h2>OUR APPROACH</h2>
-        <p>Empowering youth and communities through healthcare access and education.</p>
-    </section>
-
-    <section class="services">
-        <div class="service-grid">
-            <div class="service-card">
-                <img src="<?php echo $base_url; ?>/images/antenatal.jpg" alt="Antenatal Care">
-                <h3><a href="<?php echo $base_url; ?>/antenatal.php">ANTENATAL<br>CARE</a></h3>
-                <p>Supporting expectant mothers with comprehensive prenatal care services.</p>
-                <a href="<?php echo $base_url; ?>/antenatal.php" class="btn view-more-btn">View More</a>
-            </div>
-            <div class="service-card">
-                <img src="<?php echo $base_url; ?>/images/art.jpg" alt="ART Program">
-                <h3><a href="<?php echo $base_url; ?>/art.php">ART<br>PROGRAM</a></h3>
-                <p>Providing comprehensive care and support for people living with HIV/AIDS.</p>
-                <a href="<?php echo $base_url; ?>/art.php" class="btn view-more-btn">View More</a>
-            </div>
-            <div class="service-card">
-                <img src="<?php echo $base_url; ?>/images/youth-services.jpg" alt="Youth Friendly Services">
-                <h3><a href="<?php echo $base_url; ?>/youth.php">YOUTH FRIENDLY<br>SERVICES</a></h3>
-                <p>Offering specialized healthcare and support services for young people.</p>
-                <a href="<?php echo $base_url; ?>/youth.php" class="btn view-more-btn">View More</a>
-            </div>
-        </div>
-
-        <div class="service-grid">
-            <div class="service-card">
-                <img src="<?php echo $base_url; ?>/images/palliative.jpg" alt="Palliative Care">
-                <h3><a href="<?php echo $base_url; ?>/palliative.php">PALLIATIVE<br>CARE</a></h3>
-                <p>Providing compassionate care and support for those with serious illnesses.</p>
-                <a href="<?php echo $base_url; ?>/palliative.php" class="btn view-more-btn">View More</a>
-            </div>
-            <div class="service-card">
-                <img src="<?php echo $base_url; ?>/images/student.jpg" alt="Student Support">
-                <h3><a href="<?php echo $base_url; ?>/student.php">STUDENT<br>SUPPORT</a></h3>
-                <p>Helping students achieve their educational goals through various support programs.</p>
-                <a href="<?php echo $base_url; ?>/student.php" class="btn view-more-btn">View More</a>
-            </div>
-            <div class="service-card">
-                <img src="<?php echo $base_url; ?>/images/outreach.jpg" alt="Outreach Clinic">
-                <h3><a href="<?php echo $base_url; ?>/outreach.php">OUTREACH<br>CLINIC</a></h3>
-                <p>Bringing healthcare services directly to underserved communities.</p>
-                <a href="<?php echo $base_url; ?>/outreach.php" class="btn view-more-btn">View More</a>
+    <!-- Our Approach Section -->
+    <section class="our-approach section-padding" style="background-color: #f7f7f7; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h2 class="section-heading">OUR APPROACH</h2>
+            <div style="font-size: 1.5rem; font-weight: bold; max-width: 900px; margin: 0 auto; line-height: 1.6; color: #333;">
+                Empowering youth and communities through healthcare access and education. Our approach is centered on sustainable development, community engagement, and youth empowerment to create lasting positive change in Malawi.
             </div>
         </div>
     </section>
 
-    <section class="quote">
-        <blockquote>
-            "Access to Health Care is a basic human right. Everyone deserves it regardless of their economic background or geographical position"
-        </blockquote>
-        <cite>George Nedi - Executive Director</cite>
-    </section>
-
-    <section class="stats" style="padding: 4rem 0; background-color: #f9f9f9;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <h2 style="color: #008751; font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; text-align: center;">OUR IMPACT</h2>
-            <p style="max-width: 800px; margin: 0 auto 3rem auto; font-size: 1.1rem; color: #555; text-align: center;">Since 2004, Nancholi Youth Organisation has been making a difference in communities across Malawi.</p>
+    <!-- Services Section -->
+    <section class="services section-padding">
+        <div class="container">
+            <h2 class="section-heading">OUR SERVICES</h2>
+            <p class="section-subheading">Discover the comprehensive range of services we offer to empower our community and support youth development.</p>
             
-            <div class="stats-container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                <div class="stat-item" style="text-align: left; flex: 1; min-width: 200px; background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-                    <h3 style="color: #555; margin-bottom: 0.5rem; font-size: 1.5rem;">Programs</h3>
-                    <p class="number" data-target="6" style="color: #008751; font-size: 3.5rem; font-weight: bold; margin: 0;">6</p>
+            <div class="service-grid">
+                <!-- Row 1 -->
+                <div class="service-card">
+                    <img src="<?php echo $base_url; ?>/images/antenatal.jpg" alt="Antenatal Care">
+                    <h3><a href="<?php echo $base_url; ?>/antenatal.php">ANTENATAL CARE</a></h3>
+                    <p>Supporting expectant mothers with comprehensive prenatal care services to ensure safe pregnancies and healthy babies.</p>
+                    <a href="<?php echo $base_url; ?>/antenatal.php" class="btn view-more-btn">Learn More</a>
                 </div>
                 
-                <div class="stat-item" style="text-align: center; flex: 1; min-width: 200px; background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-                    <h3 style="color: #555; margin-bottom: 0.5rem; font-size: 1.5rem;">Districts</h3>
-                    <p class="number" data-target="5" style="color: #008751; font-size: 3.5rem; font-weight: bold; margin: 0;">5</p>
+                <div class="service-card">
+                    <img src="<?php echo $base_url; ?>/images/art.jpg" alt="ART Program">
+                    <h3><a href="<?php echo $base_url; ?>/art.php">ART PROGRAM</a></h3>
+                    <p>Providing comprehensive care, treatment, and support for people living with HIV/AIDS in our community.</p>
+                    <a href="<?php echo $base_url; ?>/art.php" class="btn view-more-btn">Learn More</a>
                 </div>
                 
-                <div class="stat-item" style="text-align: right; flex: 1; min-width: 200px; background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-                    <h3 style="color: #555; margin-bottom: 0.5rem; font-size: 1.5rem;">Yearly Reach</h3>
-                    <p class="number" data-target="35000+" style="color: #008751; font-size: 3.5rem; font-weight: bold; margin: 0;">35000+</p>
+                <div class="service-card">
+                    <img src="<?php echo $base_url; ?>/images/youth-services.jpg" alt="Youth Friendly Services">
+                    <h3><a href="<?php echo $base_url; ?>/youth.php">YOUTH FRIENDLY SERVICES</a></h3>
+                    <p>Offering specialized healthcare, counseling, and support services tailored specifically for young people.</p>
+                    <a href="<?php echo $base_url; ?>/youth.php" class="btn view-more-btn">Learn More</a>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="service-card">
+                    <img src="<?php echo $base_url; ?>/images/palliative.jpg" alt="Palliative Care">
+                    <h3><a href="<?php echo $base_url; ?>/palliative.php">PALLIATIVE CARE</a></h3>
+                    <p>Providing compassionate care, pain management, and support for individuals with life-limiting illnesses.</p>
+                    <a href="<?php echo $base_url; ?>/palliative.php" class="btn view-more-btn">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <img src="<?php echo $base_url; ?>/images/student.jpg" alt="Student Support">
+                    <h3><a href="<?php echo $base_url; ?>/student.php">STUDENT SUPPORT</a></h3>
+                    <p>Helping students achieve their educational goals through mentorship, resources, and scholarship programs.</p>
+                    <a href="<?php echo $base_url; ?>/student.php" class="btn view-more-btn">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <img src="<?php echo $base_url; ?>/images/outreach.jpg" alt="Outreach Clinic">
+                    <h3><a href="<?php echo $base_url; ?>/outreach.php">OUTREACH CLINIC</a></h3>
+                    <p>Bringing essential healthcare services directly to underserved communities through our mobile clinics.</p>
+                    <a href="<?php echo $base_url; ?>/outreach.php" class="btn view-more-btn">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="staff" class="staff-section">
-        <div class="staff-container">
-            <div class="staff-header">
-                <h2><a href="staff.php">OUR TEAM</a></h2>
-                <p>Meet the dedicated professionals who make our mission possible.</p>
+    <!-- Director's Quote -->
+    <section class="quote section-padding" style="background-color: #f7f7f7; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <blockquote style="font-size: 1.5rem; font-weight: bold; max-width: 900px; margin: 0 auto 1rem; line-height: 1.6; color: #333;">
+                "Access to Health Care is a basic human right. Everyone deserves it regardless of their economic background or geographical position."
+            </blockquote>
+            <cite style="font-style: normal; font-weight: 600; color: #008751; font-size: 1.2rem;">George Nedi - Executive Director</cite>
+        </div>
+    </section>
+
+    <section class="impact-section">
+        <div class="impact-container">
+            <h2 class="impact-heading">OUR IMPACT</h2>
+            <p class="impact-subheading">Since 2004, Nancholi Youth Organisation has been making a difference in communities across Malawi.</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>Programs</h3>
+                    <p class="stat-number" data-target="6">6</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h3>Districts</h3>
+                    <p class="stat-number" data-target="5">5</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h3>Yearly Reach</h3>
+                    <p class="stat-number" data-target="35000">35000+</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Our Staff Section -->
+    <section class="staff-section section-padding">
+        <div class="container">
+            <h2 class="section-heading"><a href="<?php echo $base_url; ?>/staff.php" style="color: inherit; text-decoration: none;">OUR LEADERSHIP</a></h2>
+            <p class="section-subheading">Meet the dedicated team behind NAYO's mission to empower youth and transform communities.</p>
+            
             <div class="staff-grid">
+                <!-- Staff Member 1 -->
                 <div class="staff-card">
                     <div class="staff-image">
                         <img src="<?php echo $base_url; ?>/images/staff/george-nedi.jpg" alt="George Nedi">
@@ -185,9 +203,6 @@ include_once 'base_url.php';
                     <div class="staff-info">
                         <h3>George Nedi</h3>
                         <p>Executive Director</p>
-                        <div class="staff-bio">
-                            <p>George Nedi brings over 20 years of experience and expertise to Nancholi Youth Organization. Currently serving as NAYO's Executive Director, George holds a Master's degree in Marketing and has helped position Nancholi Youth Organisation as one the leading Non-governmental Organisations in Malawi.</p>
-                        </div>
                         <div class="staff-social">
                             <a href="https://www.linkedin.com/in/george-nedi-5b74b332/" target="_blank" class="linkedin">
                                 <i class="fab fa-linkedin"></i>
@@ -195,7 +210,8 @@ include_once 'base_url.php';
                         </div>
                     </div>
                 </div>
-
+                
+                <!-- Staff Member 2 -->
                 <div class="staff-card">
                     <div class="staff-image">
                         <img src="<?php echo $base_url; ?>/images/staff/watson-shuzi.jpg" alt="Watson Shuzi">
@@ -203,9 +219,6 @@ include_once 'base_url.php';
                     <div class="staff-info">
                         <h3>Watson Shuzi</h3>
                         <p>Head of Programs</p>
-                        <div class="staff-bio">
-                            <p>Watson Shuzi has a background in public health and community development. He is one of the founding members and has been instrumental in developing NAYO's health programs since its inception in 2004.</p>
-                        </div>
                         <div class="staff-social">
                             <a href="https://mw.linkedin.com/in/nancholi-youth-organisation-nayo-478a38141" target="_blank" class="linkedin">
                                 <i class="fab fa-linkedin"></i>
@@ -213,7 +226,8 @@ include_once 'base_url.php';
                         </div>
                     </div>
                 </div>
-
+                
+                <!-- Staff Member 3 -->
                 <div class="staff-card">
                     <div class="staff-image">
                         <img src="<?php echo $base_url; ?>/images/staff/Patson.jpg" alt="Patson Gondwe">
@@ -221,9 +235,6 @@ include_once 'base_url.php';
                     <div class="staff-info">
                         <h3>Patson Gondwe</h3>
                         <p>Head of Finance</p>
-                        <div class="staff-bio">
-                            <p>Patson Gondwe is a Chartered Accountant and currently serves as the Head of Finance at Nancholi Youth Organisation. He joined the organisation in 2019 and has since brought a wealth of financial expertise and strategic insight to the team.</p>
-                        </div>
                         <div class="staff-social">
                             <a href="https://www.linkedin.com/in/patson-gondwe-531326107" target="_blank" class="linkedin">
                                 <i class="fab fa-linkedin"></i>
@@ -231,41 +242,96 @@ include_once 'base_url.php';
                         </div>
                     </div>
                 </div>
+                
+                <!-- Staff Member 4 -->
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="<?php echo $base_url; ?>/images/staff/moses-mageza.jpg" alt="Moses Mageza">
+                    </div>
+                    <div class="staff-info">
+                        <h3>Moses Mageza</h3>
+                        <p>Human Resources Manager</p>
+                        <div class="staff-social">
+                            <a href="https://www.linkedin.com/in/moses-mageza-b3b3b3b3" target="_blank" class="linkedin">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Staff Member 5 -->
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="<?php echo $base_url; ?>/images/staff/mloiso.JPG" alt="Mloiso M Katete">
+                    </div>
+                    <div class="staff-info">
+                        <h3>Mloiso M Katete</h3>
+                        <p>Programs Manager</p>
+                        <div class="staff-social">
+                            <a href="#" target="_blank" class="linkedin">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Staff Member 6 -->
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="<?php echo $base_url; ?>/images/staff/Chifuniro.jpg" alt="Chifuniro Masamba">
+                    </div>
+                    <div class="staff-info">
+                        <h3>Chifuniro Masamba</h3>
+                        <p>communities Officer</p>
+                        <div class="staff-social">
+                            <a href="#" target="_blank" class="linkedin">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
             <div class="view-more-staff">
                 <a href="staff.php" class="btn view-more-btn">View More Staff</a>
             </div>
         </div>
     </section>
 
-    <section class="youtube-links">
-        <h2>OUR VIDEOS</h2>
-        <div class="youtube-container">
-            <div class="youtube-box">
-                <iframe 
-                    width="100%" 
-                    height="200" 
-                    src="https://www.youtube.com/embed/K5SwAaZv0aU" 
-                    title="NAYO Video 1"
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="youtube-box">
-                <iframe 
-                    width="100%" 
-                    height="200" 
-                    src="https://www.youtube.com/embed/OpfboVkl6gs" 
-                    title="NAYO Video 2"
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
+    <!-- Videos Section -->
+    <section class="videos-section section-padding" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-heading">OUR VIDEOS</h2>
+            <div class="videos-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <!-- Video 1 -->
+                <div class="video-container" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                            src="https://www.youtube.com/embed/K5SwAaZv0aU" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-container" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                            src="https://www.youtube.com/embed/OpfboVkl6gs" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-<section class="map-section" style="margin-top: 0; padding-top: 0;">
+<section class="map-section">
     <div class="map-container">
         <h2>FIND US</h2>
         <iframe 

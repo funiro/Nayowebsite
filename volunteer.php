@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer with NAYO | Nancholi Youth Organization</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/programs.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<?php
+session_start();
+$page_title = "Volunteer with NAYO | Nancholi Youth Organization";
+?>
+
+<?php include_once 'includes/header.php'; ?>
     <style>
         .volunteer-content {
             max-width: 1200px;
@@ -245,38 +242,7 @@
     </script>
 </head>
 <body>
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
-                    <span class="tagline">One Heart,<br>One Community</span>
-                </a>
-            </div>
-            <button class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.php">HOME</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">PROJECTS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="art.php">ART</a></li>
-                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
-                        <li><a href="student.php">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
-                    </ul>
-                </li>
-                <li><a href="events.php">EVENTS</a></li>
-                <li><a href="index.html#staff">STAFF</a></li>
-                <li><a href="volunteer.php" class="active">VOLUNTEER</a></li>
-                <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <?php include 'includes/header.php'; ?>
     <main class="volunteer-content">
         <section class="volunteer-hero">
             <h1>Volunteer with NAYO</h1>

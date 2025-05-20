@@ -1,94 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Details - NAYO Events</title>
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+<?php
+// Start session first thing
+session_start();
+$page_title = "Event Details | Nancholi Youth Organization";
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-    <script src="js/events.js"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Nancholi Youth Organization (NAYO)",
-      "alternateName": "NAYO",
-      "url": "https://nayomalawi.org/",
-      "logo": "https://nayomalawi.org/images/logo.png",
-      "description": "NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.",
-      "email": "info@nayomalawi.org",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "P.O. Box 1624",
-        "addressLocality": "Blantyre",
-        "addressCountry": "MW"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "General Inquiries",
-        "email": "info@nayomalawi.org"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/nancholi-youth-organisation-nayo/",
-        "https://www.givey.com/nayoukschoolfundraiser20232024",
-        "https://www.every.org/nancholi-youth-organization"
-      ]
-    }
-    </script>
-</head>
-<body>
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="index.php" class="logo-link">
-                    <img src="images/logo.png" alt="NAYO Logo" class="logo-img">
-                    <span class="tagline">One Heart,<br>One Community</span>
-                </a>
-            </div>
-            <button class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.php">HOME</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">PROJECTS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="art.php">ART</a></li>
-                        <li><a href="antenatal.php">ANTENATAL CARE</a></li>
-                        <li><a href="palliative.php">PALLIATIVE CARE</a></li>
-                        <li><a href="student.php">STUDENT SUPPORT</a></li>
-                        <li><a href="outreach.php">OUTREACH PROGRAMS</a></li>
-                        <li><a href="youth.php">YOUTH FRIENDLY SERVICES</a></li>
-                    </ul>
-                </li>
-                <li><a href="events.php">EVENTS</a></li>
-                <li><a href="index.html#staff">STAFF</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">PARTNERS</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://www.copred.org/" target="_blank">Copred</a></li>
-                        <li><a href="https://www.foccad.org/" target="_blank">FOCCAD</a></li>
-                        <li><a href="https://k2fasteners.ca/" target="_blank">K2 Fasteners</a></li>
-                        <li><a href="https://luena.org/" target="_blank">Luena Foundation</a></li>
-                        <li><a href="https://www.masanawaafrika.org/" target="_blank">Masana Wa Wafrika</a></li>
-                        <li><a href="https://www.health.gov.mw" target="_blank">Malawi's Ministry of Health</a></li>
-                        <li><a href="https://stephenlewisfoundation.org" target="_blank">Stephen Lewis Foundation</a></li>
-                        <li><a href="https://www.unaids.org/en" target="_blank">UNAIDS</a></li>
-                        <li><a href="https://www.givey.com/nayoukschoolfundraiser20232024" target="_blank">NAYO UK FUNDRAISERS</a></li>
-                    </ul>
-                </li>
-                <li><a href="volunteer.php">VOLUNTEER</a></li>
-                <li><a href="https://www.every.org/nancholi-youth-organization?search_meta=" class="donate-btn">Donate</a></li>
-            </ul>
-        </nav>
-    </header>
+// Include header
+include_once 'includes/header.php';
+?>
+
 
     <main class="event-details-content">
         <section class="event-hero">
@@ -339,7 +257,7 @@
     });
     </script>
 
-    <!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>
-<!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>`n</body>
+    <?php include_once 'includes/footer.php'; ?>
+</body>
 </html>
 

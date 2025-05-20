@@ -1,20 +1,39 @@
 /* Program Page Styles */
 .program-content {
-    padding: 4rem 5%;
+    padding: 8rem 5% 4rem; /* Increased top padding to create more space below header */
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .program-hero {
     text-align: center;
     margin-bottom: 3rem;
+    padding-top: 3rem; /* Increased space between header and title */
 }
 
 .program-hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: #008751;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem;
     line-height: 1.2;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.program-hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: #008751;
+    border-radius: 2px;
 }
 
 .program-image {
@@ -102,8 +121,44 @@
 .action-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.action-buttons a.btn {
+    display: inline-block !important;
+    padding: 0.8rem 2rem !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    min-width: 180px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    border: 2px solid transparent !important;
+}
+
+.action-buttons a.donate-btn {
+    background-color: #008751 !important; /* NAYO green */
+    color: white !important;
+    border: 2px solid #008751 !important;
+}
+
+.action-buttons a.contact-btn {
+    background-color: #e74c3c !important; /* Red color */
+    color: white !important;
+    border: 2px solid #e74c3c !important;
+}
+
+.action-buttons a.btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+    opacity: 0.9 !important;
+}
+
+.action-buttons a.btn:active {
+    transform: translateY(0) !important;
 }
 
 /* Active state for current program in dropdown */
@@ -166,8 +221,10 @@
 }
 
 /* FAQ Styles */
-.program-faq {
-    margin-bottom: 4rem;
+.program-impact {
+    margin: 4rem auto;
+    text-align: center;
+    max-width: 800px;
 }
 
 .faq-container {
@@ -212,10 +269,12 @@
 
 /* Sponsorship Section Styles */
 .sponsorship-section {
-    margin-bottom: 4rem;
+    margin: 4rem auto;
     background-color: #f9f9f9;
     padding: 3rem;
     border-radius: 8px;
+    text-align: center;
+    max-width: 800px;
 }
 
 .sponsorship-section ul {
@@ -276,8 +335,22 @@
 }
 
 @media (max-width: 768px) {
+    .program-content {
+        padding: 5rem 5% 3rem; /* Adjusted padding for mobile */
+    }
+    
+    .program-hero {
+        padding-top: 1rem;
+    }
+    
     .program-hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        padding: 0 1rem 1rem;
+    }
+    
+    .program-hero h1::after {
+        width: 80px;
+        height: 3px;
     }
 
     .impact-stats {
@@ -286,6 +359,14 @@
 
     .action-buttons {
         flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .action-buttons a {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
     }
 
     .program-content {

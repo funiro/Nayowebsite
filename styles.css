@@ -140,6 +140,8 @@ body {
     position: relative;
     height: 80vh;
     overflow: hidden;
+    width: 100%;
+    background: #000;
 }
 
 .slider {
@@ -155,11 +157,17 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transform: translateX(100%);
+    transition: all 0.7s ease-in-out;
 }
 
 .slide.active {
     opacity: 1;
+    transform: translateX(0);
+}
+
+.slide.prev {
+    transform: translateX(-100%);
 }
 
 .slide img {
@@ -172,8 +180,8 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -50vw;
+    width: 200vw;
     height: 100%;
     background: rgba(0,0,0,0.5);
     z-index: 1;
@@ -193,25 +201,35 @@ body {
 
 .slider-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    padding: 10px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 20px;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: rgba(255,255,255,0.5);
+    border: 2px solid transparent;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: rgba(255,255,255,0.8);
 }
 
 .dot.active {
     background: white;
+    border-color: #008751;
+    transform: scale(1.2);
 }
 
 .slider-btn {
@@ -219,25 +237,53 @@ body {
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.3);
     color: white;
-    border: none;
-    padding: 1rem;
+    border: 2px solid rgba(255,255,255,0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 1.5rem;
-    transition: background 0.3s ease;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.7;
 }
 
 .slider-btn:hover {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.6);
+    border-color: white;
+    opacity: 1;
 }
 
 .prev {
-    left: 20px;
+    left: 30px;
 }
 
 .next {
-    right: 20px;
+    right: 30px;
+}
+
+@media (max-width: 768px) {
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .prev {
+        left: 15px;
+    }
+    
+    .next {
+        right: 15px;
+    }
+    
+    .slider-dots {
+        bottom: 20px;
+    }
 }
 
 .hero h1 {
@@ -354,8 +400,9 @@ cite {
 
 /* YouTube Section Styles */
 .youtube-links {
-    padding: 4rem 5%;
+    padding: 4rem 5% 0;
     background-color: #f5f5f5;
+    margin-bottom: 0;
 }
 
 .youtube-container {
@@ -364,7 +411,7 @@ cite {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    padding: 1rem;
+    padding: 0;
 }
 
 .youtube-box {
@@ -375,6 +422,7 @@ cite {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 .youtube-box iframe {
@@ -383,7 +431,9 @@ cite {
     left: 0;
     width: 100%;
     height: 100%;
+    border: none;
     border-radius: 8px;
+    display: block;
 }
 
 /* Footer */
@@ -689,15 +739,15 @@ footer {
 }
 
 .staff-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+background: white;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
 }
 
 .staff-card:hover {
-    transform: translateY(-5px);
+transform: translateY(-5px);
 }
 
 .staff-image {
@@ -746,9 +796,15 @@ footer {
     color: #006b41;
 }
 
+@media (max-width: 1024px) {
+    .staff-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .staff-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: 1fr;
     }
 
     .staff-image {
