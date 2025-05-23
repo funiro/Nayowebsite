@@ -187,12 +187,14 @@
         top: 80px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 80px);
+        max-height: calc(100vh - 80px);
         background-color: white;
         flex-direction: column;
-        padding: 2rem;
+        padding: 1rem;
         transition: left 0.3s ease;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
     }
 
     .nav-links.active {
@@ -200,8 +202,16 @@
     }
 
     .nav-links li {
-        margin: 1rem 0;
+        margin: 0.5rem 0;
         width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .nav-links a {
+        padding: 0.8rem 1rem;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .dropdown-menu {
@@ -211,18 +221,42 @@
         visibility: visible;
         transform: none;
         display: none;
-        padding-left: 1rem;
+        padding: 0 0 0 1rem;
         width: 100%;
         border-radius: 0;
+        background-color: #f9f9f9;
+        margin: 0.5rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
     }
-
+    
     .dropdown.active .dropdown-menu {
         display: block;
+        max-height: 1000px; /* Adjust based on your content */
+        padding: 0.5rem 0 0.5rem 1rem;
     }
 
+    /* This is now handled in the previous block */
+
+    .dropdown-toggle {
+        position: relative;
+        padding-right: 2rem;
+    }
+    
     .dropdown-toggle::after {
-        right: 45%;
-        top: 80%;
+        content: '\f107';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-toggle::after {
+        transform: translateY(-50%) rotate(180deg);
     }
 
     .mobile-menu-toggle.active .bar:nth-child(1) {

@@ -174,6 +174,19 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
             text-decoration: underline;
         }
 
+        .form-group.terms-group {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .form-group.terms-group .checkbox-label {
+            justify-content: center;
+            display: inline-flex;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
         .submit-btn {
             background-color: #2c3e50;
             color: white;
@@ -184,7 +197,7 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
             cursor: pointer;
             transition: background-color 0.3s ease;
             display: block;
-            margin: 2rem auto 0;
+            margin: 0 auto;
             width: 200px;
         }
 
@@ -312,20 +325,20 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
                         <textarea id="why_volunteer" name="why_volunteer" rows="4" required></textarea>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group terms-group">
                         <label class="checkbox-label">
                             <input type="checkbox" name="terms" required>
                             <span>I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> *</span>
                         </label>
                     </div>
 
-                    <button type="submit" class="submit-btn">Submit Application</button>
+                    <div style="text-align: center; width: 100%;">
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </div>
                 </form>
             </div>
         </section>
     </main>
-
-    <!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>
 
     <script>
     document.getElementById('volunteer-form').addEventListener('submit', function(e) {
@@ -369,6 +382,6 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
         });
     });
     </script>
-<!-- Include footer -->`n    <?php include 'includes/footer.php'; ?>`n</body>
-</html> 
-
+    <?php include 'includes/footer.php'; ?>
+</body>
+</html>

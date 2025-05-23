@@ -46,14 +46,51 @@
             </div>
         </div>
     
-    <div class="partners-section">
-        <h4 class="partners-heading"><a href="<?php echo $base_url; ?>/partners.php">OUR PARTNERS</a></h4>
-        <div class="partners-container">
+    <div class="partners-section" style="background: none !important; padding: 0 !important; margin: 40px 0 0 0 !important; position: relative;">
+        <h2 class="partners-heading" style="margin: 0 0 20px 0 !important; padding: 0 !important; background: none !important; color: #ffffff !important;">
+            <a href="<?php echo $base_url; ?>/partners.php" class="partners-heading-link">OUR PARTNERS</a>
+        </h2>
+    </div>
+    <div class="partners-container-wrapper" style="background: none !important; box-shadow: none !important; border: none !important; outline: none !important; position: relative;">
+        <div class="partners-container" style="background: none !important; box-shadow: none !important; border: none !important; outline: none !important; position: relative;">
             <button class="partners-nav prev" id="partners-prev" aria-label="Previous partners">
                 <i class="fas fa-chevron-left"></i>
             </button>
             <div class="partners-scroll-container" id="partners-scroll">
                 <style>
+                    /* Partners Section */
+                    .partners-section {
+                        text-align: center;
+                        margin: 3rem 0 1.5rem;
+                        width: 100%;
+                        background: none !important;
+                        padding: 0 !important;
+                    }
+                    .partners-heading {
+                        color: #333 !important;
+                        font-size: 2rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        margin: 0 0 2rem 0;
+                        padding: 0;
+                        line-height: 1.2;
+                    }
+                    .partners-heading a {
+                        color: #333 !important;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    }
+                    .partners-heading a:hover {
+                        color: #006b41 !important;
+                    }
+                    .partners-container-wrapper {
+                        width: 100%;
+                        position: relative;
+                        margin: 0 auto;
+                        padding: 20px 0;
+                        background: none !important;
+                    }
                     .partner-logo {
                         display: flex;
                         align-items: center;
@@ -64,6 +101,7 @@
                         border-radius: 8px;
                         padding: 10px;
                         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                        margin: 0 10px;
                     }
                     .partner-logo img {
                         max-width: 100%;
@@ -103,7 +141,7 @@
                     <?php endforeach; ?>
                 </div>
             </div>
-            <button class="partners-nav next" id="partners-next" aria-label="Next partners">
+            <button class="partners-nav next" id="partners-next" aria-label="Next partners" style="background: #f9f9f9 !important; box-shadow: none !important; border: 1px solid #006b41 !important; color: #006b41 !important;">
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
