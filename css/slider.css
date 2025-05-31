@@ -104,7 +104,7 @@
     width: 100%;
     z-index: 10;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
@@ -116,7 +116,7 @@
     background: rgba(0, 0, 0, 0.3);
     padding: 8px 12px;
     border-radius: 20px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .slider-dots .dot {
@@ -141,45 +141,7 @@
     transform: scale(1.2);
 }
 
-.slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: 2px solid white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.slider-arrow.prev-slide {
-    left: 20px;
-}
-
-.slider-arrow.next-slide {
-    right: 20px;
-}
-
-.slider-arrow:hover,
-.slider-arrow:focus {
-    background: rgba(0, 0, 0, 0.9);
-    transform: translateY(-50%) scale(1.1);
-    outline: none;
-}
-
 /* Focus styles for better accessibility */
-.slider-arrow:focus-visible {
-    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #006241;
-}
 
 .slider-dots .dot:focus-visible {
     box-shadow: 0 0 0 3px #fff, 0 0 0 5px #006241;

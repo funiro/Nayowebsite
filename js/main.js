@@ -1311,10 +1311,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Start/stop auto-scroll on hover
+    // Start/stop auto-scroll on hover (only on the container, not the heading)
     if (partnerSection) {
-        partnerSection.addEventListener('mouseenter', stopAutoScroll);
-        partnerSection.addEventListener('mouseleave', startAutoScroll);
+        // Only add hover effects to the scrollable container, not the entire section
+        partnersContainer.addEventListener('mouseenter', stopAutoScroll);
+        partnersContainer.addEventListener('mouseleave', startAutoScroll);
         partnerSection.addEventListener('touchstart', stopAutoScroll, { passive: true });
         partnerSection.addEventListener('touchend', () => {
             // Delay restart to avoid conflicts with manual touch navigation

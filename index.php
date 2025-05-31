@@ -77,7 +77,6 @@ require_once 'includes/header.php';
             </div>
         </div>
         <div class="slider-controls">
-            <button class="slider-arrow prev-slide" aria-label="Previous slide">&#10094;</button>
             <div class="slider-dots" role="tablist">
                 <span class="dot active" data-slide="0" role="tab" aria-selected="true" tabindex="0"></span>
                 <span class="dot" data-slide="1" role="tab" aria-selected="false" tabindex="0"></span>
@@ -86,7 +85,6 @@ require_once 'includes/header.php';
                 <span class="dot" data-slide="4" role="tab" aria-selected="false" tabindex="0"></span>
                 <span class="dot" data-slide="5" role="tab" aria-selected="false" tabindex="0"></span>
             </div>
-            <button class="slider-arrow next-slide" aria-label="Next slide">&#10095;</button>
         </div>
     </section>
 

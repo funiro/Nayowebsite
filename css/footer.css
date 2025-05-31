@@ -352,6 +352,14 @@ footer .partners-container {
     margin: 40px auto 25px;
     max-width: 1200px;
     width: 100%;
+    color: #ffffff !important;
+    cursor: default !important;
+    pointer-events: none !important;
+}
+
+/* High specificity rule for partners heading link */
+body footer .partners-section .partners-heading a.partners-heading-link {
+    color: #ffffff !important;
 }
 
 .partners-heading-link {
@@ -390,8 +398,9 @@ footer .partners-container {
 }
 
 .partners-heading a:hover {
-    color: var(--accent-color);
+    color: #ffffff !important;
     transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 footer .partners-container {

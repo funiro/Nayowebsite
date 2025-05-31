@@ -1,0 +1,110 @@
+/**
+ * Mobile Optimizations for NAYO Website
+ * This file contains mobile-specific optimizations
+ */
+
+/* Base mobile styles */
+@media (max-width: 768px) {
+    /* Ensure content isn't hidden behind fixed header */
+    main {
+        margin-top: 80px;
+    }
+    
+    /* Improve touch targets for interactive elements */
+    button, 
+    .btn,
+    [role="button"],
+    .form-control,
+    .form-select,
+    .form-check-input,
+    .nav-link,
+    .dropdown-item,
+    .pagination .page-link {
+        min-height: 48px;
+        min-width: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Improve form input readability on mobile */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    input[type="search"],
+    input[type="url"],
+    input[type="number"],
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevent iOS zoom on focus */
+        min-height: 48px;
+        padding: 0.75rem 1rem !important;
+    }
+    
+    /* Improve button touch targets */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 4px;
+    }
+    
+    /* Ensure images are responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Improve readability of text blocks */
+    p, li, td, th, label, .text-content {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Adjust headings for better mobile hierarchy */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.4rem; }
+    h4 { font-size: 1.2rem; }
+    h5, h6 { font-size: 1.1rem; }
+    
+    /* Improve table display on mobile */
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Improve iframe responsiveness */
+    iframe, 
+    video, 
+    embed, 
+    object {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Prevent long words from breaking layout */
+    p, h1, h2, h3, h4, h5, h6, li, td, th, label {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Improve button tap targets */
+    .btn, 
+    button, 
+    [role="button"] {
+        touch-action: manipulation;
+    }
+    
+    /* Add visual feedback for touch interactions */
+    a:active, 
+    button:active, 
+    [role="button"]:active {
+        opacity: 0.8;
+        transform: scale(0.98);
+        transition: opacity 0.1s, transform 0.1s;
+    }
+}

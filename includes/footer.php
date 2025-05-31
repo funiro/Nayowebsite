@@ -47,8 +47,8 @@
         </div>
     
     <div class="partners-section" style="background: none !important; padding: 0 !important; margin: 40px 0 0 0 !important; position: relative;">
-        <h2 class="partners-heading" style="margin: 0 0 20px 0 !important; padding: 0 !important; background: none !important; color: #ffffff !important;">
-            <a href="<?php echo $base_url; ?>/partners.php" class="partners-heading-link">OUR PARTNERS</a>
+        <h2 class="partners-heading" style="margin: 0 0 20px 0 !important; padding: 0 !important; background: none !important; color: #ffffff !important; text-transform: uppercase; letter-spacing: 2px; font-size: 2rem; font-weight: 700; line-height: 1.2;">
+            OUR PARTNERS
         </h2>
     </div>
     <div class="partners-container-wrapper" style="background: none !important; box-shadow: none !important; border: none !important; outline: none !important; position: relative;">
@@ -67,23 +67,16 @@
                         padding: 0 !important;
                     }
                     .partners-heading {
-                        color: #333 !important;
+                        color: #ffffff !important;
                         font-size: 2rem;
                         font-weight: 700;
                         text-transform: uppercase;
                         letter-spacing: 2px;
-                        margin: 0 0 2rem 0;
-                        padding: 0;
+                        margin: 0 0 2rem 0 !important;
+                        padding: 0 !important;
                         line-height: 1.2;
                     }
-                    .partners-heading a {
-                        color: #333 !important;
-                        text-decoration: none;
-                        transition: all 0.3s ease;
-                    }
-                    .partners-heading a:hover {
-                        color: #006b41 !important;
-                    }
+                    /* Removed link styles as the heading is no longer a link */
                     .partners-container-wrapper {
                         width: 100%;
                         position: relative;
@@ -269,5 +262,7 @@
             </div>
         </div>
     </div>
-
 </footer>
+
+<!-- Mobile Menu JavaScript -->
+<script src="<?php echo $base_url; ?>/js/mobile-menu.js?ver=1.0"></script>

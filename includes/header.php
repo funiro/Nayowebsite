@@ -11,12 +11,17 @@ ini_set('display_errors', 1);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#006b41">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title><?php echo isset($page_title) ? $page_title . ' - NAYO' : 'NAYO - Empowering Communities in Malawi'; ?></title>
     <link rel="preload" href="<?php echo $base_url; ?>/images/logo.png" as="image">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/navigation.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/slider.css">
@@ -25,6 +30,7 @@ ini_set('display_errors', 1);
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/staff.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/impact.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/footer.css?ver=1.2">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/mobile-optimizations.css?ver=1.0">
     
     <!-- Primary Meta Tags -->
     <meta name="title" content="Nancholi Youth Organization (NAYO) | Youth Development & Healthcare NGO in Malawi">
@@ -41,9 +47,127 @@ ini_set('display_errors', 1);
     <meta property="og:description" content="NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.">
     <meta property="og:image" content="https://nayomalawi.org/images/hero-1.jpg">
     
-    <?php if (isset($page_title) && strpos($page_title, 'Youth Friendly Services') !== false) { ?>
-        <link rel="stylesheet" href="<?php echo $base_url; ?>/css/youth.css">
-    <?php } ?>
+    <?php 
+    if (isset($page_title) && strpos($page_title, 'Youth Friendly Services') !== false) { 
+        echo '<link rel="stylesheet" href="' . $base_url . '/css/youth.css">';
+    }
+    if (strpos($_SERVER['REQUEST_URI'], '/news/') !== false) {
+        echo '<link rel="stylesheet" href="' . $base_url . '/css/news.css">';
+    }
+    ?>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "@id": "https://nayomalawi.org/#organization",
+        "name": "Nancholi Youth Organisation (NAYO)",
+        "legalName": "Nancholi Youth Organisation",
+        "alternateName": "NAYO",
+        "url": "https://nayomalawi.org/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://nayomalawi.org/images/logo.png",
+            "width": "150",
+            "height": "60"
+        },
+        "description": "NAYO is a leading NGO in Malawi providing healthcare services, youth development programs, HIV/AIDS care, palliative care, and educational support in Blantyre and surrounding areas.",
+        "foundingDate": "2009",
+        "foundingLocation": "Blantyre, Malawi",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "P.O. Box 1624",
+            "addressLocality": "Blantyre",
+            "addressRegion": "Southern Region",
+            "postalCode": "1624",
+            "addressCountry": "MW"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-15.7861",
+            "longitude": "35.0058"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer service",
+            "email": "info@nayomalawi.org",
+            "url": "https://nayomalawi.org/contact"
+        },
+        "sameAs": [
+            "https://www.facebook.com/nayomalawi",
+            "https://twitter.com/nayomalawi",
+            "https://www.instagram.com/nayomalawi"
+        ],
+        "areaServed": {
+            "@type": "Country",
+            "name": "Malawi"
+        },
+        "keywords": [
+            "NGO Malawi",
+            "Youth Development",
+            "Healthcare Services Malawi",
+            "HIV/AIDS Care",
+            "Palliative Care",
+            "Education Support"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Youth Development Programs"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Healthcare Services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Educational Support"
+                    }
+                }
+            ]
+        },
+        "founder": {
+            "@type": "Organization",
+            "name": "Nancholi Youth Organisation Founders"
+        },
+        "memberOf": [
+            {
+                "@type": "NGO",
+                "name": "Malawi Network of AIDS Service Organizations (MANASO)"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@id": "https://nayomalawi.org/",
+                    "name": "Home"
+                }
+            }
+        ]
+    }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="<?php echo $base_url; ?>/js/main.js" defer></script>
     <script src="<?php echo $base_url; ?>/js/lazy-load.js" defer></script>
@@ -302,31 +426,25 @@ ini_set('display_errors', 1);
         document.addEventListener('DOMContentLoaded', function() {
             // Hero Slider functionality
             const slides = document.querySelectorAll('.hero-slide');
-            const dots = document.querySelectorAll('.slider-dot');
-            const prevBtn = document.querySelector('.prev-slide');
-            const nextBtn = document.querySelector('.next-slide');
+            const dots = document.querySelectorAll('.dot');
             let currentSlide = 0;
             let slideInterval;
 
             function showSlide(n) {
                 // Remove active class from current slide and dot
-                slides[currentSlide].classList.remove('active');
-                dots[currentSlide].classList.remove('active');
+                if (slides[currentSlide]) slides[currentSlide].classList.remove('active');
+                if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
                 
                 // Calculate new slide index
                 currentSlide = (n + slides.length) % slides.length;
                 
                 // Add active class to new slide and dot
-                slides[currentSlide].classList.add('active');
-                dots[currentSlide].classList.add('active');
+                if (slides[currentSlide]) slides[currentSlide].classList.add('active');
+                if (dots[currentSlide]) dots[currentSlide].classList.add('active');
             }
 
             function nextSlide() {
                 showSlide(currentSlide + 1);
-            }
-
-            function prevSlide() {
-                showSlide(currentSlide - 1);
             }
 
             function startAutoSlide() {
@@ -334,34 +452,35 @@ ini_set('display_errors', 1);
                 slideInterval = setInterval(nextSlide, 5000);
             }
 
+
             function stopAutoSlide() {
-                clearInterval(autoSlideInterval);
+                clearInterval(slideInterval);
             }
 
-            dots.forEach(dot => {
+            // Add click event listeners to dots
+            dots.forEach((dot, index) => {
                 dot.addEventListener('click', function() {
-                    currentIndex = parseInt(this.getAttribute('data-slide'));
-                    showSlide(currentIndex);
+                    showSlide(index);
                     stopAutoSlide(); // Stop auto-slide on user interaction
                     setTimeout(startAutoSlide, 10000); // Resume after 10 seconds of inactivity
                 });
             });
 
-            if (prevArrow && nextArrow) {
-                prevArrow.addEventListener('click', function() {
-                    prevSlide();
-                    stopAutoSlide(); // Stop auto-slide on user interaction
-                    setTimeout(startAutoSlide, 10000); // Resume after 10 seconds of inactivity
-                });
-                nextArrow.addEventListener('click', function() {
-                    nextSlide();
-                    stopAutoSlide(); // Stop auto-slide on user interaction
-                    setTimeout(startAutoSlide, 10000); // Resume after 10 seconds of inactivity
-                });
-            }
-
             // Start auto-sliding on page load
             startAutoSlide();
+
+            // Pause auto-slide when user hovers over slider
+            const heroSlider = document.querySelector('.hero-slider');
+            if (heroSlider) {
+                heroSlider.addEventListener('mouseenter', stopAutoSlide);
+                heroSlider.addEventListener('mouseleave', startAutoSlide);
+                
+                // For touch devices
+                heroSlider.addEventListener('touchstart', stopAutoSlide);
+                heroSlider.addEventListener('touchend', function() {
+                    setTimeout(startAutoSlide, 10000);
+                });
+            }
         });
     </script>
     <!-- Schema.org markup for Google -->
@@ -393,14 +512,24 @@ ini_set('display_errors', 1);
     }
     </script>
 </head>
-<body>
+<body class="<?php echo (strpos($_SERVER['REQUEST_URI'], '/news/') !== false) ? 'news-page' : ''; ?>">
     <header>
         <nav class="main-nav">
-            <div class="logo">
-                <a href="<?php echo $base_url; ?>/index.php" class="logo-link">
-                    <img src="<?php echo $base_url; ?>/images/logo.png" alt="NAYO Logo" class="logo-img" width="150" height="60" fetchpriority="high" loading="lazy"> 
+            <div class="logo" itemscope itemtype="https://schema.org/Organization">
+                <a href="<?php echo $base_url; ?>" class="logo-link" itemprop="url" aria-label="Nancholi Youth Organisation - Home">
+                    <img src="<?php echo $base_url; ?>/images/logo.png" 
+                         alt="Nancholi Youth Organisation Logo" 
+                         class="logo-img" 
+                         width="150" 
+                         height="60" 
+                         fetchpriority="high" 
+                         loading="eager"
+                         itemprop="logo"
+                         aria-hidden="false"> 
                     <span class="tagline">One Heart,<br>One Community</span>
                 </a>
+                <meta itemprop="name" content="Nancholi Youth Organisation (NAYO)">
+                <meta itemprop="description" content="Empowering communities in Malawi through youth development and healthcare services">
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span class="hamburger">
@@ -422,7 +551,13 @@ ini_set('display_errors', 1);
                         <li><a href="<?php echo $base_url; ?>/youth.php">YOUTH FRIENDLY SERVICES</a></li>
                     </ul>
                 </li>
-                <li><a href="<?php echo $base_url; ?>/events.php">EVENTS</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">EVENTS & NEWS</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo $base_url; ?>/events.php">Events</a></li>
+                        <li><a href="<?php echo $base_url; ?>/news/">News</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">OUR PEOPLE</a>
                     <ul class="dropdown-menu">

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <!-- Main Pages -->
     <url>
         <loc>https://nayomalawi.org/</loc>
-        <lastmod>2025-05-05</lastmod>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://nayomalawi.org/dashboard/nayo-website/images/logo.png</image:loc>
+            <image:loc>https://nayomalawi.org/images/logo.png</image:loc>
             <image:title>Nancholi Youth Organisation (NAYO) Logo</image:title>
             <image:caption>NAYO - One Heart, One Community</image:caption>
         </image:image>
@@ -15,84 +15,100 @@
     
     <!-- Project Pages -->
     <url>
-        <loc>https://nayomalawi.org/art.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/art</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://nayomalawi.org/antenatal.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/antenatal</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://nayomalawi.org/palliative.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/palliative</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://nayomalawi.org/student.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/student</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://nayomalawi.org/outreach.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/outreach</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://nayomalawi.org/youth.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/youth</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
+    <!-- News Section -->
+    <url>
+        <loc>https://nayomalawi.org/news</loc>
+        <lastmod>2025-05-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <news:news>
+            <news:publication>
+                <news:name>NAYO News</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2025-05-31</news:publication_date>
+            <news:title>Latest News - Nancholi Youth Organisation</news:title>
+        </news:news>
+    </url>
+    
     <!-- Events Page -->
     <url>
-        <loc>https://nayomalawi.org/events.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/events</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <!-- Our People Pages -->
     <url>
-        <loc>https://nayomalawi.org/board.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/board</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://nayomalawi.org/staff.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/staff</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <!-- Volunteer Page -->
     <url>
-        <loc>https://nayomalawi.org/volunteer.php</loc>
-        <lastmod>2025-05-01</lastmod>
+        <loc>https://nayomalawi.org/volunteer</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <!-- Thank You Page -->
     <url>
-        <loc>https://nayomalawi.org/thank-you.php</loc>
-        <lastmod>2025-05-05</lastmod>
+        <loc>https://nayomalawi.org/thank-you</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     
     <!-- Partners Page -->
     <url>
-        <loc>https://nayomalawi.org/partners.php</loc>
-        <lastmod>2025-05-05</lastmod>
+        <loc>https://nayomalawi.org/partners</loc>
+        <lastmod>2025-05-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
