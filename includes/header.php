@@ -17,7 +17,24 @@ ini_set('display_errors', 1);
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title><?php echo isset($page_title) ? $page_title . ' - NAYO' : 'NAYO - Empowering Communities in Malawi'; ?></title>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:site_name" content="NAYO - Empowering Communities in Malawi">
+    <meta property="og:title" content="<?php echo isset($page_title) ? $page_title . ' - NAYO' : 'NAYO - Empowering Communities in Malawi'; ?>">
+    <meta property="og:description" content="NAYO is dedicated to empowering communities in Malawi through various initiatives and programs.">
+    <meta property="og:image" content="<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $base_url; ?>/images/logo.png">
+    <meta property="og:url" content="<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<?php echo isset($page_title) ? $page_title . ' - NAYO' : 'NAYO - Empowering Communities in Malawi'; ?>">
+    <meta name="twitter:description" content="NAYO is dedicated to empowering communities in Malawi through various initiatives and programs.">
+    <meta name="twitter:image" content="<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $base_url; ?>/images/logo.png">
     <link rel="preload" href="<?php echo $base_url; ?>/images/logo.png" as="image">
+    <link rel="icon" type="image/png" href="<?php echo $base_url; ?>/images/logo.png">
+    <link rel="shortcut icon" href="<?php echo $base_url; ?>/images/logo.png">
+    <link rel="apple-touch-icon" href="<?php echo $base_url; ?>/images/logo.png">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
