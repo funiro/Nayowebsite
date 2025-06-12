@@ -16,29 +16,63 @@ ini_set('display_errors', 1);
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title><?php echo isset($page_title) ? $page_title . ' - NAYO' : 'NAYO - Empowering Communities in Malawi'; ?></title>
+    
+    <?php
+    // Get current URL for canonical and meta tags
+    $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http');
+    $current_url = $protocol . '://' . $_SERVER['HTTP_HOST'] . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $current_url = rtrim($current_url, '/');
+    $page_title = isset($page_title) ? $page_title . ' - NAYO' : 'NAYO - Empowering Communities in Malawi';
+    $page_description = isset($page_description) ? $page_description : 'NAYO is dedicated to empowering communities in Malawi through healthcare, education, and youth development programs.';
+    $page_image = $protocol . '://' . $_SERVER['HTTP_HOST'] . $base_url . '/images/logo.png';
+    ?>
+    
+    <title><?php echo htmlspecialchars($page_title); ?></title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="<?php echo htmlspecialchars($page_description); ?>">
+    <meta name="keywords" content="NAYO, Malawi, youth development, healthcare, education, NGO, Blantyre, community development">
+    <meta name="author" content="Nancholi Youth Organisation">
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:site_name" content="NAYO - Empowering Communities in Malawi">
-    <meta property="og:title" content="<?php echo isset($page_title) ? $page_title . ' - NAYO' : 'NAYO - Empowering Communities in Malawi'; ?>">
-    <meta property="og:description" content="NAYO is dedicated to empowering communities in Malawi through various initiatives and programs.">
-    <meta property="og:image" content="<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $base_url; ?>/images/logo.png">
-    <meta property="og:url" content="<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
+    <meta property="og:description" content="<?php echo htmlspecialchars($page_description); ?>">
+    <meta property="og:image" content="<?php echo htmlspecialchars($page_image); ?>">
+    <meta property="og:url" content="<?php echo htmlspecialchars($current_url); ?>">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
     
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="<?php echo isset($page_title) ? $page_title . ' - NAYO' : 'NAYO - Empowering Communities in Malawi'; ?>">
-    <meta name="twitter:description" content="NAYO is dedicated to empowering communities in Malawi through various initiatives and programs.">
-    <meta name="twitter:image" content="<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $base_url; ?>/images/logo.png">
-    <link rel="preload" href="<?php echo $base_url; ?>/images/logo.png" as="image">
-    <link rel="icon" type="image/png" href="<?php echo $base_url; ?>/images/logo.png">
-    <link rel="shortcut icon" href="<?php echo $base_url; ?>/images/logo.png">
-    <link rel="apple-touch-icon" href="<?php echo $base_url; ?>/images/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title); ?>">
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($page_description); ?>">
+    <meta name="twitter:image" content="<?php echo htmlspecialchars($page_image); ?>">
+    <meta name="twitter:site" content="@nayomalawi">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?php echo htmlspecialchars($current_url); ?>">
+    
+    <!-- Preload critical assets -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $base_url; ?>/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $base_url; ?>/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="<?php echo $base_url; ?>/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $base_url; ?>/images/apple-touch-icon.png">
+    <link rel="manifest" href="<?php echo $base_url; ?>/site.webmanifest">
+    
+    <!-- Preconnect to external domains -->
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="<?php echo $base_url; ?>/images/logo.png" as="image">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    
+    <!-- Load non-critical CSS asynchronously -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Main CSS -->
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/styles.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/navigation.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>/css/slider.css">

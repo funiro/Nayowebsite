@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Crawl-delay: 3
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /config/
+
+# Sitemap
+Sitemap: https://nayomalawi.org/sitemap.xml

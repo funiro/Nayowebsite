@@ -1,10 +1,57 @@
-<?php
-session_start();
-$page_title = "Volunteer with NAYO | Nancholi Youth Organization";
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer with NAYO | Nancholi Youth Organization</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/programs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<?php include_once 'includes/header.php'; ?>
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #overlay-spinner {
+            display: none; /* Spinner is hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #overlay-spinner.active {
+            display: flex; /* Show spinner when active */
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solidrgb(189, 119, 49);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         .volunteer-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -174,19 +221,6 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
             text-decoration: underline;
         }
 
-        .form-group.terms-group {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .form-group.terms-group .checkbox-label {
-            justify-content: center;
-            display: inline-flex;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-
         .submit-btn {
             background-color: #2c3e50;
             color: white;
@@ -197,7 +231,7 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
             cursor: pointer;
             transition: background-color 0.3s ease;
             display: block;
-            margin: 0 auto;
+            margin: 2rem auto 0;
             width: 200px;
         }
 
@@ -255,7 +289,8 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
     </script>
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
+    <?php include_once 'includes/header.php'; ?>
+
     <main class="volunteer-content">
         <section class="volunteer-hero">
             <h1>Volunteer with NAYO</h1>
@@ -264,10 +299,10 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
 
         <section class="volunteer-form-section">
             <div class="form-container">
-                <form id="volunteer-form" action="php/volunteer_form_handler.php" method="POST">
+                <form id="volunteer-form" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="fullname" required>
                     </div>
 
                     <div class="form-group">
@@ -294,19 +329,19 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
                         <label for="interests">Areas of Interest *</label>
                         <div class="checkbox-group">
                             <label>
-                                <input type="checkbox" name="interests[]" value="Healthcare">
+                                <input type="checkbox" name="interests[]" value="Healthcare Services">
                                 <span>Healthcare Services</span>
                             </label>
                             <label>
-                                <input type="checkbox" name="interests[]" value="Education">
+                                <input type="checkbox" name="interests[]" value="Education Support">
                                 <span>Education Support</span>
                             </label>
                             <label>
-                                <input type="checkbox" name="interests[]" value="Youth">
+                                <input type="checkbox" name="interests[]" value="Youth Development">
                                 <span>Youth Development</span>
                             </label>
                             <label>
-                                <input type="checkbox" name="interests[]" value="Community">
+                                <input type="checkbox" name="interests[]" value="Community Outreach">
                                 <span>Community Outreach</span>
                             </label>
                             <label>
@@ -325,63 +360,63 @@ $page_title = "Volunteer with NAYO | Nancholi Youth Organization";
                         <textarea id="why_volunteer" name="why_volunteer" rows="4" required></textarea>
                     </div>
 
-                    <div class="form-group terms-group">
+                    <div class="form-group">
                         <label class="checkbox-label">
                             <input type="checkbox" name="terms" required>
                             <span>I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> *</span>
                         </label>
                     </div>
 
-                    <div style="text-align: center; width: 100%;">
-                        <button type="submit" class="submit-btn">Submit Application</button>
-                    </div>
+                    <button type="submit" class="submit-btn">Submit Application</button>
                 </form>
             </div>
+            <div id="spinner" style="display: none; text-align: center;">
+                <div class="loader"></div>
+            </div>
+
         </section>
     </main>
-
+   
     <script>
-    document.getElementById('volunteer-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const form = this;
-        const submitBtn = form.querySelector('.submit-btn');
-        const originalBtnText = submitBtn.textContent;
-        
-        // Disable submit button and show loading state
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting...';
-        
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Show success message
-                alert(data.message);
-                form.reset();
-                // Redirect to thank you page
-                window.location.href = 'thank-you.html';
-            } else {
-                // Show error message with debug info
-                const errorMessage = data.message + '\n\nDebug Information:\n' + data.debug;
-                console.error('Form submission error:', data.debug);
-                alert(errorMessage);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error submitting your form. Please try again.\n\nError details: ' + error.message);
-        })
-        .finally(() => {
-            // Reset button state
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
+        $(document).ready(function() {
+            
+            $('#overlay-spinner').removeClass('active');
+
+            $('#volunteer-form').on('submit', function(e) {
+                e.preventDefault();
+
+                // Show the full-screen spinner
+                $('#overlay-spinner').addClass('active');
+                $('#overlay-spinner').show();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/volunteer_form_handler.php',
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function(response) {
+                        $('#overlay-spinner').hide(); // Hide spinner
+
+                        if (response.status === 'success') {
+                            alertify.success(response.message);
+                            $('#volunteer-form')[0].reset();
+                        } else {
+                            alertify.error(response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        $('#overlay-spinner').hide(); // Hide spinner
+                        alertify.error('An error occurred: ' + error);
+                    }
+                });
+            });
         });
-    });
     </script>
-    <?php include 'includes/footer.php'; ?>
+
+<!-- Include footer -->   <?php include 'includes/footer.php'; ?> 
+    <div id="overlay-spinner">
+        <div class="loader"></div>
+    </div>
 </body>
-</html>
+</html> 
+
