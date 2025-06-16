@@ -50,6 +50,14 @@ ini_set('display_errors', 1);
     <meta name="twitter:image" content="<?php echo htmlspecialchars($page_image); ?>">
     <meta name="twitter:site" content="@nayomalawi">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="<?php echo $base_url; ?>/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $base_url; ?>/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $base_url; ?>/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $base_url; ?>/images/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo $base_url; ?>/site.webmanifest">
+    <meta name="robots" content="index, follow">
+    
     <!-- Canonical URL -->
     <link rel="canonical" href="<?php echo htmlspecialchars($current_url); ?>">
     

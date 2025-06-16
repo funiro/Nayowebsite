@@ -202,7 +202,7 @@ require_once 'includes/header.php';
                         <h3>George Nedi</h3>
                         <p>Executive Director</p>
                         <div class="staff-social">
-                            <a href="https://www.linkedin.com/in/george-nedi-5b74b332/" target="_blank" class="linkedin">
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7340310731629768704/" target="_blank" class="linkedin">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                         </div>

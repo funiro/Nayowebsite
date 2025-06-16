@@ -90,7 +90,7 @@ ob_start(); // Start output buffering
                                 </div>
                             </div>
                             <div class="staff-social" style="display: flex; justify-content: center; gap: 1rem; padding: 0.5rem 0; margin-top: auto;">
-                                <a href="https://www.linkedin.com/in/george-nedi-5b74b332/" target="_blank" class="linkedin" style="color: #006b41; font-size: 1.2rem; transition: color 0.3s ease;">
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7340310731629768704/" target="_blank" class="linkedin" style="color: #006b41; font-size: 1.2rem; transition: color 0.3s ease;">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
@@ -291,6 +291,26 @@ ob_start(); // Start output buffering
                             </div>
                             <div class="staff-social" style="display: flex; justify-content: center; gap: 1rem; padding: 0.5rem 0; margin-top: auto;">
                                 <a href="https://mw.linkedin.com/in/nancholi-youth-organisation-nayo-478a38141" target="_blank" class="linkedin" style="color: #006b41; font-size: 1.2rem; transition: color 0.3s ease;">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="staff-card" style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+                        <div class="staff-image" style="width: 100%; height: 250px; overflow: hidden;">
+                            <img src="<?php echo $base_url; ?>/images/staff/EDGAR.jpg" alt="Edgar Mpatula" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </div>
+                        <div class="staff-info" style="padding: 1.5rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column;">
+                            <div>
+                                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: #333;">Edgar Mpatula</h3>
+                                <p style="color: var(--primary-color); font-weight: 600; margin: 0 0 1rem 0; font-size: 0.9rem;">Driver</p>
+                                <div class="staff-bio" style="margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.5; color: #555; text-align: left; flex-grow: 1;">
+                                    <p>Edgar Mpatula has been a dedicated Driver for Nancholi Youth Organisation since 2013. He plays an essential role in reaching remote communities, helping ensure vital services and support are delivered where they are needed most.</p>
+                                </div>
+                            </div>
+                            <div class="staff-social" style="display: flex; justify-content: center; gap: 1rem; padding: 0.5rem 0; margin-top: auto;">
+                                <a href="https://mw.linkedin.com/company/nancholi-youth-organisation-nayo" target="_blank" class="linkedin" style="color: #006b41; font-size: 1.2rem; transition: color 0.3s ease;">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
