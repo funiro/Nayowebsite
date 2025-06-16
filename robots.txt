@@ -1,7 +1,21 @@
+# robots.txt for NAYO Website
 User-agent: *
 Allow: /
+
+# Disallow access to private directories
 Disallow: /admin/
 Disallow: /includes/
 Disallow: /config/
+Disallow: /cgi-bin/
+Disallow: /vendor/
 
+# Disallow query strings that might cause duplicate content
+Disallow: /*?s=
+Disallow: /*&s=
+Disallow: /*?q=
+Disallow: /*&q=
+Disallow: /*?*
+
+# Sitemaps
 Sitemap: https://nayomalawi.org/sitemap.xml
+Sitemap: https://localhost/dashboard/nayo-website/sitemap.php

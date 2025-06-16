@@ -2,9 +2,22 @@
 // Include base URL configuration
 require_once dirname(__DIR__) . '/base_url.php';
 
+// Include redirects
+require_once __DIR__ . '/redirects.php';
+
+// Include breadcrumbs
+require_once __DIR__ . '/breadcrumbs.php';
+
 // Error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
+// Set default breadcrumbs if not set
+if (!isset($breadcrumbs)) {
+    $breadcrumbs = [
+        ['url' => $base_url, 'text' => 'Home']
+    ];
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +62,21 @@ ini_set('display_errors', 1);
     <meta name="twitter:description" content="<?php echo htmlspecialchars($page_description); ?>">
     <meta name="twitter:image" content="<?php echo htmlspecialchars($page_image); ?>">
     <meta name="twitter:site" content="@nayomalawi">
+    
+    <!-- Canonical URL - Remove query parameters and fragments -->
+    <?php
+    $canonical_url = $protocol . '://' . $_SERVER['HTTP_HOST'] . strtok($_SERVER['REQUEST_URI'], '?');
+    $canonical_url = rtrim($canonical_url, '/');
+    ?>
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
+    
+    <!-- Prevents search engines from indexing search results and similar pages -->
+    <?php if (strpos($_SERVER['REQUEST_URI'], '?s=') !== false || strpos($_SERVER['REQUEST_URI'], '&s=') !== false || 
+              strpos($_SERVER['REQUEST_URI'], 'search') !== false || strpos($_SERVER['REQUEST_URI'], '?q=') !== false): ?>
+        <meta name="robots" content="noindex, follow">
+    <?php else: ?>
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <?php endif; ?>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?php echo $base_url; ?>/images/favicon.ico">
